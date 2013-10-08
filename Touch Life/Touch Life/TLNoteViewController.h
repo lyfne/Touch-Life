@@ -13,7 +13,7 @@
 #import "TLRecordViewController.h"
 #import "TLNote.h"
 
-
+//  log
 @class FastTextView;
 @protocol TLNoteDelegate
 
