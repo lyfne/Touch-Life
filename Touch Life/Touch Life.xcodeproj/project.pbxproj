@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C3CDA8118325B0C00FBE934 /* TLNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA8018325B0C00FBE934 /* TLNoteViewController.m */; };
+		1C3CDA8418325B5000FBE934 /* TLSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA8318325B5000FBE934 /* TLSettingViewController.m */; };
+		1C3CDA88183262F500FBE934 /* TLNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA87183262F500FBE934 /* TLNavigationViewController.m */; };
+		1C3CDA8C183264AD00FBE934 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA8B183264AD00FBE934 /* UIView+Frame.m */; };
 		1CE4FE5718227BE800BC7C1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE4FE5618227BE800BC7C1C /* Foundation.framework */; };
 		1CE4FE5918227BE800BC7C1C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE4FE5818227BE800BC7C1C /* CoreGraphics.framework */; };
 		1CE4FE5B18227BE800BC7C1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE4FE5A18227BE800BC7C1C /* UIKit.framework */; };
@@ -34,6 +38,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C3CDA7F18325B0C00FBE934 /* TLNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNoteViewController.h; sourceTree = "<group>"; };
+		1C3CDA8018325B0C00FBE934 /* TLNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNoteViewController.m; sourceTree = "<group>"; };
+		1C3CDA8218325B5000FBE934 /* TLSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSettingViewController.h; sourceTree = "<group>"; };
+		1C3CDA8318325B5000FBE934 /* TLSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLSettingViewController.m; sourceTree = "<group>"; };
+		1C3CDA86183262F500FBE934 /* TLNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNavigationViewController.h; sourceTree = "<group>"; };
+		1C3CDA87183262F500FBE934 /* TLNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNavigationViewController.m; sourceTree = "<group>"; };
+		1C3CDA8A183264AD00FBE934 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		1C3CDA8B183264AD00FBE934 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		1CE4FE5318227BE800BC7C1C /* Touch Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Touch Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CE4FE5618227BE800BC7C1C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1CE4FE5818227BE800BC7C1C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,6 +91,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C3CDA7E18325ADC00FBE934 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1CE4FE6B18227BE800BC7C1C /* TLViewController.h */,
+				1CE4FE6C18227BE800BC7C1C /* TLViewController.m */,
+				1C3CDA7F18325B0C00FBE934 /* TLNoteViewController.h */,
+				1C3CDA8018325B0C00FBE934 /* TLNoteViewController.m */,
+				1C3CDA8218325B5000FBE934 /* TLSettingViewController.h */,
+				1C3CDA8318325B5000FBE934 /* TLSettingViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		1C3CDA85183262D700FBE934 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				1C3CDA86183262F500FBE934 /* TLNavigationViewController.h */,
+				1C3CDA87183262F500FBE934 /* TLNavigationViewController.m */,
+			);
+			name = CustomView;
+			sourceTree = "<group>";
+		};
+		1C3CDA89183263EE00FBE934 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				1C3CDA8A183264AD00FBE934 /* UIView+Frame.h */,
+				1C3CDA8B183264AD00FBE934 /* UIView+Frame.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
 		1CE4FE4A18227BE800BC7C1C = {
 			isa = PBXGroup;
 			children = (
@@ -112,11 +155,12 @@
 		1CE4FE5C18227BE800BC7C1C /* Touch Life */ = {
 			isa = PBXGroup;
 			children = (
+				1C3CDA89183263EE00FBE934 /* Category */,
+				1C3CDA85183262D700FBE934 /* CustomView */,
+				1C3CDA7E18325ADC00FBE934 /* ViewController */,
 				1CE4FE6518227BE800BC7C1C /* TLAppDelegate.h */,
 				1CE4FE6618227BE800BC7C1C /* TLAppDelegate.m */,
 				1CE4FE6818227BE800BC7C1C /* Main.storyboard */,
-				1CE4FE6B18227BE800BC7C1C /* TLViewController.h */,
-				1CE4FE6C18227BE800BC7C1C /* TLViewController.m */,
 				1CE4FE6E18227BE800BC7C1C /* Images.xcassets */,
 				1CE4FE5D18227BE800BC7C1C /* Supporting Files */,
 			);
@@ -250,8 +294,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C3CDA88183262F500FBE934 /* TLNavigationViewController.m in Sources */,
+				1C3CDA8418325B5000FBE934 /* TLSettingViewController.m in Sources */,
 				1CE4FE6D18227BE800BC7C1C /* TLViewController.m in Sources */,
+				1C3CDA8C183264AD00FBE934 /* UIView+Frame.m in Sources */,
 				1CE4FE6718227BE800BC7C1C /* TLAppDelegate.m in Sources */,
+				1C3CDA8118325B0C00FBE934 /* TLNoteViewController.m in Sources */,
 				1CE4FE6318227BE800BC7C1C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +509,7 @@
 				1CE4FE8718227BE800BC7C1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1CE4FE8818227BE800BC7C1C /* Build configuration list for PBXNativeTarget "Touch LifeTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +518,7 @@
 				1CE4FE8A18227BE800BC7C1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
