@@ -44,6 +44,7 @@
     [self.navigationVC.view setX:0 Y:0];
     [self.navigationVC.view setHeight:50];
     [self.navigationVC setActionButtonHidden:YES];
+    [self.navigationVC setHeaderTitle:@"新建日记"];
     [self.view addSubview:self.navigationVC.view];
 }
 

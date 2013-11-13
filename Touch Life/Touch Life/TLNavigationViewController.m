@@ -77,4 +77,16 @@
     self.titleLabel.text = title;
 }
 
+- (void)setActionButtonTitle:(NSString *)title
+{
+    [self.actionButton setTitle:title forState:UIControlStateNormal];
+}
+
+- (void)setActionButtonBgImage:(UIImage *)image selectedImage:(UIImage *)selectedImage
+{
+    [self.actionButton setBackgroundImage:image forState:UIControlStateNormal];
+    [self.actionButton setBackgroundImage:selectedImage forState:UIControlStateHighlighted];
+    [self.actionButton setBackgroundImage:selectedImage forState:UIControlStateSelected];
+}
+
 @end

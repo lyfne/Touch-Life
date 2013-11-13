@@ -46,7 +46,21 @@
     [self.navigationVC.view setX:0 Y:0];
     [self.navigationVC.view setHeight:50];
     [self.navigationVC setBackButtonHidden:YES];
+    [self.navigationVC setHeaderTitle:[self getMonth]];
+    [self.navigationVC setActionButtonTitle:@"新建日记"];
     [self.view addSubview:self.navigationVC.view];
+}
+
+#pragma mark Privite Method
+
+- (NSString *)getMonth
+{
+    NSDate *now = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSUInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
+    int month = [dateComponent month];
+    return [NSString stringWithFormat:@"%d 月",month];
 }
 
 #pragma mark TableView DataSource

@@ -23,5 +23,7 @@
 - (void)setBackButtonHidden:(BOOL)hidden;
 - (void)setActionButtonHidden:(BOOL)hidden;
 - (void)setHeaderTitle:(NSString *)title;
+- (void)setActionButtonTitle:(NSString *)title;
+- (void)setActionButtonBgImage:(UIImage *)image selectedImage:(UIImage *)selectedImage;
 
 @end
