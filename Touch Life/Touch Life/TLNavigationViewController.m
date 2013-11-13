@@ -7,12 +7,14 @@
 //
 
 #import "TLNavigationViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface TLNavigationViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *actionButton;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 
 @end
 
@@ -30,6 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self initShadow];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,6 +44,20 @@
 
 - (IBAction)backAction:(id)sender {
     
+}
+
+- (IBAction)moreAction:(id)sender {
+    
+}
+
+#pragma mark Init Method
+
+- (void)initShadow
+{
+    [self.view.layer setShadowOffset:CGSizeMake(0, 0)];
+    [self.view.layer setShadowRadius:2];
+    [self.view.layer setShadowOpacity:0.7f];
+    [self.view.layer setShadowColor:[UIColor blackColor].CGColor];
 }
 
 #pragma mark Public Method

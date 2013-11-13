@@ -21,6 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self initNavigationView];
     [self initTableView];
 }
 
@@ -41,6 +42,10 @@
 {
     self.navigationController.navigationBar.hidden = YES;
     self.navigationVC = [self.storyboard instantiateViewControllerWithIdentifier:kTLNavigationViewController];
+    [self.navigationVC.view setX:0 Y:0];
+    [self.navigationVC.view setHeight:50];
+    [self.navigationVC setBackButtonHidden:YES];
+    [self.view addSubview:self.navigationVC.view];
 }
 
 #pragma mark TableView DataSource

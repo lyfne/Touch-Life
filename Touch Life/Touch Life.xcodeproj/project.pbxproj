@@ -11,6 +11,7 @@
 		1C2EB2641833A4B30051A2B6 /* TLNoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EB2631833A4B30051A2B6 /* TLNoteCell.m */; };
 		1C2EB2671833A65D0051A2B6 /* TLNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EB2661833A65D0051A2B6 /* TLNote.m */; };
 		1C2EB26A1833A6760051A2B6 /* TLNoteList.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EB2691833A6760051A2B6 /* TLNoteList.m */; };
+		1C2EB26E1833C4250051A2B6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2EB26D1833C4250051A2B6 /* QuartzCore.framework */; };
 		1C3CDA8118325B0C00FBE934 /* TLNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA8018325B0C00FBE934 /* TLNoteViewController.m */; };
 		1C3CDA8418325B5000FBE934 /* TLSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA8318325B5000FBE934 /* TLSettingViewController.m */; };
 		1C3CDA88183262F500FBE934 /* TLNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA87183262F500FBE934 /* TLNavigationViewController.m */; };
@@ -51,6 +52,7 @@
 		1C2EB2681833A6760051A2B6 /* TLNoteList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNoteList.h; sourceTree = "<group>"; };
 		1C2EB2691833A6760051A2B6 /* TLNoteList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNoteList.m; sourceTree = "<group>"; };
 		1C2EB26B1833A7610051A2B6 /* TLConstantConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLConstantConfig.h; sourceTree = "<group>"; };
+		1C2EB26D1833C4250051A2B6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1C3CDA7F18325B0C00FBE934 /* TLNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNoteViewController.h; sourceTree = "<group>"; };
 		1C3CDA8018325B0C00FBE934 /* TLNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNoteViewController.m; sourceTree = "<group>"; };
 		1C3CDA8218325B5000FBE934 /* TLSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSettingViewController.h; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C2EB26E1833C4250051A2B6 /* QuartzCore.framework in Frameworks */,
 				1CE4FE5918227BE800BC7C1C /* CoreGraphics.framework in Frameworks */,
 				1CE4FE5B18227BE800BC7C1C /* UIKit.framework in Frameworks */,
 				1CE4FE5718227BE800BC7C1C /* Foundation.framework in Frameworks */,
@@ -172,6 +175,7 @@
 		1CE4FE5518227BE800BC7C1C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1C2EB26D1833C4250051A2B6 /* QuartzCore.framework */,
 				1CE4FE5618227BE800BC7C1C /* Foundation.framework */,
 				1CE4FE5818227BE800BC7C1C /* CoreGraphics.framework */,
 				1CE4FE5A18227BE800BC7C1C /* UIKit.framework */,
