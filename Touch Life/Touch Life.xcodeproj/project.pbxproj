@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C2EB260183339CA0051A2B6 /* TLNoteActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EB25F183339CA0051A2B6 /* TLNoteActionViewController.m */; };
 		1C3CDA8118325B0C00FBE934 /* TLNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA8018325B0C00FBE934 /* TLNoteViewController.m */; };
 		1C3CDA8418325B5000FBE934 /* TLSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA8318325B5000FBE934 /* TLSettingViewController.m */; };
 		1C3CDA88183262F500FBE934 /* TLNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA87183262F500FBE934 /* TLNavigationViewController.m */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C2EB25E183339CA0051A2B6 /* TLNoteActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNoteActionViewController.h; sourceTree = "<group>"; };
+		1C2EB25F183339CA0051A2B6 /* TLNoteActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNoteActionViewController.m; sourceTree = "<group>"; };
 		1C3CDA7F18325B0C00FBE934 /* TLNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNoteViewController.h; sourceTree = "<group>"; };
 		1C3CDA8018325B0C00FBE934 /* TLNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNoteViewController.m; sourceTree = "<group>"; };
 		1C3CDA8218325B5000FBE934 /* TLSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSettingViewController.h; sourceTree = "<group>"; };
@@ -109,6 +112,8 @@
 			children = (
 				1C3CDA86183262F500FBE934 /* TLNavigationViewController.h */,
 				1C3CDA87183262F500FBE934 /* TLNavigationViewController.m */,
+				1C2EB25E183339CA0051A2B6 /* TLNoteActionViewController.h */,
+				1C2EB25F183339CA0051A2B6 /* TLNoteActionViewController.m */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 			files = (
 				1C3CDA88183262F500FBE934 /* TLNavigationViewController.m in Sources */,
 				1C3CDA8418325B5000FBE934 /* TLSettingViewController.m in Sources */,
+				1C2EB260183339CA0051A2B6 /* TLNoteActionViewController.m in Sources */,
 				1CE4FE6D18227BE800BC7C1C /* TLViewController.m in Sources */,
 				1C3CDA8C183264AD00FBE934 /* UIView+Frame.m in Sources */,
 				1CE4FE6718227BE800BC7C1C /* TLAppDelegate.m in Sources */,
