@@ -10,4 +10,8 @@
 
 @interface TLNavigationViewController : UIViewController
 
+- (void)setBackButtonHidden:(BOOL)hidden;
+- (void)setActionButtonHidden:(BOOL)hidden;
+- (void)setHeaderTitle:(NSString *)title;
+
 @end

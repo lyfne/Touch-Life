@@ -7,6 +7,7 @@
 //
 
 #import "TLViewController.h"
+#import "TLNoteCell.h"
 
 @interface TLViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -36,11 +37,17 @@
     self.tableView.dataSource = self;
 }
 
+- (void)initNavigationView
+{
+    self.navigationController.navigationBar.hidden = YES;
+    self.navigationVC = [self.storyboard instantiateViewControllerWithIdentifier:kTLNavigationViewController];
+}
+
 #pragma mark TableView DataSource
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 60;
+    return 100;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -50,7 +57,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    static NSString * identifer = @"TLNoteCell";
+    
+    TLNoteCell * cell = [tableView dequeueReusableCellWithIdentifier:identifer];
+    if (cell == nil) {
+        cell = [[TLNoteCell alloc] initWithStyle:UITableViewCellStyleValue1
+                                       reuseIdentifier:identifer];
+    }
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%d",indexPath.row];
+    return cell;
 }
 
 #pragma mark TableView Delegate

@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TLNavigationViewController.h"
 
 @interface TLViewController : UIViewController
 
+@property (strong, nonatomic) TLNavigationViewController *navigationVC;
 
 @end
