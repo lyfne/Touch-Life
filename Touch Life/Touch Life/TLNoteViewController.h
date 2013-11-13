@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TLNavigationViewController.h"
 
-@interface TLNoteViewController : UIViewController
+@interface TLNoteViewController : UIViewController<TLNavigationDelegate>
+
+@property (strong, nonatomic) TLNavigationViewController *navigationVC;
 
 @end

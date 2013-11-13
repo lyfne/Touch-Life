@@ -43,11 +43,11 @@
 #pragma mark IBAction Method
 
 - (IBAction)backAction:(id)sender {
-    
+    [self.delegate popBack];
 }
 
 - (IBAction)moreAction:(id)sender {
-    
+    [self.delegate moreAction];
 }
 
 #pragma mark Init Method

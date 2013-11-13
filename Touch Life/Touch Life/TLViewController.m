@@ -42,6 +42,7 @@
 {
     self.navigationController.navigationBar.hidden = YES;
     self.navigationVC = [self.storyboard instantiateViewControllerWithIdentifier:kTLNavigationViewController];
+    self.navigationVC.delegate = self;
     [self.navigationVC.view setX:0 Y:0];
     [self.navigationVC.view setHeight:50];
     [self.navigationVC setBackButtonHidden:YES];
@@ -79,6 +80,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+}
+
+#pragma mark TLNavigationDelegate
+
+- (void)moreAction
+{
+    self.noteVC = [self.storyboard instantiateViewControllerWithIdentifier:kTLNoteViewController];
+    [self.navigationController pushViewController:self.noteVC animated:YES];
 }
 
 @end
