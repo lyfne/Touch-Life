@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TLNavigationViewController.h"
 #import "TLNoteActionViewController.h"
+#import "TLNote.h"
 
 @interface TLNoteViewController : UIViewController<TLNavigationDelegate>{
     BOOL keyboardWasShown;

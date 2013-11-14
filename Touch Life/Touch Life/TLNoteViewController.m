@@ -88,6 +88,15 @@
     keyboardWasShown = NO;
 }
 
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        NSLog(@"0");
+    }else if(buttonIndex == 1){
+        TLNote *note = [TLNote createNoteWithDate:[NSDate date] note:self.noteTextView.text image:nil];
+    }
+}
+                    
 #pragma mark TLNavigationDelegate
 
 - (void)moreAction
