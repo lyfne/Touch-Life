@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
+@property (weak, nonatomic) IBOutlet UIButton *settingButton;
 
 @end
 
@@ -49,6 +50,13 @@
     [self.navigationVC setHeaderTitle:[self getMonth]];
     [self.navigationVC setActionButtonTitle:@"新建日记"];
     [self.view addSubview:self.navigationVC.view];
+}
+
+#pragma mark IBAction Method
+
+- (IBAction)settingAction:(id)sender {
+    self.settingVC = [self.storyboard instantiateViewControllerWithIdentifier:kTLSettingViewController];
+    [self.navigationController pushViewController:self.settingVC animated:YES];
 }
 
 #pragma mark Privite Method

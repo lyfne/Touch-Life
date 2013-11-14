@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "TLNavigationViewController.h"
 #import "TLNoteViewController.h"
+#import "TLSettingViewController.h"
 
 @interface TLViewController : UIViewController<TLNavigationDelegate>
 
 @property (strong, nonatomic) TLNavigationViewController *navigationVC;
 @property (strong, nonatomic) TLNoteViewController *noteVC;
+@property (strong, nonatomic) TLSettingViewController *settingVC;
 
 @end

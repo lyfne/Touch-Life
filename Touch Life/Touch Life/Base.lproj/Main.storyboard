@@ -36,12 +36,23 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbu-48-dpg">
+                                <rect key="frame" x="275" y="522" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="设置">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="settingAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ym8-Uy-JbQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Tb6-gq-C1O"/>
                     <connections>
                         <outlet property="bgImageView" destination="wqH-kQ-mUd" id="g8d-jk-GX8"/>
+                        <outlet property="settingButton" destination="kbu-48-dpg" id="ll7-1o-67P"/>
                         <outlet property="tableView" destination="CEe-zB-H6O" id="cVg-mW-Fq4"/>
                     </connections>
                 </viewController>
@@ -183,7 +194,7 @@
                     <view key="view" contentMode="scaleToFill" id="xko-O9-0pV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SyT-DT-cuz" userLabel="First Responder" sceneMemberID="firstResponder"/>
