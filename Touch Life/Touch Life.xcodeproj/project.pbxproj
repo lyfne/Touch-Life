@@ -16,6 +16,8 @@
 		1C3CDA8418325B5000FBE934 /* TLSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA8318325B5000FBE934 /* TLSettingViewController.m */; };
 		1C3CDA88183262F500FBE934 /* TLNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA87183262F500FBE934 /* TLNavigationViewController.m */; };
 		1C3CDA8C183264AD00FBE934 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA8B183264AD00FBE934 /* UIView+Frame.m */; };
+		1C9C5453183499FE00813037 /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9C5451183499FE00813037 /* LaunchImage@2x.png */; };
+		1C9C5454183499FE00813037 /* LaunchImage@R4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9C5452183499FE00813037 /* LaunchImage@R4.png */; };
 		1CE4FE5718227BE800BC7C1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE4FE5618227BE800BC7C1C /* Foundation.framework */; };
 		1CE4FE5918227BE800BC7C1C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE4FE5818227BE800BC7C1C /* CoreGraphics.framework */; };
 		1CE4FE5B18227BE800BC7C1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE4FE5A18227BE800BC7C1C /* UIKit.framework */; };
@@ -61,6 +63,8 @@
 		1C3CDA87183262F500FBE934 /* TLNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNavigationViewController.m; sourceTree = "<group>"; };
 		1C3CDA8A183264AD00FBE934 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		1C3CDA8B183264AD00FBE934 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		1C9C5451183499FE00813037 /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
+		1C9C5452183499FE00813037 /* LaunchImage@R4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@R4.png"; sourceTree = "<group>"; };
 		1CE4FE5318227BE800BC7C1C /* Touch Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Touch Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CE4FE5618227BE800BC7C1C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1CE4FE5818227BE800BC7C1C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -153,6 +157,28 @@
 			name = Category;
 			sourceTree = "<group>";
 		};
+		1C9C544F183499CC00813037 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				1C2EB2611833A4600051A2B6 /* Model */,
+				1C3CDA89183263EE00FBE934 /* Category */,
+				1C3CDA85183262D700FBE934 /* CustomView */,
+				1C3CDA7E18325ADC00FBE934 /* ViewController */,
+				1CE4FE6518227BE800BC7C1C /* TLAppDelegate.h */,
+				1CE4FE6618227BE800BC7C1C /* TLAppDelegate.m */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
+		1C9C5450183499DF00813037 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1C9C5451183499FE00813037 /* LaunchImage@2x.png */,
+				1C9C5452183499FE00813037 /* LaunchImage@R4.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		1CE4FE4A18227BE800BC7C1C = {
 			isa = PBXGroup;
 			children = (
@@ -187,12 +213,8 @@
 		1CE4FE5C18227BE800BC7C1C /* Touch Life */ = {
 			isa = PBXGroup;
 			children = (
-				1C2EB2611833A4600051A2B6 /* Model */,
-				1C3CDA89183263EE00FBE934 /* Category */,
-				1C3CDA85183262D700FBE934 /* CustomView */,
-				1C3CDA7E18325ADC00FBE934 /* ViewController */,
-				1CE4FE6518227BE800BC7C1C /* TLAppDelegate.h */,
-				1CE4FE6618227BE800BC7C1C /* TLAppDelegate.m */,
+				1C9C5450183499DF00813037 /* Resources */,
+				1C9C544F183499CC00813037 /* Class */,
 				1CE4FE6818227BE800BC7C1C /* Main.storyboard */,
 				1CE4FE6E18227BE800BC7C1C /* Images.xcassets */,
 				1CE4FE5D18227BE800BC7C1C /* Supporting Files */,
@@ -308,7 +330,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CE4FE6F18227BE800BC7C1C /* Images.xcassets in Resources */,
+				1C9C5453183499FE00813037 /* LaunchImage@2x.png in Resources */,
 				1CE4FE6118227BE800BC7C1C /* InfoPlist.strings in Resources */,
+				1C9C5454183499FE00813037 /* LaunchImage@R4.png in Resources */,
 				1CE4FE6A18227BE800BC7C1C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
