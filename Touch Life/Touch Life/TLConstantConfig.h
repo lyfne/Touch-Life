@@ -12,6 +12,8 @@
 #define kDate @"Date"
 #define kNote @"Note"
 #define kDetailImage @"DetailImage"
+#define kNoteArrayData @"NoteArrayData"
+#define kListData @"ListData"
 
 #define kTLNavigationViewController @"TLNavigationViewController"
 #define kTLViewController @"TLViewController"

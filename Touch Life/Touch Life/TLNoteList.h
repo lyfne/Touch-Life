@@ -7,10 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TLNote.h"
 
 @interface TLNoteList : NSObject
 
-@property (assign, nonatomic, readonly) NSInteger count;
-@property (copy, nonatomic) NSString *month;
+@property (copy, nonatomic) NSDate *listDate;
+
++ (TLNoteList *)createNoteList;
+- (NSInteger)count;
+- (void)addNote:(TLNote *)note;
+- (int)getMonth;
+- (int)getYear;
 
 @end
