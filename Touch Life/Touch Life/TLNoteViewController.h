@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "TLNavigationViewController.h"
+#import "TLNoteActionViewController.h"
 
-@interface TLNoteViewController : UIViewController<TLNavigationDelegate>
+@interface TLNoteViewController : UIViewController<TLNavigationDelegate>{
+    BOOL keyboardWasShown;
+}
 
 @property (strong, nonatomic) TLNavigationViewController *navigationVC;
+@property (strong, nonatomic) TLNoteActionViewController *noteActionVC;
 
 @end
