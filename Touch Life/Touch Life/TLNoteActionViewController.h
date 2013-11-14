@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol TLNoteActionDelegate
+
+- (void)takePhoto;
+
+@end
+
 @interface TLNoteActionViewController : UIViewController
+
+@property (strong, nonatomic) id<TLNoteActionDelegate> delegate;
 
 @end

@@ -11,7 +11,7 @@
 #import "TLNoteActionViewController.h"
 #import "TLNote.h"
 
-@interface TLNoteViewController : UIViewController<TLNavigationDelegate>{
+@interface TLNoteViewController : UIViewController<TLNavigationDelegate,TLNoteActionDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate,UINavigationControllerDelegate>{
     BOOL keyboardWasShown;
 }
 

@@ -60,6 +60,7 @@
 - (void)initNoteActionView
 {
     self.noteActionVC = [self.storyboard instantiateViewControllerWithIdentifier:kTLNoteActionViewController];
+    self.noteActionVC.delegate = self;
     [self.noteActionVC.view setX:0 Y:300];
     [self.noteActionVC.view setHeight:50];
     [self.view addSubview:self.noteActionVC.view];
@@ -88,6 +89,13 @@
     keyboardWasShown = NO;
 }
 
+- (void) saveImage:(UIImage *)currentImage withName:(NSString *)imageName
+{
+    NSData *imageData = UIImageJPEGRepresentation(currentImage, 0.5);
+    NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:imageName];
+    [imageData writeToFile:fullPath atomically:NO];
+}
+
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 0) {
@@ -112,6 +120,67 @@
 - (void)popBack
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark TLNoteActionDelegate
+
+- (void)takePhoto
+{
+    UIActionSheet *sheet;
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        sheet  = [[UIActionSheet alloc] initWithTitle:@"选择" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"拍照",@"从相册选择", nil];
+    }else {
+        sheet = [[UIActionSheet alloc] initWithTitle:@"选择" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"从相册选择", nil];
+    }
+    sheet.tag = 255;
+    [sheet showInView:self.view];
+}
+
+-(void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (actionSheet.tag == 255) {
+        NSUInteger sourceType = 0;
+        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            switch (buttonIndex) {
+                case 0:
+                    return;
+                case 1:
+                    sourceType = UIImagePickerControllerSourceTypeCamera;
+                    break;
+                case 2:
+                    sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                    break;
+            }
+        }else {
+            if (buttonIndex == 0) {
+                return;
+            }else {
+                sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+            }
+        }
+        
+        UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+        imagePickerController.delegate = self;
+        imagePickerController.allowsEditing = YES;
+        imagePickerController.sourceType = sourceType;
+        [self presentViewController:imagePickerController animated:YES completion:^{}];
+    }
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    [picker dismissViewControllerAnimated:YES completion:^{}];
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    [self saveImage:image withName:@"currentImage.png"];
+ //   NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"currentImage.png"];
+ //   UIImage *savedImage = [[UIImage alloc] initWithContentsOfFile:fullPath];
+ //   [self.imageView setImage:savedImage];
+ //   self.imageView.tag = 100;
+    
+}
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+	[self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 @end
