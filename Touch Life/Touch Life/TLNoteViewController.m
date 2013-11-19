@@ -7,8 +7,7 @@
 //
 
 #import "TLNoteViewController.h"
-
-#define DOCUMENTS_FOLDER [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]
+#import "UIView+FadeInOut.h"
 
 @interface TLNoteViewController ()
 
@@ -185,97 +184,34 @@
 	[self dismissViewControllerAnimated:YES completion:^{}];
 }
 
-- (void) startRecord
+- (void)startRecord
 {
-    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-    NSError *err = nil;
-    [audioSession setCategory :AVAudioSessionCategoryPlayAndRecord error:&err];
-    if(err){
-        NSLog(@"audioSession: %@ %d %@", [err domain], [err code], [[err userInfo] description]);
-        return;
-    }
-    [audioSession setActive:YES error:&err];
-    err = nil;
-    if(err){
-        NSLog(@"audioSession: %@ %d %@", [err domain], [err code], [[err userInfo] description]);
-        return;
-    }
-    
-    recordSetting = [[NSMutableDictionary alloc] init];
-    [recordSetting setValue :[NSNumber numberWithInt:kAudioFormatLinearPCM] forKey:AVFormatIDKey];
-    [recordSetting setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
-    [recordSetting setValue:[NSNumber numberWithInt: 2] forKey:AVNumberOfChannelsKey];
-    [recordSetting setValue :[NSNumber numberWithInt:16] forKey:AVLinearPCMBitDepthKey];
-    [recordSetting setValue :[NSNumber numberWithBool:NO] forKey:AVLinearPCMIsBigEndianKey];
-    [recordSetting setValue :[NSNumber numberWithBool:NO] forKey:AVLinearPCMIsFloatKey];
-    
-    // Create a new dated file
-    NSDate *now = [NSDate dateWithTimeIntervalSinceNow:0];
-    NSString *caldate = [now description];
-    recorderFilePath = [NSString stringWithFormat:@"%@/%@.caf",DOCUMENTS_FOLDER,caldate];
-    
-    NSURL *url = [NSURL fileURLWithPath:recorderFilePath];
-    err = nil;
-    recorder = [[ AVAudioRecorder alloc] initWithURL:url settings:recordSetting error:&err];
-    if(!recorder){
-        NSLog(@"recorder: %@ %d %@", [err domain], [err code], [[err userInfo] description]);
-        UIAlertView *alert =
-        [[UIAlertView alloc] initWithTitle: @"Warning"
-                                   message: [err localizedDescription]
-                                  delegate: nil
-                         cancelButtonTitle:@"OK"
-                         otherButtonTitles:nil];
-        [alert show];
-        return;
-    }
-    
-    //prepare to record
-    [recorder setDelegate:self];
-    [recorder prepareToRecord];
-    recorder.meteringEnabled = YES;
-    
-    BOOL audioHWAvailable = audioSession.isInputAvailable;
-    if (! audioHWAvailable) {
-        UIAlertView *cantRecordAlert =
-        [[UIAlertView alloc] initWithTitle: @"Warning"
-                                   message: @"Audio input hardware not available"
-                                  delegate: nil
-                         cancelButtonTitle:@"OK"
-                         otherButtonTitles:nil];
-        [cantRecordAlert show];
-        return;
-    }
-    
-    // start recording
-    [recorder recordForDuration:(NSTimeInterval) 10];
+    [self.noteTextView resignFirstResponder];
+    self.recordVC = [self.storyboard instantiateViewControllerWithIdentifier:kTLRecordViewController];
+    self.recordVC.delegate = self;
+    [self.recordVC.view setX:0 Y:0 Width:self.view.frame.size.width Height:self.view.frame.size.height];
+    [self.view addSubview:self.recordVC.view];
+    [self.recordVC.view fadeIn:0.5f];
+    [self.recordVC startRecording];
 }
 
-- (void) stopRecording{
+#pragma mark TLRecoreDelegate
+
+- (void)saveRecord
+{
     
-    [recorder stop];
-    
-    NSURL *url = [NSURL fileURLWithPath: recorderFilePath];
-    NSError *err = nil;
-    NSData *audioData = [NSData dataWithContentsOfFile:[url path] options: 0 error:&err];
-    if(!audioData){
-        NSLog(@"audio data: %@ %d %@", [err domain], [err code], [[err userInfo] description]);
-    }
-    
-    NSFileManager *fm = [NSFileManager defaultManager];
-    err = nil;
-    [fm removeItemAtPath:[url path] error:&err];
-    if(err){
-        NSLog(@"File Manager: %@ %d %@", [err domain], [err code], [[err userInfo] description]);
-    }
-    
-    UIBarButtonItem *startButton = [[UIBarButtonItem alloc] initWithTitle:@"Record" style:UIBarButtonItemStyleBordered  target:self action:@selector(startRecord)];
-    self.navigationItem.rightBarButtonItem = startButton;
 }
 
-- (void)audioRecorderDidFinishRecording:(AVAudioRecorder *) aRecorder successfully:(BOOL)flag
+- (void)backToNoteView
 {
-    NSLog (@"audioRecorderDidFinishRecording:successfully:");
-    // your actions here
+    [self.recordVC.view fadeOut:0.5f];
+    [self performSelector:@selector(removeRecordView) withObject:nil afterDelay:0.5f];
+}
+
+- (void)removeRecordView
+{
+    [self.noteTextView becomeFirstResponder];
+    [self.recordVC.view removeFromSuperview];
 }
 
 @end

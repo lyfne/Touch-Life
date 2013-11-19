@@ -17,6 +17,9 @@
 		1C3CDA88183262F500FBE934 /* TLNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA87183262F500FBE934 /* TLNavigationViewController.m */; };
 		1C3CDA8C183264AD00FBE934 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA8B183264AD00FBE934 /* UIView+Frame.m */; };
 		1C7E6F64183B558E00CF3BD7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7E6F63183B558E00CF3BD7 /* AVFoundation.framework */; };
+		1C7E6F67183B84E300CF3BD7 /* TLRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E6F66183B84E300CF3BD7 /* TLRecordViewController.m */; };
+		1C7E6F6A183B86C100CF3BD7 /* UIView+FadeInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E6F69183B86C100CF3BD7 /* UIView+FadeInOut.m */; };
+		1C7E6F6C183B925100CF3BD7 /* RecordDVD.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7E6F6B183B925100CF3BD7 /* RecordDVD.png */; };
 		1C9C5453183499FE00813037 /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9C5451183499FE00813037 /* LaunchImage@2x.png */; };
 		1C9C5454183499FE00813037 /* LaunchImage@R4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9C5452183499FE00813037 /* LaunchImage@R4.png */; };
 		1CE4FE5718227BE800BC7C1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE4FE5618227BE800BC7C1C /* Foundation.framework */; };
@@ -66,6 +69,11 @@
 		1C3CDA8A183264AD00FBE934 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		1C3CDA8B183264AD00FBE934 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		1C7E6F63183B558E00CF3BD7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1C7E6F65183B84E300CF3BD7 /* TLRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLRecordViewController.h; sourceTree = "<group>"; };
+		1C7E6F66183B84E300CF3BD7 /* TLRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLRecordViewController.m; sourceTree = "<group>"; };
+		1C7E6F68183B86C100CF3BD7 /* UIView+FadeInOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FadeInOut.h"; sourceTree = "<group>"; };
+		1C7E6F69183B86C100CF3BD7 /* UIView+FadeInOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FadeInOut.m"; sourceTree = "<group>"; };
+		1C7E6F6B183B925100CF3BD7 /* RecordDVD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecordDVD.png; sourceTree = "<group>"; };
 		1C9C5451183499FE00813037 /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
 		1C9C5452183499FE00813037 /* LaunchImage@R4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@R4.png"; sourceTree = "<group>"; };
 		1CE4FE5318227BE800BC7C1C /* Touch Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Touch Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +158,8 @@
 				1C2EB25F183339CA0051A2B6 /* TLNoteActionViewController.m */,
 				1C2EB2621833A4B30051A2B6 /* TLNoteCell.h */,
 				1C2EB2631833A4B30051A2B6 /* TLNoteCell.m */,
+				1C7E6F65183B84E300CF3BD7 /* TLRecordViewController.h */,
+				1C7E6F66183B84E300CF3BD7 /* TLRecordViewController.m */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -157,6 +167,8 @@
 		1C3CDA89183263EE00FBE934 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				1C7E6F68183B86C100CF3BD7 /* UIView+FadeInOut.h */,
+				1C7E6F69183B86C100CF3BD7 /* UIView+FadeInOut.m */,
 				4B53F4171835003B00CC33A6 /* NSArray+Data.m */,
 				4B53F4181835003B00CC33A6 /* NSArray+Data.h */,
 				1C3CDA8A183264AD00FBE934 /* UIView+Frame.h */,
@@ -181,6 +193,7 @@
 		1C9C5450183499DF00813037 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1C7E6F6B183B925100CF3BD7 /* RecordDVD.png */,
 				1C9C5451183499FE00813037 /* LaunchImage@2x.png */,
 				1C9C5452183499FE00813037 /* LaunchImage@R4.png */,
 			);
@@ -341,6 +354,7 @@
 				1CE4FE6F18227BE800BC7C1C /* Images.xcassets in Resources */,
 				1C9C5453183499FE00813037 /* LaunchImage@2x.png in Resources */,
 				1CE4FE6118227BE800BC7C1C /* InfoPlist.strings in Resources */,
+				1C7E6F6C183B925100CF3BD7 /* RecordDVD.png in Resources */,
 				1C9C5454183499FE00813037 /* LaunchImage@R4.png in Resources */,
 				1CE4FE6A18227BE800BC7C1C /* Main.storyboard in Resources */,
 			);
@@ -363,12 +377,14 @@
 			files = (
 				1C3CDA88183262F500FBE934 /* TLNavigationViewController.m in Sources */,
 				1C3CDA8418325B5000FBE934 /* TLSettingViewController.m in Sources */,
+				1C7E6F6A183B86C100CF3BD7 /* UIView+FadeInOut.m in Sources */,
 				4B53F4191835003B00CC33A6 /* NSArray+Data.m in Sources */,
 				1C2EB260183339CA0051A2B6 /* TLNoteActionViewController.m in Sources */,
 				1CE4FE6D18227BE800BC7C1C /* TLViewController.m in Sources */,
 				1C3CDA8C183264AD00FBE934 /* UIView+Frame.m in Sources */,
 				1C2EB2671833A65D0051A2B6 /* TLNote.m in Sources */,
 				1CE4FE6718227BE800BC7C1C /* TLAppDelegate.m in Sources */,
+				1C7E6F67183B84E300CF3BD7 /* TLRecordViewController.m in Sources */,
 				1C2EB26A1833A6760051A2B6 /* TLNoteList.m in Sources */,
 				1C3CDA8118325B0C00FBE934 /* TLNoteViewController.m in Sources */,
 				1C2EB2641833A4B30051A2B6 /* TLNoteCell.m in Sources */,

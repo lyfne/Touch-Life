@@ -20,5 +20,6 @@
 #define kTLNoteViewController @"TLNoteViewController"
 #define kTLNoteActionViewController @"TLNoteActionViewController"
 #define kTLSettingViewController @"TLSettingViewController"
+#define kTLRecordViewController @"TLRecordViewController"
 
 #endif
