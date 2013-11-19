@@ -15,6 +15,8 @@
 
 @interface TLNoteViewController : UIViewController<TLNavigationDelegate,TLNoteActionDelegate,TLRecordDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate,UINavigationControllerDelegate>{
     BOOL keyboardWasShown;
+    UIImageView *photoImageView;
+    UIImage *savedImage;
 }
 
 @property (strong, nonatomic) TLRecordViewController *recordVC;

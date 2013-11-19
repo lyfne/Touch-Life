@@ -9,6 +9,9 @@
 #import "TLNoteViewController.h"
 #import "UIView+FadeInOut.h"
 
+#define kPhotoBeforeX -130
+#define kPhotoAfterX -110
+
 @interface TLNoteViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *noteTextView;
@@ -60,6 +63,7 @@
 
 - (void)initNoteActionView
 {
+    photoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kPhotoBeforeX, 70, 130, 200)];
     self.noteActionVC = [self.storyboard instantiateViewControllerWithIdentifier:kTLNoteActionViewController];
     self.noteActionVC.delegate = self;
     [self.noteActionVC.view setX:0 Y:300];
@@ -70,6 +74,7 @@
 - (void)initView
 {
     [self.noteTextView becomeFirstResponder];
+    self.view.clipsToBounds = YES;
 }
 
 - (void)initNotification
@@ -102,7 +107,7 @@
     if (buttonIndex == 0) {
         NSLog(@"0");
     }else if(buttonIndex == 1){
-        TLNote *note = [TLNote createNoteWithDate:[NSDate date] note:self.noteTextView.text image:nil];
+        TLNote *note = [TLNote createNoteWithDate:[NSDate date] note:self.noteTextView.text];
     }
 }
                     
@@ -173,12 +178,15 @@
     [picker dismissViewControllerAnimated:YES completion:^{}];
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     [self saveImage:image withName:@"currentImage.png"];
- //   NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"currentImage.png"];
- //   UIImage *savedImage = [[UIImage alloc] initWithContentsOfFile:fullPath];
- //   [self.imageView setImage:savedImage];
- //   self.imageView.tag = 100;
-    
+    NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"currentImage.png"];
+    savedImage = [[UIImage alloc] initWithContentsOfFile:fullPath];
+    [photoImageView setImage:savedImage];
+    [self.view addSubview:photoImageView];
+    [UIView animateWithDuration:0.3f animations:^{
+        [photoImageView setX:kPhotoAfterX];
+    }];
 }
+
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
 	[self dismissViewControllerAnimated:YES completion:^{}];

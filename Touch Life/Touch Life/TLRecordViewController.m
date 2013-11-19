@@ -158,21 +158,6 @@
     rotate.fillMode = kCAFillModeForwards;
     rotate.removedOnCompletion = NO;
     [self.recordImageView.layer addAnimation:rotate forKey:@"rotatelayer"];
-    
-    
-    
-//    [UIView beginAnimations:nil context:nil];
-//    [UIView setAnimationDuration:0.1f];
-//    [UIView setAnimationDelegate:self];
-//    [UIView setAnimationDidStopSelector:@selector(endAnimation)];
-//    self.recordImageView.transform = CGAffineTransformMakeRotation(angle * (M_PI / 180.0f));
-//    [UIView commitAnimations];
-}
-
--(void)endAnimation
-{
-    angle += 10;
-    [self startAnimation];
 }
 
 - (void)addTime{
@@ -183,7 +168,7 @@
         [self.delegate backToNoteView];
         time = 0;
     }else{
-        self.timeLabel.text = [NSString stringWithFormat:@"%d:%.1i",time/60,time%60];
+        self.timeLabel.text = [NSString stringWithFormat:@"%d:%.2i",time/60,time%60];
     }
 }
 

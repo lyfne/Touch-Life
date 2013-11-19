@@ -16,6 +16,7 @@
 		1C3CDA8418325B5000FBE934 /* TLSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA8318325B5000FBE934 /* TLSettingViewController.m */; };
 		1C3CDA88183262F500FBE934 /* TLNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA87183262F500FBE934 /* TLNavigationViewController.m */; };
 		1C3CDA8C183264AD00FBE934 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA8B183264AD00FBE934 /* UIView+Frame.m */; };
+		1C5C82FD183BA43B005EE013 /* testBlur.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C5C82FC183BA43A005EE013 /* testBlur.png */; };
 		1C7E6F64183B558E00CF3BD7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7E6F63183B558E00CF3BD7 /* AVFoundation.framework */; };
 		1C7E6F67183B84E300CF3BD7 /* TLRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E6F66183B84E300CF3BD7 /* TLRecordViewController.m */; };
 		1C7E6F6A183B86C100CF3BD7 /* UIView+FadeInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E6F69183B86C100CF3BD7 /* UIView+FadeInOut.m */; };
@@ -68,6 +69,7 @@
 		1C3CDA87183262F500FBE934 /* TLNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNavigationViewController.m; sourceTree = "<group>"; };
 		1C3CDA8A183264AD00FBE934 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		1C3CDA8B183264AD00FBE934 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		1C5C82FC183BA43A005EE013 /* testBlur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testBlur.png; sourceTree = "<group>"; };
 		1C7E6F63183B558E00CF3BD7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1C7E6F65183B84E300CF3BD7 /* TLRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLRecordViewController.h; sourceTree = "<group>"; };
 		1C7E6F66183B84E300CF3BD7 /* TLRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLRecordViewController.m; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		1C9C5450183499DF00813037 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1C5C82FC183BA43A005EE013 /* testBlur.png */,
 				4B5023C8183B9F8C00D3A4BE /* RecordDVD.png */,
 				1C9C5451183499FE00813037 /* LaunchImage@2x.png */,
 				1C9C5452183499FE00813037 /* LaunchImage@R4.png */,
@@ -355,6 +358,7 @@
 				1C9C5453183499FE00813037 /* LaunchImage@2x.png in Resources */,
 				1CE4FE6118227BE800BC7C1C /* InfoPlist.strings in Resources */,
 				4B5023C9183B9F8C00D3A4BE /* RecordDVD.png in Resources */,
+				1C5C82FD183BA43B005EE013 /* testBlur.png in Resources */,
 				1C9C5454183499FE00813037 /* LaunchImage@R4.png in Resources */,
 				1CE4FE6A18227BE800BC7C1C /* Main.storyboard in Resources */,
 			);

@@ -12,9 +12,10 @@
 
 - (void)encodeWithCoder:(NSCoder*)coder
 {
-    [coder encodeObject:self.date forKey:kDate];
-    [coder encodeObject:self.note forKey:kNote];
+    [coder encodeObject:self.detailDate forKey:kDetailDate];
+    [coder encodeObject:self.detailNote forKey:kDetailNote];
     [coder encodeObject:self.detailImage forKey:kDetailImage];
+    [coder encodeObject:self.recordName forKey:kRecordName];
 }
 
 - (id)initWithCoder:(NSCoder*)coder
@@ -22,23 +23,36 @@
     self = [super init];
     
     if (self) {
-        self.date = [coder decodeObjectForKey:kDate];
-        self.note = [coder decodeObjectForKey:kNote];
+        self.detailDate = [coder decodeObjectForKey:kDetailDate];
+        self.detailNote = [coder decodeObjectForKey:kDetailNote];
         self.detailImage = [coder decodeObjectForKey:kDetailImage];
+        self.recordName = [coder decodeObjectForKey:kRecordName];
     }
     
     return self;
 }
 
-+ (TLNote *)createNoteWithDate:(NSDate *)date note:(NSString *)note image:(UIImage *)image
++ (TLNote *)createNoteWithDate:(NSDate *)date note:(NSString *)note
 {
     TLNote *tlNote = [[TLNote alloc] init];
-    
-    tlNote.date = date;
-    tlNote.note = note;
-    tlNote.detailImage = image;
-    
+    tlNote.detailDate = date;
+    tlNote.detailNote = note;
+    tlNote->withPhoto = NO;
+    tlNote->withRecord = NO;
     return tlNote;
+}
+
+
+- (void)addImageToNote:(UIImage *)image
+{
+    withPhoto = YES;
+    self.detailImage = image;
+}
+
+- (void)addRecordToNote:(NSString *)name
+{
+    withRecord = YES;
+    self.recordName = name;
 }
 
 @end

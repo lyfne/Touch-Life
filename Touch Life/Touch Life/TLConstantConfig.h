@@ -9,9 +9,10 @@
 #ifndef Touch_Life_TLConstantConfig_h
 #define Touch_Life_TLConstantConfig_h
 
-#define kDate @"Date"
-#define kNote @"Note"
+#define kDetailDate @"DetailDate"
+#define kDetailNote @"DetailNote"
 #define kDetailImage @"DetailImage"
+#define kRecordName @"RecordName"
 #define kNoteArrayData @"NoteArrayData"
 #define kListData @"ListData"
 
