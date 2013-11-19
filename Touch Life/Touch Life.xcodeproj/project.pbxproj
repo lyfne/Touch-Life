@@ -19,7 +19,6 @@
 		1C7E6F64183B558E00CF3BD7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7E6F63183B558E00CF3BD7 /* AVFoundation.framework */; };
 		1C7E6F67183B84E300CF3BD7 /* TLRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E6F66183B84E300CF3BD7 /* TLRecordViewController.m */; };
 		1C7E6F6A183B86C100CF3BD7 /* UIView+FadeInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E6F69183B86C100CF3BD7 /* UIView+FadeInOut.m */; };
-		1C7E6F6C183B925100CF3BD7 /* RecordDVD.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7E6F6B183B925100CF3BD7 /* RecordDVD.png */; };
 		1C9C5453183499FE00813037 /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9C5451183499FE00813037 /* LaunchImage@2x.png */; };
 		1C9C5454183499FE00813037 /* LaunchImage@R4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9C5452183499FE00813037 /* LaunchImage@R4.png */; };
 		1CE4FE5718227BE800BC7C1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE4FE5618227BE800BC7C1C /* Foundation.framework */; };
@@ -36,6 +35,7 @@
 		1CE4FE7818227BE800BC7C1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE4FE5A18227BE800BC7C1C /* UIKit.framework */; };
 		1CE4FE8018227BE800BC7C1C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CE4FE7E18227BE800BC7C1C /* InfoPlist.strings */; };
 		1CE4FE8218227BE800BC7C1C /* Touch_LifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE4FE8118227BE800BC7C1C /* Touch_LifeTests.m */; };
+		4B5023C9183B9F8C00D3A4BE /* RecordDVD.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5023C8183B9F8C00D3A4BE /* RecordDVD.png */; };
 		4B53F4191835003B00CC33A6 /* NSArray+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F4171835003B00CC33A6 /* NSArray+Data.m */; };
 /* End PBXBuildFile section */
 
@@ -73,7 +73,6 @@
 		1C7E6F66183B84E300CF3BD7 /* TLRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLRecordViewController.m; sourceTree = "<group>"; };
 		1C7E6F68183B86C100CF3BD7 /* UIView+FadeInOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FadeInOut.h"; sourceTree = "<group>"; };
 		1C7E6F69183B86C100CF3BD7 /* UIView+FadeInOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FadeInOut.m"; sourceTree = "<group>"; };
-		1C7E6F6B183B925100CF3BD7 /* RecordDVD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecordDVD.png; sourceTree = "<group>"; };
 		1C9C5451183499FE00813037 /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
 		1C9C5452183499FE00813037 /* LaunchImage@R4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@R4.png"; sourceTree = "<group>"; };
 		1CE4FE5318227BE800BC7C1C /* Touch Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Touch Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +94,7 @@
 		1CE4FE7D18227BE800BC7C1C /* Touch LifeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Touch LifeTests-Info.plist"; sourceTree = "<group>"; };
 		1CE4FE7F18227BE800BC7C1C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1CE4FE8118227BE800BC7C1C /* Touch_LifeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Touch_LifeTests.m; sourceTree = "<group>"; };
+		4B5023C8183B9F8C00D3A4BE /* RecordDVD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecordDVD.png; sourceTree = "<group>"; };
 		4B53F4171835003B00CC33A6 /* NSArray+Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Data.m"; sourceTree = "<group>"; };
 		4B53F4181835003B00CC33A6 /* NSArray+Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Data.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,7 +193,7 @@
 		1C9C5450183499DF00813037 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1C7E6F6B183B925100CF3BD7 /* RecordDVD.png */,
+				4B5023C8183B9F8C00D3A4BE /* RecordDVD.png */,
 				1C9C5451183499FE00813037 /* LaunchImage@2x.png */,
 				1C9C5452183499FE00813037 /* LaunchImage@R4.png */,
 			);
@@ -354,7 +354,7 @@
 				1CE4FE6F18227BE800BC7C1C /* Images.xcassets in Resources */,
 				1C9C5453183499FE00813037 /* LaunchImage@2x.png in Resources */,
 				1CE4FE6118227BE800BC7C1C /* InfoPlist.strings in Resources */,
-				1C7E6F6C183B925100CF3BD7 /* RecordDVD.png in Resources */,
+				4B5023C9183B9F8C00D3A4BE /* RecordDVD.png in Resources */,
 				1C9C5454183499FE00813037 /* LaunchImage@R4.png in Resources */,
 				1CE4FE6A18227BE800BC7C1C /* Main.storyboard in Resources */,
 			);

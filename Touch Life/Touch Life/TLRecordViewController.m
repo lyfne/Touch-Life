@@ -84,7 +84,7 @@
     [recordSetting setValue :[NSNumber numberWithInt:16] forKey:AVLinearPCMBitDepthKey];
     [recordSetting setValue :[NSNumber numberWithBool:NO] forKey:AVLinearPCMIsBigEndianKey];
     [recordSetting setValue :[NSNumber numberWithBool:NO] forKey:AVLinearPCMIsFloatKey];
-    [recordSetting setValue:[NSNumber numberWithInt:AVAudioQualityLow] forKey:AVEncoderAudioQualityKey];
+    [recordSetting setValue:[NSNumber numberWithInt:AVAudioQualityMin] forKey:AVEncoderAudioQualityKey];
     
     NSDate *now = [NSDate dateWithTimeIntervalSinceNow:0];
     NSString *caldate = [now description];
@@ -149,12 +149,24 @@
 
 -(void) startAnimation
 {
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.1f];
-    [UIView setAnimationDelegate:self];
-    [UIView setAnimationDidStopSelector:@selector(endAnimation)];
-    self.recordImageView.transform = CGAffineTransformMakeRotation(angle * (M_PI / 180.0f));
-    [UIView commitAnimations];
+    CABasicAnimation *rotate;
+    rotate = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotate.toValue = [NSNumber numberWithFloat:(2 * M_PI) * 2];
+    rotate.duration=3.5;      //动画持续时间
+    rotate.repeatCount=200;     //动画重复次数
+    rotate.autoreverses=NO;  //是否自动重复
+    rotate.fillMode = kCAFillModeForwards;
+    rotate.removedOnCompletion = NO;
+    [self.recordImageView.layer addAnimation:rotate forKey:@"rotatelayer"];
+    
+    
+    
+//    [UIView beginAnimations:nil context:nil];
+//    [UIView setAnimationDuration:0.1f];
+//    [UIView setAnimationDelegate:self];
+//    [UIView setAnimationDidStopSelector:@selector(endAnimation)];
+//    self.recordImageView.transform = CGAffineTransformMakeRotation(angle * (M_PI / 180.0f));
+//    [UIView commitAnimations];
 }
 
 -(void)endAnimation
