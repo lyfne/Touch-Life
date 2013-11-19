@@ -11,6 +11,7 @@
 @protocol TLNoteActionDelegate
 
 - (void)takePhoto;
+- (void)startRecord;
 
 @end
 

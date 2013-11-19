@@ -39,4 +39,8 @@
     [self.delegate takePhoto];
 }
 
+- (IBAction)recordAction:(id)sender {
+    [self.delegate startRecord];
+}
+
 @end

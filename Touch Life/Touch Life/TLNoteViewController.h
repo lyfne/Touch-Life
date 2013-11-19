@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 #import "TLNavigationViewController.h"
 #import "TLNoteActionViewController.h"
 #import "TLNote.h"
 
-@interface TLNoteViewController : UIViewController<TLNavigationDelegate,TLNoteActionDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate,UINavigationControllerDelegate>{
+@interface TLNoteViewController : UIViewController<TLNavigationDelegate,TLNoteActionDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate,UINavigationControllerDelegate,AVAudioRecorderDelegate>{
     BOOL keyboardWasShown;
+    AVAudioRecorder *recorder;
+    NSMutableDictionary *recordSetting;
+    NSString *recorderFilePath;
 }
 
 @property (strong, nonatomic) TLNavigationViewController *navigationVC;

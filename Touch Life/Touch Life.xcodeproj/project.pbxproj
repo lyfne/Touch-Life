@@ -16,6 +16,7 @@
 		1C3CDA8418325B5000FBE934 /* TLSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA8318325B5000FBE934 /* TLSettingViewController.m */; };
 		1C3CDA88183262F500FBE934 /* TLNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA87183262F500FBE934 /* TLNavigationViewController.m */; };
 		1C3CDA8C183264AD00FBE934 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA8B183264AD00FBE934 /* UIView+Frame.m */; };
+		1C7E6F64183B558E00CF3BD7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7E6F63183B558E00CF3BD7 /* AVFoundation.framework */; };
 		1C9C5453183499FE00813037 /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9C5451183499FE00813037 /* LaunchImage@2x.png */; };
 		1C9C5454183499FE00813037 /* LaunchImage@R4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9C5452183499FE00813037 /* LaunchImage@R4.png */; };
 		1CE4FE5718227BE800BC7C1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE4FE5618227BE800BC7C1C /* Foundation.framework */; };
@@ -64,6 +65,7 @@
 		1C3CDA87183262F500FBE934 /* TLNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNavigationViewController.m; sourceTree = "<group>"; };
 		1C3CDA8A183264AD00FBE934 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		1C3CDA8B183264AD00FBE934 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		1C7E6F63183B558E00CF3BD7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1C9C5451183499FE00813037 /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
 		1C9C5452183499FE00813037 /* LaunchImage@R4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@R4.png"; sourceTree = "<group>"; };
 		1CE4FE5318227BE800BC7C1C /* Touch Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Touch Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C7E6F64183B558E00CF3BD7 /* AVFoundation.framework in Frameworks */,
 				1C2EB26E1833C4250051A2B6 /* QuartzCore.framework in Frameworks */,
 				1CE4FE5918227BE800BC7C1C /* CoreGraphics.framework in Frameworks */,
 				1CE4FE5B18227BE800BC7C1C /* UIKit.framework in Frameworks */,
@@ -206,6 +209,7 @@
 		1CE4FE5518227BE800BC7C1C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1C7E6F63183B558E00CF3BD7 /* AVFoundation.framework */,
 				1C2EB26D1833C4250051A2B6 /* QuartzCore.framework */,
 				1CE4FE5618227BE800BC7C1C /* Foundation.framework */,
 				1CE4FE5818227BE800BC7C1C /* CoreGraphics.framework */,

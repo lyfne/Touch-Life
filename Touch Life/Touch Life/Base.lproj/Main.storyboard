@@ -159,9 +159,12 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phE-eI-pNJ">
                                 <rect key="frame" x="61" y="5" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="录音">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="recordAction:" destination="qlC-Kn-z1Z" eventType="touchUpInside" id="Qdc-4J-cbc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Qc-28-pSn">
                                 <rect key="frame" x="109" y="5" width="40" height="40"/>
@@ -185,6 +188,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJE-pA-l6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-320" y="990"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9ED-YA-B1R">
+            <objects>
+                <viewController id="bkE-VS-OQJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wf3-sM-1In"/>
+                        <viewControllerLayoutGuide type="bottom" id="RRw-ds-cvk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7ic-ZT-qDv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DPx-6f-Hmu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-320" y="1131"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="qgg-0Z-T14">
