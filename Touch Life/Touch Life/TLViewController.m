@@ -69,8 +69,8 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSUInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
     NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
-    int month = [dateComponent month];
-    return [NSString stringWithFormat:@"%d 月",month];
+    NSInteger month = [dateComponent month];
+    return [NSString stringWithFormat:@"%ld 月",(long)month];
 }
 
 - (UIImage *)blurryImage:(UIImage *)image withBlurLevel:(CGFloat)blur {
@@ -188,7 +188,7 @@
                                        reuseIdentifier:identifer];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%d",indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
     return cell;
 }
 
