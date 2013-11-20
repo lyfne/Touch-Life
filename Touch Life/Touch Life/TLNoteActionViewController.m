@@ -10,6 +10,9 @@
 
 @interface TLNoteActionViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *takePhotoButton;
+@property (weak, nonatomic) IBOutlet UIButton *recordButton;
+
 @end
 
 @implementation TLNoteActionViewController
@@ -41,6 +44,13 @@
 
 - (IBAction)recordAction:(id)sender {
     [self.delegate startRecord];
+}
+
+#pragma mark Public Method
+
+- (void)setPhotoButtonTitle:(NSString *)title
+{
+    [self.takePhotoButton setTitle:title forState:UIControlStateNormal];
 }
 
 @end

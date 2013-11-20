@@ -9,9 +9,6 @@
 #import "TLNoteViewController.h"
 #import "UIView+FadeInOut.h"
 
-#define kPhotoBeforeX -130
-#define kPhotoAfterX -110
-
 @interface TLNoteViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *noteTextView;
@@ -63,7 +60,6 @@
 
 - (void)initNoteActionView
 {
-    photoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kPhotoBeforeX, 70, 130, 200)];
     self.noteActionVC = [self.storyboard instantiateViewControllerWithIdentifier:kTLNoteActionViewController];
     self.noteActionVC.delegate = self;
     [self.noteActionVC.view setX:0 Y:300];
@@ -75,6 +71,7 @@
 {
     [self.noteTextView becomeFirstResponder];
     self.view.clipsToBounds = YES;
+    takePhoto = NO;
 }
 
 - (void)initNotification
@@ -132,14 +129,24 @@
 
 - (void)takePhoto
 {
-    UIActionSheet *sheet;
-    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
-        sheet  = [[UIActionSheet alloc] initWithTitle:@"选择" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"拍照",@"从相册选择", nil];
-    }else {
-        sheet = [[UIActionSheet alloc] initWithTitle:@"选择" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"从相册选择", nil];
+    if (takePhoto == NO) {
+        UIActionSheet *sheet;
+        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+            sheet  = [[UIActionSheet alloc] initWithTitle:@"选择" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"拍照",@"从相册选择", nil];
+        }else {
+            sheet = [[UIActionSheet alloc] initWithTitle:@"选择" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"从相册选择", nil];
+        }
+        sheet.tag = 255;
+        [sheet showInView:self.view];
+        
+        takePhoto = YES;
+        [self.noteActionVC setPhotoButtonTitle:@"查看照片"];
+    }else{
+        self.photoVC = [self.storyboard instantiateViewControllerWithIdentifier:kTLPhotoViewController];
+        [self.photoVC.view setX:0 Y:50 Width:self.view.frame.size.width Height:250];
+        [self.view addSubview:self.photoVC.view];
+        [self.photoVC.view fadeIn:0.5f];
     }
-    sheet.tag = 255;
-    [sheet showInView:self.view];
 }
 
 -(void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -180,11 +187,6 @@
     [self saveImage:image withName:@"currentImage.png"];
     NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"currentImage.png"];
     savedImage = [[UIImage alloc] initWithContentsOfFile:fullPath];
-    [photoImageView setImage:savedImage];
-    [self.view addSubview:photoImageView];
-    [UIView animateWithDuration:0.3f animations:^{
-        [photoImageView setX:kPhotoAfterX];
-    }];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
@@ -220,6 +222,19 @@
 {
     [self.noteTextView becomeFirstResponder];
     [self.recordVC.view removeFromSuperview];
+}
+
+#pragma mark TLPhotoDelegate
+
+- (void)closePhotoView
+{
+    [self.photoVC.view fadeOut:0.5f];
+    [self performSelector:@selector(removePhotoView) withObject:nil afterDelay:0.5f];
+}
+
+- (void)removePhotoView
+{
+    [self.photoVC.view removeFromSuperview];
 }
 
 @end

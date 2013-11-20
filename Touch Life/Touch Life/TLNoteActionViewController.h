@@ -19,4 +19,6 @@
 
 @property (strong, nonatomic) id<TLNoteActionDelegate> delegate;
 
+- (void)setPhotoButtonTitle:(NSString *)title;
+
 @end
