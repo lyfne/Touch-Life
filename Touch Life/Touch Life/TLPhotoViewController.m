@@ -29,12 +29,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.clipsToBounds = YES;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
+
+#pragma mark Init Method
 
 #pragma mark IBAction Method
 
@@ -50,6 +53,16 @@
 }
 
 - (IBAction)deleteAction:(id)sender {
+}
+
+#pragma mark Public Method
+
+- (void)addDetailViewWithImage:(UIImage *)image
+{
+    [self.photoImageView setImage:image];
+    [UIView animateWithDuration:0.5f animations:^{
+        [self.detailView setY:60];
+    }];
 }
 
 @end

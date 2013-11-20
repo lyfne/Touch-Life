@@ -18,4 +18,6 @@
 
 @property (weak, nonatomic) id<TLPhotoDelegate> delegate;
 
+- (void)addDetailViewWithImage:(UIImage *)image;
+
 @end

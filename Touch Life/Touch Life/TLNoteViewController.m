@@ -28,12 +28,13 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [self initView];
+    [self initKeyboard];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self initView];
     [self initNavigationView];
     [self initNoteActionView];
     [self initNotification];
@@ -67,9 +68,13 @@
     [self.view addSubview:self.noteActionVC.view];
 }
 
-- (void)initView
+- (void)initKeyboard
 {
     [self.noteTextView becomeFirstResponder];
+}
+
+- (void)initView
+{
     self.view.clipsToBounds = YES;
     takePhoto = NO;
 }
@@ -138,15 +143,19 @@
         }
         sheet.tag = 255;
         [sheet showInView:self.view];
-        
-        takePhoto = YES;
-        [self.noteActionVC setPhotoButtonTitle:@"查看照片"];
     }else{
         self.photoVC = [self.storyboard instantiateViewControllerWithIdentifier:kTLPhotoViewController];
-        [self.photoVC.view setX:0 Y:50 Width:self.view.frame.size.width Height:250];
+        [self.photoVC.view setX:0 Y:0 Width:self.view.frame.size.width Height:290];
+        self.photoVC.delegate = self;
         [self.view addSubview:self.photoVC.view];
         [self.photoVC.view fadeIn:0.5f];
+        [self performSelector:@selector(showDetailView:) withObject:savedImage afterDelay:0.5f];
     }
+}
+
+- (void)showDetailView:(UIImage *)image
+{
+    [self.photoVC addDetailViewWithImage:savedImage];
 }
 
 -(void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -187,6 +196,8 @@
     [self saveImage:image withName:@"currentImage.png"];
     NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"currentImage.png"];
     savedImage = [[UIImage alloc] initWithContentsOfFile:fullPath];
+    [self.noteActionVC setPhotoButtonTitle:@"查看"];
+    takePhoto = YES;
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
