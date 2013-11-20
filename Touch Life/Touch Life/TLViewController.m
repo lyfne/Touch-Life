@@ -25,7 +25,6 @@
     [super viewDidLoad];
     [self initNavigationView];
     [self initTableView];
-    [self.bgImageView setImage:[self blurryImage:[UIImage imageNamed:@"testBlur.png"] withBlurLevel:0.4f]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,8 +68,9 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSUInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
     NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
-    NSInteger month = [dateComponent month];
-    return [NSString stringWithFormat:@"%ld 月",(long)month];
+    int month = [dateComponent month];
+    [self.bgImageView setImage:[self blurryImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d",month]] withBlurLevel:0.2f]];
+    return [NSString stringWithFormat:@"%d 月",month];
 }
 
 - (UIImage *)blurryImage:(UIImage *)image withBlurLevel:(CGFloat)blur {
@@ -188,7 +188,7 @@
                                        reuseIdentifier:identifer];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%d",indexPath.row];
     return cell;
 }
 

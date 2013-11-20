@@ -7,8 +7,11 @@
 //
 
 #import "TLSettingViewController.h"
+#import "TLSettingHeaderViewController.h"
 
 @interface TLSettingViewController ()
+
+@property (weak, nonatomic) IBOutlet UIScrollView *settingScrollView;
 
 @end
 
@@ -27,6 +30,7 @@
 {
     [super viewDidLoad];
     [self initNavigationView];
+    [self initScrollView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,6 +39,14 @@
 }
 
 #pragma mark Init Method
+
+- (void)initScrollView
+{
+    TLSettingHeaderViewController *firstHeaderView = [self.storyboard instantiateViewControllerWithIdentifier:kTLSettingHeaderViewController];
+    [firstHeaderView.view setX:0 Y:0 Width:self.settingScrollView.frame.size.width Height:35];
+    [firstHeaderView setHeaderTitle:@"壁纸"];
+    [self.settingScrollView addSubview:firstHeaderView.view];
+}
 
 - (void)initNavigationView
 {
