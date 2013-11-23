@@ -9,6 +9,7 @@
 #import <Accelerate/Accelerate.h>
 #import "TLViewController.h"
 #import "TLNoteCell.h"
+#import "TLFileManager.h"
 
 @interface TLViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -19,6 +20,11 @@
 @end
 
 @implementation TLViewController
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self setBgImage];
+}
 
 - (void)viewDidLoad
 {
@@ -34,6 +40,15 @@
 
 #pragma mark Init 
 
+- (void)setBgImage
+{
+    if ([[[TLFileManager sharedFileManager] getBgImageName] isEqualToString:kCurrentMonthStr]) {
+        [self.bgImageView setImage:[UIImage imageNamed:[self getMonth]]];
+    }else{
+        [self.bgImageView setImage:[UIImage imageNamed:[[TLFileManager sharedFileManager] getBgImageName]]];
+    }
+}
+
 - (void)initTableView
 {
     self.tableView.delegate = self;
@@ -48,7 +63,7 @@
     [self.navigationVC.view setX:0 Y:0];
     [self.navigationVC.view setHeight:50];
     [self.navigationVC setBackButtonHidden:YES];
-    [self.navigationVC setHeaderTitle:[self getMonth]];
+    [self.navigationVC setHeaderTitle:[[self getMonth] stringByAppendingString:@" 月"]];
     [self.navigationVC setActionButtonTitle:@"新建日记"];
     [self.view addSubview:self.navigationVC.view];
 }
@@ -69,8 +84,7 @@
     NSUInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
     NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
     int month = [dateComponent month];
-    [self.bgImageView setImage:[self blurryImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d",month]] withBlurLevel:0.2f]];
-    return [NSString stringWithFormat:@"%d 月",month];
+    return [NSString stringWithFormat:@"%d",month];
 }
 
 - (UIImage *)blurryImage:(UIImage *)image withBlurLevel:(CGFloat)blur {

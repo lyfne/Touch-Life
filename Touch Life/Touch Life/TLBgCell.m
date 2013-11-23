@@ -7,6 +7,7 @@
 //
 
 #import "TLBgCell.h"
+#import "TLFileManager.h"
 
 @implementation TLBgCell
 
@@ -41,27 +42,27 @@
     
     bgA = [UIButton buttonWithType:UIButtonTypeCustom];
     bgA.frame = CGRectMake(100, 10, 68, 120);
-    [bgA setImage:[UIImage imageNamed:@"2"] forState:UIControlStateNormal];
+    [bgA setImage:[UIImage imageNamed:@"1"] forState:UIControlStateNormal];
     [scrollView addSubview:bgA];
-    bgA.tag = 101;
+    bgA.tag = 1;
     
     bgB = [UIButton buttonWithType:UIButtonTypeCustom];
     bgB.frame = CGRectMake(180, 10, 68, 120);
-    [bgB setImage:[UIImage imageNamed:@"3"] forState:UIControlStateNormal];
+    [bgB setImage:[UIImage imageNamed:@"2"] forState:UIControlStateNormal];
     [scrollView addSubview:bgB];
-    bgB.tag = 102;
+    bgB.tag = 2;
     
     bgC= [UIButton buttonWithType:UIButtonTypeCustom];
     bgC.frame = CGRectMake(260, 10, 68, 120);
-    [bgC setImage:[UIImage imageNamed:@"4"] forState:UIControlStateNormal];
+    [bgC setImage:[UIImage imageNamed:@"3"] forState:UIControlStateNormal];
     [scrollView addSubview:bgC];
-    bgC.tag = 103;
+    bgC.tag = 3;
     
     bgD = [UIButton buttonWithType:UIButtonTypeCustom];
     bgD.frame = CGRectMake(340, 10, 68, 120);
-    [bgD setImage:[UIImage imageNamed:@"5"] forState:UIControlStateNormal];
+    [bgD setImage:[UIImage imageNamed:@"4"] forState:UIControlStateNormal];
     [scrollView addSubview:bgD];
-    bgD.tag = 104;
+    bgD.tag = 4;
     
     bgArray = [[NSMutableArray alloc] initWithObjects:bgCurrent,bgA,bgB,bgC,bgD, nil];
     
@@ -73,7 +74,11 @@
 - (void)chooseBG:(id)sender
 {
     UIButton *btn = (UIButton *)sender;
-    NSLog(@"tag %d",btn.tag);
+    if (btn.tag == 100) {
+        [[TLFileManager sharedFileManager] setBgImage:@"currentMonth"];
+    }else{
+        [[TLFileManager sharedFileManager] setBgImage:[NSString stringWithFormat:@"%d",btn.tag]];
+    }
 }
 
 - (NSString *)getMonth

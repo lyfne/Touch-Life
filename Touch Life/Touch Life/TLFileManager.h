@@ -12,5 +12,7 @@
 
 + (TLFileManager *)sharedFileManager;
 - (void)serialze;
+- (void)setBgImage:(NSString *)imageName;
+- (NSString *)getBgImageName;
 
 @end

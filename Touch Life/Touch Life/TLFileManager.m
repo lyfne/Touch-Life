@@ -40,10 +40,11 @@ static TLFileManager *tlFileManagerInstance;
 
 - (void)initSetting
 {
-    [[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"FirslLoad"]];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"FirstLoad"]];
     NSNumber *number = [[NSUserDefaults standardUserDefaults] objectForKey:@"FirstLoad"];
     if ([number boolValue] == YES) {
         [self firstLoadList];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"FirstLoad"];
     }
 }
 
@@ -51,10 +52,15 @@ static TLFileManager *tlFileManagerInstance;
 {
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"SettingList" ofType:@"plist"];
     NSMutableDictionary *settingData = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
-    
     NSArray *docPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    
     [settingData writeToFile:[[docPaths objectAtIndex:0] stringByAppendingString:@"SettingList.plist"] atomically:YES];
+}
+
+- (NSString *)getFilePathWithName:(NSString *)name
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *dic = [[paths objectAtIndex:0] stringByAppendingString:name];
+    return dic;
 }
 
 #pragma mark Public Method
@@ -72,6 +78,19 @@ static TLFileManager *tlFileManagerInstance;
 - (void)serialze
 {
     [self.noteLists saveToFile:kLocalListsFileName key:kLocalListsKey atomically:YES];
+}
+
+- (void)setBgImage:(NSString *)imageName
+{
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:[self getFilePathWithName:@"SettingList.plist"]];
+    [dic setObject:imageName forKey:kBgImageKey];
+    [dic writeToFile:[self getFilePathWithName:@"SettingList.plist"] atomically:YES];
+}
+
+- (NSString *)getBgImageName
+{
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:[self getFilePathWithName:@"SettingList.plist"]];
+    return [dic objectForKey:kBgImageKey];
 }
 
 @end
