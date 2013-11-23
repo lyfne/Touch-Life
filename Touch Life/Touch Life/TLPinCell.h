@@ -10,4 +10,6 @@
 
 @interface TLPinCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *pinLabel;
+
 @end

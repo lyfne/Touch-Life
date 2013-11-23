@@ -10,4 +10,6 @@
 
 @interface TLBgCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
+
 @end

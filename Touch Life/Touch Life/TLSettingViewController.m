@@ -7,7 +7,6 @@
 //
 
 #import "TLSettingViewController.h"
-#import "TLSettingHeaderViewController.h"
 #import "TLPinCell.h"
 #import "TLBgCell.h"
 
@@ -79,7 +78,7 @@
     if (section == 0) {
         return 1;
     }else{
-        return 1;
+        return 2;
     }
 }
 
@@ -90,7 +89,11 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    if (indexPath.section == 0) {
+        return 140;
+    }else{
+        return 100;
+    }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -122,17 +125,24 @@
     static NSString *bgImageCellIdStr = @"TLBgCell";
     static NSString *pinCellIdStr = @"TLPinCell";
     if (indexPath.section == 0) {
-        TLBgCell *cell = [tableView dequeueReusableHeaderFooterViewWithIdentifier:bgImageCellIdStr];
+        [tableView registerClass:[TLBgCell class] forCellReuseIdentifier:bgImageCellIdStr];
+        TLBgCell *cell = [tableView dequeueReusableCellWithIdentifier:bgImageCellIdStr forIndexPath:indexPath];
         if (cell == nil) {
             cell = [[TLBgCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:bgImageCellIdStr];
         }
+        [cell.bgScrollView setContentSize:CGSizeMake(400, 140)];
+        cell.backgroundColor = [UIColor greenColor];
+        cell.bgScrollView.backgroundColor = [UIColor blueColor];
         
         return cell;
     }else{
+        [tableView registerClass:[TLPinCell class] forCellReuseIdentifier:pinCellIdStr];
         TLPinCell *cell = [tableView dequeueReusableHeaderFooterViewWithIdentifier:pinCellIdStr];
         if (cell == nil) {
             cell = [[TLPinCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:pinCellIdStr];
         }
+        
+        cell.pinLabel.text = @"welcome";
         
         return cell;
     }

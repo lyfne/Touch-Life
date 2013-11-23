@@ -29,7 +29,6 @@
 		1C7A106D183CF25700AF562C /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7A1061183CF25700AF562C /* 6.png */; };
 		1C7A106E183CF25700AF562C /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7A1062183CF25700AF562C /* 5.png */; };
 		1C7A106F183CF25700AF562C /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7A1063183CF25700AF562C /* 12.png */; };
-		1C7A1072183CFA4A00AF562C /* TLSettingHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A1071183CFA4A00AF562C /* TLSettingHeaderViewController.m */; };
 		1C7A1075183CFC3300AF562C /* UIView+Subview.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A1074183CFC3300AF562C /* UIView+Subview.m */; };
 		1C7E6F64183B558E00CF3BD7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7E6F63183B558E00CF3BD7 /* AVFoundation.framework */; };
 		1C7E6F67183B84E300CF3BD7 /* TLRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E6F66183B84E300CF3BD7 /* TLRecordViewController.m */; };
@@ -56,7 +55,6 @@
 		7FC1CC2818406F360071E4A5 /* TLTimeLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC1CC2718406F360071E4A5 /* TLTimeLineCell.m */; };
 		7FC1CC2E1840725B0071E4A5 /* TLPinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC1CC2D1840725B0071E4A5 /* TLPinCell.m */; };
 		7FC1CC311840727C0071E4A5 /* TLBgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC1CC301840727C0071E4A5 /* TLBgCell.m */; };
-		7FC1CC34184075020071E4A5 /* TLSettingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC1CC33184075020071E4A5 /* TLSettingHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,8 +99,6 @@
 		1C7A1061183CF25700AF562C /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
 		1C7A1062183CF25700AF562C /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
 		1C7A1063183CF25700AF562C /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12.png; sourceTree = "<group>"; };
-		1C7A1070183CFA4A00AF562C /* TLSettingHeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSettingHeaderViewController.h; sourceTree = "<group>"; };
-		1C7A1071183CFA4A00AF562C /* TLSettingHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLSettingHeaderViewController.m; sourceTree = "<group>"; };
 		1C7A1073183CFC3300AF562C /* UIView+Subview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Subview.h"; sourceTree = "<group>"; };
 		1C7A1074183CFC3300AF562C /* UIView+Subview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Subview.m"; sourceTree = "<group>"; };
 		1C7E6F63183B558E00CF3BD7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -142,8 +138,6 @@
 		7FC1CC2D1840725B0071E4A5 /* TLPinCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLPinCell.m; sourceTree = "<group>"; };
 		7FC1CC2F1840727C0071E4A5 /* TLBgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLBgCell.h; sourceTree = "<group>"; };
 		7FC1CC301840727C0071E4A5 /* TLBgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLBgCell.m; sourceTree = "<group>"; };
-		7FC1CC32184075020071E4A5 /* TLSettingHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSettingHeaderView.h; sourceTree = "<group>"; };
-		7FC1CC33184075020071E4A5 /* TLSettingHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLSettingHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,16 +203,12 @@
 				1C7E6F66183B84E300CF3BD7 /* TLRecordViewController.m */,
 				1CBA6BAB183C709200215812 /* TLPhotoViewController.h */,
 				1CBA6BAC183C709200215812 /* TLPhotoViewController.m */,
-				1C7A1070183CFA4A00AF562C /* TLSettingHeaderViewController.h */,
-				1C7A1071183CFA4A00AF562C /* TLSettingHeaderViewController.m */,
 				7FC1CC2618406F360071E4A5 /* TLTimeLineCell.h */,
 				7FC1CC2718406F360071E4A5 /* TLTimeLineCell.m */,
 				7FC1CC2C1840725B0071E4A5 /* TLPinCell.h */,
 				7FC1CC2D1840725B0071E4A5 /* TLPinCell.m */,
 				7FC1CC2F1840727C0071E4A5 /* TLBgCell.h */,
 				7FC1CC301840727C0071E4A5 /* TLBgCell.m */,
-				7FC1CC32184075020071E4A5 /* TLSettingHeaderView.h */,
-				7FC1CC33184075020071E4A5 /* TLSettingHeaderView.m */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -462,7 +452,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C7A1072183CFA4A00AF562C /* TLSettingHeaderViewController.m in Sources */,
 				1C3CDA88183262F500FBE934 /* TLNavigationViewController.m in Sources */,
 				1C3CDA8418325B5000FBE934 /* TLSettingViewController.m in Sources */,
 				1C7E6F6A183B86C100CF3BD7 /* UIView+FadeInOut.m in Sources */,
@@ -477,7 +466,6 @@
 				1CE4FE6718227BE800BC7C1C /* TLAppDelegate.m in Sources */,
 				1C7E6F67183B84E300CF3BD7 /* TLRecordViewController.m in Sources */,
 				7FC1CC311840727C0071E4A5 /* TLBgCell.m in Sources */,
-				7FC1CC34184075020071E4A5 /* TLSettingHeaderView.m in Sources */,
 				1C7A1075183CFC3300AF562C /* UIView+Subview.m in Sources */,
 				1C2EB26A1833A6760051A2B6 /* TLNoteList.m in Sources */,
 				1C3CDA8118325B0C00FBE934 /* TLNoteViewController.m in Sources */,
