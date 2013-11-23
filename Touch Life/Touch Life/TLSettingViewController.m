@@ -8,10 +8,12 @@
 
 #import "TLSettingViewController.h"
 #import "TLSettingHeaderViewController.h"
+#import "TLPinCell.h"
+#import "TLBgCell.h"
 
 @interface TLSettingViewController ()
 
-@property (weak, nonatomic) IBOutlet UIScrollView *settingScrollView;
+@property (weak, nonatomic) IBOutlet UITableView *settingTableView;
 
 @end
 
@@ -30,7 +32,7 @@
 {
     [super viewDidLoad];
     [self initNavigationView];
-    [self initScrollView];
+    [self initTableView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,12 +42,10 @@
 
 #pragma mark Init Method
 
-- (void)initScrollView
+- (void)initTableView
 {
-    TLSettingHeaderViewController *firstHeaderView = [self.storyboard instantiateViewControllerWithIdentifier:kTLSettingHeaderViewController];
-    [firstHeaderView.view setX:0 Y:0 Width:self.settingScrollView.frame.size.width Height:35];
-    [firstHeaderView setHeaderTitle:@"壁纸"];
-    [self.settingScrollView addSubview:firstHeaderView.view];
+    self.settingTableView.delegate = self;
+    self.settingTableView.dataSource = self;
 }
 
 - (void)initNavigationView
@@ -65,6 +65,76 @@
 - (void)popBack
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark TableView DataSource
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 35;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return 1;
+    }else{
+        return 1;
+    }
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 35)];
+    headerView.backgroundColor = [UIColor clearColor];
+    UIImageView *bgLine = [[UIImageView alloc] initWithFrame:CGRectMake(0, 34, 320, 1)];
+    bgLine.backgroundColor = [UIColor blackColor];
+    bgLine.alpha = 0.6f;
+    [headerView addSubview:bgLine];
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 7, 76, 21)];
+    label.font = [UIFont systemFontOfSize:12];
+    label.textColor = [UIColor blackColor];
+    label.alpha = 0.6f;
+    if (section == 0) {
+        label.text = @"壁纸";
+    }else{
+        label.text = @"密码";
+    }
+    [headerView addSubview:label];
+    
+    return headerView;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *bgImageCellIdStr = @"TLBgCell";
+    static NSString *pinCellIdStr = @"TLPinCell";
+    if (indexPath.section == 0) {
+        TLBgCell *cell = [tableView dequeueReusableHeaderFooterViewWithIdentifier:bgImageCellIdStr];
+        if (cell == nil) {
+            cell = [[TLBgCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:bgImageCellIdStr];
+        }
+        
+        return cell;
+    }else{
+        TLPinCell *cell = [tableView dequeueReusableHeaderFooterViewWithIdentifier:pinCellIdStr];
+        if (cell == nil) {
+            cell = [[TLPinCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:pinCellIdStr];
+        }
+        
+        return cell;
+    }
 }
 
 @end

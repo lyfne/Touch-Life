@@ -1,14 +1,14 @@
 //
-//  TLSettingHeaderViewController.h
+//  TLSettingHeaderView.h
 //  Touch Life
 //
-//  Created by Fan's Mac on 13-11-20.
+//  Created by Apple Club on 13-11-23.
 //  Copyright (c) 2013年 Fan's Mac. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface TLSettingHeaderViewController : UIViewController
+@interface TLSettingHeaderView : UIView
 
 @property (weak, nonatomic) IBOutlet UILabel *headerLabel;
 

@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "TLNavigationViewController.h"
+#import "TLSettingHeaderViewController.h"
 
-@interface TLSettingViewController : UIViewController<TLNavigationDelegate>
+@interface TLSettingViewController : UIViewController<TLNavigationDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (strong, nonatomic) TLNavigationViewController *navigationVC;
+@property (strong, nonatomic) TLSettingHeaderViewController *firstHeaderView;
+@property (strong, nonatomic) TLSettingHeaderViewController *secondHeaderView;
 
 @end

@@ -53,6 +53,10 @@
 		1CE4FE8218227BE800BC7C1C /* Touch_LifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE4FE8118227BE800BC7C1C /* Touch_LifeTests.m */; };
 		4B5023C9183B9F8C00D3A4BE /* RecordDVD.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5023C8183B9F8C00D3A4BE /* RecordDVD.png */; };
 		4B53F4191835003B00CC33A6 /* NSArray+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F4171835003B00CC33A6 /* NSArray+Data.m */; };
+		7FC1CC2818406F360071E4A5 /* TLTimeLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC1CC2718406F360071E4A5 /* TLTimeLineCell.m */; };
+		7FC1CC2E1840725B0071E4A5 /* TLPinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC1CC2D1840725B0071E4A5 /* TLPinCell.m */; };
+		7FC1CC311840727C0071E4A5 /* TLBgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC1CC301840727C0071E4A5 /* TLBgCell.m */; };
+		7FC1CC34184075020071E4A5 /* TLSettingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC1CC33184075020071E4A5 /* TLSettingHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +136,14 @@
 		4B5023C8183B9F8C00D3A4BE /* RecordDVD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecordDVD.png; sourceTree = "<group>"; };
 		4B53F4171835003B00CC33A6 /* NSArray+Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Data.m"; sourceTree = "<group>"; };
 		4B53F4181835003B00CC33A6 /* NSArray+Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Data.h"; sourceTree = "<group>"; };
+		7FC1CC2618406F360071E4A5 /* TLTimeLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTimeLineCell.h; sourceTree = "<group>"; };
+		7FC1CC2718406F360071E4A5 /* TLTimeLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTimeLineCell.m; sourceTree = "<group>"; };
+		7FC1CC2C1840725B0071E4A5 /* TLPinCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLPinCell.h; sourceTree = "<group>"; };
+		7FC1CC2D1840725B0071E4A5 /* TLPinCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLPinCell.m; sourceTree = "<group>"; };
+		7FC1CC2F1840727C0071E4A5 /* TLBgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLBgCell.h; sourceTree = "<group>"; };
+		7FC1CC301840727C0071E4A5 /* TLBgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLBgCell.m; sourceTree = "<group>"; };
+		7FC1CC32184075020071E4A5 /* TLSettingHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSettingHeaderView.h; sourceTree = "<group>"; };
+		7FC1CC33184075020071E4A5 /* TLSettingHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLSettingHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +211,14 @@
 				1CBA6BAC183C709200215812 /* TLPhotoViewController.m */,
 				1C7A1070183CFA4A00AF562C /* TLSettingHeaderViewController.h */,
 				1C7A1071183CFA4A00AF562C /* TLSettingHeaderViewController.m */,
+				7FC1CC2618406F360071E4A5 /* TLTimeLineCell.h */,
+				7FC1CC2718406F360071E4A5 /* TLTimeLineCell.m */,
+				7FC1CC2C1840725B0071E4A5 /* TLPinCell.h */,
+				7FC1CC2D1840725B0071E4A5 /* TLPinCell.m */,
+				7FC1CC2F1840727C0071E4A5 /* TLBgCell.h */,
+				7FC1CC301840727C0071E4A5 /* TLBgCell.m */,
+				7FC1CC32184075020071E4A5 /* TLSettingHeaderView.h */,
+				7FC1CC33184075020071E4A5 /* TLSettingHeaderView.m */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -446,14 +466,18 @@
 				1C3CDA88183262F500FBE934 /* TLNavigationViewController.m in Sources */,
 				1C3CDA8418325B5000FBE934 /* TLSettingViewController.m in Sources */,
 				1C7E6F6A183B86C100CF3BD7 /* UIView+FadeInOut.m in Sources */,
+				7FC1CC2E1840725B0071E4A5 /* TLPinCell.m in Sources */,
 				4B53F4191835003B00CC33A6 /* NSArray+Data.m in Sources */,
 				1C2EB260183339CA0051A2B6 /* TLNoteActionViewController.m in Sources */,
 				1CE4FE6D18227BE800BC7C1C /* TLViewController.m in Sources */,
 				1C3CDA8C183264AD00FBE934 /* UIView+Frame.m in Sources */,
 				1C2EB2671833A65D0051A2B6 /* TLNote.m in Sources */,
 				1CBA6BAD183C709200215812 /* TLPhotoViewController.m in Sources */,
+				7FC1CC2818406F360071E4A5 /* TLTimeLineCell.m in Sources */,
 				1CE4FE6718227BE800BC7C1C /* TLAppDelegate.m in Sources */,
 				1C7E6F67183B84E300CF3BD7 /* TLRecordViewController.m in Sources */,
+				7FC1CC311840727C0071E4A5 /* TLBgCell.m in Sources */,
+				7FC1CC34184075020071E4A5 /* TLSettingHeaderView.m in Sources */,
 				1C7A1075183CFC3300AF562C /* UIView+Subview.m in Sources */,
 				1C2EB26A1833A6760051A2B6 /* TLNoteList.m in Sources */,
 				1C3CDA8118325B0C00FBE934 /* TLNoteViewController.m in Sources */,

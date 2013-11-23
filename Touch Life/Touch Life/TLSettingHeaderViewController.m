@@ -10,8 +10,6 @@
 
 @interface TLSettingHeaderViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *headerLabel;
-
 @end
 
 @implementation TLSettingHeaderViewController
