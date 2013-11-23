@@ -115,6 +115,12 @@
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 35)];
     headerView.backgroundColor = [UIColor clearColor];
     
+//    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 35)];
+//    [bgImageView setImage:[UIImage imageNamed:@"HeaderBg"]];
+//    bgImageView.backgroundColor = [UIColor blueColor];
+//    //bgImageView.alpha = 0.6f;
+//    [headerView addSubview:bgImageView];
+    
     UIImageView *bgLine = [[UIImageView alloc] initWithFrame:CGRectMake(55, 17, 265, 1)];
     bgLine.backgroundColor = [UIColor blackColor];
     bgLine.alpha = 0.6f;

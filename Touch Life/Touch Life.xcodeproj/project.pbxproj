@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C2B92001840E01A007CF238 /* HeaderBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C2B91FF1840E01A007CF238 /* HeaderBg.png */; };
 		1C2EB260183339CA0051A2B6 /* TLNoteActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EB25F183339CA0051A2B6 /* TLNoteActionViewController.m */; };
 		1C2EB2641833A4B30051A2B6 /* TLNoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EB2631833A4B30051A2B6 /* TLNoteCell.m */; };
 		1C2EB2671833A65D0051A2B6 /* TLNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EB2661833A65D0051A2B6 /* TLNote.m */; };
@@ -76,6 +77,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C2B91FF1840E01A007CF238 /* HeaderBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeaderBg.png; sourceTree = "<group>"; };
 		1C2EB25E183339CA0051A2B6 /* TLNoteActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNoteActionViewController.h; sourceTree = "<group>"; };
 		1C2EB25F183339CA0051A2B6 /* TLNoteActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNoteActionViewController.m; sourceTree = "<group>"; };
 		1C2EB2621833A4B30051A2B6 /* TLNoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNoteCell.h; sourceTree = "<group>"; };
@@ -266,16 +268,11 @@
 			isa = PBXGroup;
 			children = (
 				7FC1CC3D1840D99C0071E4A5 /* PinImage */,
-				7FC1CC3E1840D9B30071E4A5 /* papasscode_background.png */,
-				7FC1CC3F1840D9B30071E4A5 /* papasscode_background@2x.png */,
-				7FC1CC401840D9B30071E4A5 /* papasscode_failed_bg.png */,
-				7FC1CC411840D9B30071E4A5 /* papasscode_failed_bg@2x.png */,
-				7FC1CC421840D9B30071E4A5 /* papasscode_marker.png */,
-				7FC1CC431840D9B30071E4A5 /* papasscode_marker@2x.png */,
 				7FC1CC3C1840D9810071E4A5 /* BgImage */,
 				4B5023C8183B9F8C00D3A4BE /* RecordDVD.png */,
 				1C9C5451183499FE00813037 /* LaunchImage@2x.png */,
 				1C9C5452183499FE00813037 /* LaunchImage@R4.png */,
+				1C2B91FF1840E01A007CF238 /* HeaderBg.png */,
 				7FC1CC351840967F0071E4A5 /* SettingList.plist */,
 			);
 			name = Resources;
@@ -377,6 +374,12 @@
 		7FC1CC3D1840D99C0071E4A5 /* PinImage */ = {
 			isa = PBXGroup;
 			children = (
+				7FC1CC3E1840D9B30071E4A5 /* papasscode_background.png */,
+				7FC1CC3F1840D9B30071E4A5 /* papasscode_background@2x.png */,
+				7FC1CC401840D9B30071E4A5 /* papasscode_failed_bg.png */,
+				7FC1CC411840D9B30071E4A5 /* papasscode_failed_bg@2x.png */,
+				7FC1CC421840D9B30071E4A5 /* papasscode_marker.png */,
+				7FC1CC431840D9B30071E4A5 /* papasscode_marker@2x.png */,
 			);
 			name = PinImage;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				7FC1CC451840D9B30071E4A5 /* papasscode_background@2x.png in Resources */,
 				7FC1CC471840D9B30071E4A5 /* papasscode_failed_bg@2x.png in Resources */,
 				1C7A1066183CF25700AF562C /* 11.png in Resources */,
+				1C2B92001840E01A007CF238 /* HeaderBg.png in Resources */,
 				4B5023C9183B9F8C00D3A4BE /* RecordDVD.png in Resources */,
 				1C7A1068183CF25700AF562C /* 1.png in Resources */,
 				1C9C5454183499FE00813037 /* LaunchImage@R4.png in Resources */,
