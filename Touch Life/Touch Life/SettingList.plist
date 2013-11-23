@@ -5,6 +5,6 @@
 	<key>BgImage</key>
 	<string>currentMonth</string>
 	<key>Pin</key>
-	<string>no</string>
+	<string>noPinCode</string>
 </dict>
 </plist>

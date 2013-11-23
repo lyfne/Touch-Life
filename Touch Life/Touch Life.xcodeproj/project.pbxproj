@@ -16,7 +16,6 @@
 		1C3CDA8418325B5000FBE934 /* TLSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA8318325B5000FBE934 /* TLSettingViewController.m */; };
 		1C3CDA88183262F500FBE934 /* TLNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA87183262F500FBE934 /* TLNavigationViewController.m */; };
 		1C3CDA8C183264AD00FBE934 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA8B183264AD00FBE934 /* UIView+Frame.m */; };
-		1C5C82FD183BA43B005EE013 /* testBlur.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C5C82FC183BA43A005EE013 /* testBlur.png */; };
 		1C7A1064183CF25700AF562C /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7A1058183CF25700AF562C /* 10.png */; };
 		1C7A1065183CF25700AF562C /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7A1059183CF25700AF562C /* 9.png */; };
 		1C7A1066183CF25700AF562C /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7A105A183CF25700AF562C /* 11.png */; };
@@ -57,6 +56,13 @@
 		7FC1CC311840727C0071E4A5 /* TLBgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC1CC301840727C0071E4A5 /* TLBgCell.m */; };
 		7FC1CC361840967F0071E4A5 /* SettingList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7FC1CC351840967F0071E4A5 /* SettingList.plist */; };
 		7FC1CC39184098030071E4A5 /* TLFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC1CC38184098030071E4A5 /* TLFileManager.m */; };
+		7FC1CC441840D9B30071E4A5 /* papasscode_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FC1CC3E1840D9B30071E4A5 /* papasscode_background.png */; };
+		7FC1CC451840D9B30071E4A5 /* papasscode_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FC1CC3F1840D9B30071E4A5 /* papasscode_background@2x.png */; };
+		7FC1CC461840D9B30071E4A5 /* papasscode_failed_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FC1CC401840D9B30071E4A5 /* papasscode_failed_bg.png */; };
+		7FC1CC471840D9B30071E4A5 /* papasscode_failed_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FC1CC411840D9B30071E4A5 /* papasscode_failed_bg@2x.png */; };
+		7FC1CC481840D9B30071E4A5 /* papasscode_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FC1CC421840D9B30071E4A5 /* papasscode_marker.png */; };
+		7FC1CC491840D9B30071E4A5 /* papasscode_marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FC1CC431840D9B30071E4A5 /* papasscode_marker@2x.png */; };
+		7FC1CC4D1840D9C80071E4A5 /* PAPasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC1CC4C1840D9C80071E4A5 /* PAPasscodeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +94,6 @@
 		1C3CDA87183262F500FBE934 /* TLNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNavigationViewController.m; sourceTree = "<group>"; };
 		1C3CDA8A183264AD00FBE934 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		1C3CDA8B183264AD00FBE934 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
-		1C5C82FC183BA43A005EE013 /* testBlur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testBlur.png; sourceTree = "<group>"; };
 		1C7A1058183CF25700AF562C /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
 		1C7A1059183CF25700AF562C /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
 		1C7A105A183CF25700AF562C /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 11.png; sourceTree = "<group>"; };
@@ -143,6 +148,14 @@
 		7FC1CC351840967F0071E4A5 /* SettingList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SettingList.plist; sourceTree = "<group>"; };
 		7FC1CC37184098030071E4A5 /* TLFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLFileManager.h; sourceTree = "<group>"; };
 		7FC1CC38184098030071E4A5 /* TLFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLFileManager.m; sourceTree = "<group>"; };
+		7FC1CC3E1840D9B30071E4A5 /* papasscode_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = papasscode_background.png; sourceTree = "<group>"; };
+		7FC1CC3F1840D9B30071E4A5 /* papasscode_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "papasscode_background@2x.png"; sourceTree = "<group>"; };
+		7FC1CC401840D9B30071E4A5 /* papasscode_failed_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = papasscode_failed_bg.png; sourceTree = "<group>"; };
+		7FC1CC411840D9B30071E4A5 /* papasscode_failed_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "papasscode_failed_bg@2x.png"; sourceTree = "<group>"; };
+		7FC1CC421840D9B30071E4A5 /* papasscode_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = papasscode_marker.png; sourceTree = "<group>"; };
+		7FC1CC431840D9B30071E4A5 /* papasscode_marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "papasscode_marker@2x.png"; sourceTree = "<group>"; };
+		7FC1CC4B1840D9C80071E4A5 /* PAPasscodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAPasscodeViewController.h; sourceTree = "<group>"; };
+		7FC1CC4C1840D9C80071E4A5 /* PAPasscodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAPasscodeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +251,7 @@
 		1C9C544F183499CC00813037 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				7FC1CC4A1840D9BE0071E4A5 /* Library */,
 				1C2EB2611833A4600051A2B6 /* Model */,
 				1C3CDA89183263EE00FBE934 /* Category */,
 				1C3CDA85183262D700FBE934 /* CustomView */,
@@ -251,19 +265,14 @@
 		1C9C5450183499DF00813037 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1C7A1058183CF25700AF562C /* 10.png */,
-				1C7A1059183CF25700AF562C /* 9.png */,
-				1C7A105A183CF25700AF562C /* 11.png */,
-				1C7A105B183CF25700AF562C /* 2.png */,
-				1C7A105C183CF25700AF562C /* 1.png */,
-				1C7A105D183CF25700AF562C /* 4.png */,
-				1C7A105E183CF25700AF562C /* 8.png */,
-				1C7A105F183CF25700AF562C /* 3.png */,
-				1C7A1060183CF25700AF562C /* 7.png */,
-				1C7A1061183CF25700AF562C /* 6.png */,
-				1C7A1062183CF25700AF562C /* 5.png */,
-				1C7A1063183CF25700AF562C /* 12.png */,
-				1C5C82FC183BA43A005EE013 /* testBlur.png */,
+				7FC1CC3D1840D99C0071E4A5 /* PinImage */,
+				7FC1CC3E1840D9B30071E4A5 /* papasscode_background.png */,
+				7FC1CC3F1840D9B30071E4A5 /* papasscode_background@2x.png */,
+				7FC1CC401840D9B30071E4A5 /* papasscode_failed_bg.png */,
+				7FC1CC411840D9B30071E4A5 /* papasscode_failed_bg@2x.png */,
+				7FC1CC421840D9B30071E4A5 /* papasscode_marker.png */,
+				7FC1CC431840D9B30071E4A5 /* papasscode_marker@2x.png */,
+				7FC1CC3C1840D9810071E4A5 /* BgImage */,
 				4B5023C8183B9F8C00D3A4BE /* RecordDVD.png */,
 				1C9C5451183499FE00813037 /* LaunchImage@2x.png */,
 				1C9C5452183499FE00813037 /* LaunchImage@R4.png */,
@@ -344,6 +353,41 @@
 				1CE4FE7E18227BE800BC7C1C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7FC1CC3C1840D9810071E4A5 /* BgImage */ = {
+			isa = PBXGroup;
+			children = (
+				1C7A1058183CF25700AF562C /* 10.png */,
+				1C7A1059183CF25700AF562C /* 9.png */,
+				1C7A105A183CF25700AF562C /* 11.png */,
+				1C7A105B183CF25700AF562C /* 2.png */,
+				1C7A105C183CF25700AF562C /* 1.png */,
+				1C7A105D183CF25700AF562C /* 4.png */,
+				1C7A105E183CF25700AF562C /* 8.png */,
+				1C7A105F183CF25700AF562C /* 3.png */,
+				1C7A1060183CF25700AF562C /* 7.png */,
+				1C7A1061183CF25700AF562C /* 6.png */,
+				1C7A1062183CF25700AF562C /* 5.png */,
+				1C7A1063183CF25700AF562C /* 12.png */,
+			);
+			name = BgImage;
+			sourceTree = "<group>";
+		};
+		7FC1CC3D1840D99C0071E4A5 /* PinImage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PinImage;
+			sourceTree = "<group>";
+		};
+		7FC1CC4A1840D9BE0071E4A5 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				7FC1CC4B1840D9C80071E4A5 /* PAPasscodeViewController.h */,
+				7FC1CC4C1840D9C80071E4A5 /* PAPasscodeViewController.m */,
+			);
+			name = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,16 +477,21 @@
 				1C7A1065183CF25700AF562C /* 9.png in Resources */,
 				1C7A106A183CF25700AF562C /* 8.png in Resources */,
 				1CE4FE6118227BE800BC7C1C /* InfoPlist.strings in Resources */,
+				7FC1CC441840D9B30071E4A5 /* papasscode_background.png in Resources */,
+				7FC1CC451840D9B30071E4A5 /* papasscode_background@2x.png in Resources */,
+				7FC1CC471840D9B30071E4A5 /* papasscode_failed_bg@2x.png in Resources */,
 				1C7A1066183CF25700AF562C /* 11.png in Resources */,
 				4B5023C9183B9F8C00D3A4BE /* RecordDVD.png in Resources */,
-				1C5C82FD183BA43B005EE013 /* testBlur.png in Resources */,
 				1C7A1068183CF25700AF562C /* 1.png in Resources */,
 				1C9C5454183499FE00813037 /* LaunchImage@R4.png in Resources */,
+				7FC1CC461840D9B30071E4A5 /* papasscode_failed_bg.png in Resources */,
 				1C7A106E183CF25700AF562C /* 5.png in Resources */,
 				1CE4FE6A18227BE800BC7C1C /* Main.storyboard in Resources */,
+				7FC1CC481840D9B30071E4A5 /* papasscode_marker.png in Resources */,
 				7FC1CC361840967F0071E4A5 /* SettingList.plist in Resources */,
 				1C7A106C183CF25700AF562C /* 7.png in Resources */,
 				1C7A106F183CF25700AF562C /* 12.png in Resources */,
+				7FC1CC491840D9B30071E4A5 /* papasscode_marker@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +517,7 @@
 				4B53F4191835003B00CC33A6 /* NSArray+Data.m in Sources */,
 				1C2EB260183339CA0051A2B6 /* TLNoteActionViewController.m in Sources */,
 				1CE4FE6D18227BE800BC7C1C /* TLViewController.m in Sources */,
+				7FC1CC4D1840D9C80071E4A5 /* PAPasscodeViewController.m in Sources */,
 				1C3CDA8C183264AD00FBE934 /* UIView+Frame.m in Sources */,
 				1C2EB2671833A65D0051A2B6 /* TLNote.m in Sources */,
 				1CBA6BAD183C709200215812 /* TLPhotoViewController.m in Sources */,

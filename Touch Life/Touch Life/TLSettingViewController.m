@@ -7,6 +7,7 @@
 //
 
 #import "TLSettingViewController.h"
+#import "TLFileManager.h"
 #import "TLPinCell.h"
 #import "TLBgCell.h"
 
@@ -40,6 +41,15 @@
 }
 
 #pragma mark Init Method
+
+- (void)initData
+{
+    if ([[[TLFileManager sharedFileManager] getPinCode] isEqualToString:kPinCodeStr]) {
+        withPin = NO;
+    }else{
+        withPin = YES;
+    }
+}
 
 - (void)initTableView
 {
@@ -78,7 +88,11 @@
     if (section == 0) {
         return 1;
     }else{
-        return 2;
+        if (withPin == NO) {
+            return 1;
+        }else{
+            return 2;
+        }
     }
 }
 
@@ -92,7 +106,7 @@
     if (indexPath.section == 0) {
         return 140;
     }else{
-        return 100;
+        return 50;
     }
 }
 
@@ -141,10 +155,26 @@
             cell = [[TLPinCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:pinCellIdStr];
         }
         
-        cell.pinLabel.text = [NSString stringWithFormat:@"%d",indexPath.row];
+        [cell setCell];
+        if (withPin == NO) {
+            [cell setActionTitle:@"设置密码"];
+        }else{
+            if (indexPath.row == 0) {
+                [cell setActionTitle:@"修改密码" ];
+            }else{
+                [cell setActionTitle:@"取消密码"];
+            }
+        }
         
         return cell;
     }
+}
+
+#pragma mark TableView Delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

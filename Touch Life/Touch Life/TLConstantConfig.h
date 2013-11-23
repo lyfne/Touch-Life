@@ -10,6 +10,7 @@
 #define Touch_Life_TLConstantConfig_h
 
 #define kCurrentMonthStr @"currentMonth"
+#define kPinCodeStr @"noPinCode"
 #define kBgImageKey @"BgImage"
 #define kPinKey @"Pin"
 #define kLocalListsFileName @"LocalNoteLists.plist"

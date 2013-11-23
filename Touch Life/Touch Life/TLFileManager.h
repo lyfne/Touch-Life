@@ -14,5 +14,7 @@
 - (void)serialze;
 - (void)setBgImage:(NSString *)imageName;
 - (NSString *)getBgImageName;
+- (void)setPinCode:(NSString *)code;
+- (NSString *)getPinCode;
 
 @end

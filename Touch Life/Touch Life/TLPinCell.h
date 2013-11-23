@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TLPinCell : UITableViewCell
+@interface TLPinCell : UITableViewCell{
+    UILabel *actionLabel;
+}
 
-@property (weak, nonatomic) IBOutlet UILabel *pinLabel;
+- (void)setCell;
+- (void)setActionTitle:(NSString *)title;
 
 @end

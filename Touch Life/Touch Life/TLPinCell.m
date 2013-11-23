@@ -26,4 +26,18 @@
     // Configure the view for the selected state
 }
 
+- (void)setCell
+{
+    actionLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 12, 150, 25)];
+    actionLabel.backgroundColor = [UIColor clearColor];
+    actionLabel.textColor = [UIColor blackColor];
+    actionLabel.alpha = 0.6f;
+    [self.contentView addSubview:actionLabel];
+}
+
+- (void)setActionTitle:(NSString *)title
+{
+    actionLabel.text = title;
+}
+
 @end

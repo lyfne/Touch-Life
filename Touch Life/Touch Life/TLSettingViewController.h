@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "TLNavigationViewController.h"
 
-@interface TLSettingViewController : UIViewController<TLNavigationDelegate,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
+@interface TLSettingViewController : UIViewController<TLNavigationDelegate,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>{
+    BOOL withPin;
+}
 
 @property (strong, nonatomic) TLNavigationViewController *navigationVC;
 

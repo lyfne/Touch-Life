@@ -79,6 +79,8 @@
     }else{
         [[TLFileManager sharedFileManager] setBgImage:[NSString stringWithFormat:@"%d",btn.tag]];
     }
+    
+    [scrollView scrollRectToVisible:btn.frame animated:YES];
 }
 
 - (NSString *)getMonth

@@ -93,4 +93,17 @@ static TLFileManager *tlFileManagerInstance;
     return [dic objectForKey:kBgImageKey];
 }
 
+- (void)setPinCode:(NSString *)code
+{
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:[self getFilePathWithName:@"SettingList.plist"]];
+    [dic setObject:code forKey:kPinKey];
+    [dic writeToFile:[self getFilePathWithName:@"SettingList.plist"] atomically:YES];
+}
+
+- (NSString *)getPinCode
+{
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:[self getFilePathWithName:@"SettingList.plist"]];
+    return [dic objectForKey:kPinKey];
+}
+
 @end
