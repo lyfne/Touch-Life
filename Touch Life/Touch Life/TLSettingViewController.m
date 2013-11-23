@@ -150,9 +150,9 @@
         if (cell == nil) {
             cell = [[TLBgCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:bgImageCellIdStr];
         }
-        
+
         [cell setView];
-        
+
         return cell;
     }else{
         [tableView registerClass:[TLPinCell class] forCellReuseIdentifier:pinCellIdStr];

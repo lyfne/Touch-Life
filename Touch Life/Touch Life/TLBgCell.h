@@ -17,6 +17,8 @@
     UIButton *bgB;
     UIButton *bgC;
     UIButton *bgD;
+    
+    BOOL isUsed;
 }
 
 - (void)setView;
