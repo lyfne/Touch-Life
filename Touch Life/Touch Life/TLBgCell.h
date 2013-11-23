@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TLBgCell : UITableViewCell
+@interface TLBgCell : UITableViewCell{
+    UIScrollView *scrollView;
+    NSMutableArray *bgArray;
+}
 
-@property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
+- (void)setView;
 
 @end
+ 

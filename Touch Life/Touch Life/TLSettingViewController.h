@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TLNavigationViewController.h"
 
-@interface TLSettingViewController : UIViewController<TLNavigationDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface TLSettingViewController : UIViewController<TLNavigationDelegate,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
 @property (strong, nonatomic) TLNavigationViewController *navigationVC;
 

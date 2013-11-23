@@ -100,6 +100,7 @@
 {
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 35)];
     headerView.backgroundColor = [UIColor clearColor];
+    
     UIImageView *bgLine = [[UIImageView alloc] initWithFrame:CGRectMake(55, 17, 265, 1)];
     bgLine.backgroundColor = [UIColor blackColor];
     bgLine.alpha = 0.6f;
@@ -125,14 +126,12 @@
     static NSString *bgImageCellIdStr = @"TLBgCell";
     static NSString *pinCellIdStr = @"TLPinCell";
     if (indexPath.section == 0) {
-        [tableView registerClass:[TLBgCell class] forCellReuseIdentifier:bgImageCellIdStr];
-        TLBgCell *cell = [tableView dequeueReusableCellWithIdentifier:bgImageCellIdStr forIndexPath:indexPath];
+        TLBgCell *cell = [tableView dequeueReusableCellWithIdentifier:bgImageCellIdStr];
         if (cell == nil) {
             cell = [[TLBgCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:bgImageCellIdStr];
         }
-        [cell.bgScrollView setContentSize:CGSizeMake(400, 140)];
-        cell.backgroundColor = [UIColor greenColor];
-        cell.bgScrollView.backgroundColor = [UIColor blueColor];
+        
+        [cell setView];
         
         return cell;
     }else{
@@ -142,7 +141,7 @@
             cell = [[TLPinCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:pinCellIdStr];
         }
         
-        cell.pinLabel.text = @"welcome";
+        cell.pinLabel.text = [NSString stringWithFormat:@"%d",indexPath.row];
         
         return cell;
     }
