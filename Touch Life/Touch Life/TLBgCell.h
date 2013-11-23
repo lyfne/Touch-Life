@@ -11,6 +11,12 @@
 @interface TLBgCell : UITableViewCell{
     UIScrollView *scrollView;
     NSMutableArray *bgArray;
+    
+    UIButton *bgCurrent;
+    UIButton *bgA;
+    UIButton *bgB;
+    UIButton *bgC;
+    UIButton *bgD;
 }
 
 - (void)setView;

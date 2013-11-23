@@ -10,4 +10,7 @@
 
 @interface TLFileManager : NSObject
 
++ (TLFileManager *)sharedFileManager;
+- (void)serialze;
+
 @end

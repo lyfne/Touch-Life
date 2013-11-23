@@ -9,6 +9,9 @@
 #ifndef Touch_Life_TLConstantConfig_h
 #define Touch_Life_TLConstantConfig_h
 
+#define kLocalListsFileName @"LocalNoteLists.plist"
+#define kLocalListsKey @"LocalListsKey"
+
 #define kDetailDate @"DetailDate"
 #define kDetailNote @"DetailNote"
 #define kDetailImage @"DetailImage"
