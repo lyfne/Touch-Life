@@ -97,15 +97,16 @@
 {
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 35)];
     headerView.backgroundColor = [UIColor clearColor];
-    UIImageView *bgLine = [[UIImageView alloc] initWithFrame:CGRectMake(0, 34, 320, 1)];
+    UIImageView *bgLine = [[UIImageView alloc] initWithFrame:CGRectMake(55, 17, 265, 1)];
     bgLine.backgroundColor = [UIColor blackColor];
     bgLine.alpha = 0.6f;
     [headerView addSubview:bgLine];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 7, 76, 21)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 7, 55, 20)];
     label.font = [UIFont systemFontOfSize:12];
     label.textColor = [UIColor blackColor];
     label.alpha = 0.6f;
+    label.textAlignment = NSTextAlignmentCenter;
     if (section == 0) {
         label.text = @"壁纸";
     }else{
