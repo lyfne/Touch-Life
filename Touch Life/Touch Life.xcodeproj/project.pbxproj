@@ -14,6 +14,7 @@
 		1C2EB26A1833A6760051A2B6 /* TLNoteList.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EB2691833A6760051A2B6 /* TLNoteList.m */; };
 		1C2EB26E1833C4250051A2B6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2EB26D1833C4250051A2B6 /* QuartzCore.framework */; };
 		1C31EFFD1841B6330031560C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CE4FE6818227BE800BC7C1C /* Main.storyboard */; };
+		1C31F0031841C69B0031560C /* SelectedBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C31F0021841C69B0031560C /* SelectedBg.png */; };
 		1C3CDA8118325B0C00FBE934 /* TLNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA8018325B0C00FBE934 /* TLNoteViewController.m */; };
 		1C3CDA8418325B5000FBE934 /* TLSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA8318325B5000FBE934 /* TLSettingViewController.m */; };
 		1C3CDA88183262F500FBE934 /* TLNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA87183262F500FBE934 /* TLNavigationViewController.m */; };
@@ -88,6 +89,7 @@
 		1C2EB2691833A6760051A2B6 /* TLNoteList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNoteList.m; sourceTree = "<group>"; };
 		1C2EB26B1833A7610051A2B6 /* TLConstantConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLConstantConfig.h; sourceTree = "<group>"; };
 		1C2EB26D1833C4250051A2B6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1C31F0021841C69B0031560C /* SelectedBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SelectedBg.png; sourceTree = "<group>"; };
 		1C3CDA7F18325B0C00FBE934 /* TLNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNoteViewController.h; sourceTree = "<group>"; };
 		1C3CDA8018325B0C00FBE934 /* TLNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNoteViewController.m; sourceTree = "<group>"; };
 		1C3CDA8218325B5000FBE934 /* TLSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSettingViewController.h; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				7FC1CC3D1840D99C0071E4A5 /* PinImage */,
 				7FC1CC3C1840D9810071E4A5 /* BgImage */,
 				4B5023C8183B9F8C00D3A4BE /* RecordDVD.png */,
+				1C31F0021841C69B0031560C /* SelectedBg.png */,
 				1C9C5451183499FE00813037 /* LaunchImage@2x.png */,
 				1C9C5452183499FE00813037 /* LaunchImage@R4.png */,
 				1C2B91FF1840E01A007CF238 /* HeaderBg.png */,
@@ -471,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C31EFFD1841B6330031560C /* Main.storyboard in Resources */,
+				1C31F0031841C69B0031560C /* SelectedBg.png in Resources */,
 				1C7A106B183CF25700AF562C /* 3.png in Resources */,
 				1C7A1067183CF25700AF562C /* 2.png in Resources */,
 				1CE4FE6F18227BE800BC7C1C /* Images.xcassets in Resources */,

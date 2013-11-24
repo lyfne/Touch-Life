@@ -9,6 +9,12 @@
 #import "TLBgCell.h"
 #import "TLFileManager.h"
 
+#define kButtonXBasic 20
+#define kButtonXOffset 10
+#define kButtonY 12
+#define kButtonWidth 70 
+#define kButtonHeight 124
+
 @implementation TLBgCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -31,37 +37,37 @@
 {
     if (isUsed != YES) {
         isUsed = YES;
-        scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 140)];
-        scrollView.contentSize = CGSizeMake(420, 140);
+        scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, kButtonHeight+20)];
+        scrollView.contentSize = CGSizeMake(420, kButtonHeight+20);
         scrollView.showsHorizontalScrollIndicator = NO;
         [self.contentView addSubview:scrollView];
         
         bgCurrent = [UIButton buttonWithType:UIButtonTypeCustom];
-        bgCurrent.frame = CGRectMake(20, 10, 68, 120);
+        bgCurrent.frame = CGRectMake(kButtonXBasic, kButtonY, kButtonWidth, kButtonHeight);
         [bgCurrent setImage:[UIImage imageNamed:[self getMonth]] forState:UIControlStateNormal];
         [scrollView addSubview:bgCurrent];
         bgCurrent.tag = 100;
         
         bgA = [UIButton buttonWithType:UIButtonTypeCustom];
-        bgA.frame = CGRectMake(100, 10, 68, 120);
+        bgA.frame = CGRectMake(kButtonXBasic+(kButtonWidth+kButtonXOffset), kButtonY, kButtonWidth, kButtonHeight);
         [bgA setImage:[UIImage imageNamed:@"1"] forState:UIControlStateNormal];
         [scrollView addSubview:bgA];
         bgA.tag = 1;
         
         bgB = [UIButton buttonWithType:UIButtonTypeCustom];
-        bgB.frame = CGRectMake(180, 10, 68, 120);
+        bgB.frame = CGRectMake(kButtonXBasic+2*(kButtonWidth+kButtonXOffset), kButtonY, kButtonWidth, kButtonHeight);
         [bgB setImage:[UIImage imageNamed:@"2"] forState:UIControlStateNormal];
         [scrollView addSubview:bgB];
         bgB.tag = 2;
         
         bgC= [UIButton buttonWithType:UIButtonTypeCustom];
-        bgC.frame = CGRectMake(260, 10, 68, 120);
+        bgC.frame = CGRectMake(kButtonXBasic+3*(kButtonWidth+kButtonXOffset), kButtonY, kButtonWidth, kButtonHeight);
         [bgC setImage:[UIImage imageNamed:@"3"] forState:UIControlStateNormal];
         [scrollView addSubview:bgC];
         bgC.tag = 3;
         
         bgD = [UIButton buttonWithType:UIButtonTypeCustom];
-        bgD.frame = CGRectMake(340, 10, 68, 120);
+        bgD.frame = CGRectMake(kButtonXBasic+4*(kButtonWidth+kButtonXOffset), kButtonY, kButtonWidth, kButtonHeight);
         [bgD setImage:[UIImage imageNamed:@"4"] forState:UIControlStateNormal];
         [scrollView addSubview:bgD];
         bgD.tag = 4;
@@ -71,6 +77,18 @@
         for (UIButton *button in bgArray) {
             [button addTarget:self action:@selector(chooseBG:) forControlEvents:UIControlEventTouchUpInside];
         }
+        
+        selectedImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"SelectedBg"]];
+        if ([[[TLFileManager sharedFileManager] getBgImageName] isEqualToString:kCurrentMonthStr]) {
+            bgCurrent.userInteractionEnabled = NO;
+            selectedImageView.frame = bgCurrent.frame;
+        }else{
+            int index = [[[TLFileManager sharedFileManager] getBgImageName] intValue];
+            UIButton *btn = (UIButton *)[bgArray objectAtIndex:index];
+            btn.userInteractionEnabled = NO;
+            selectedImageView.frame = btn.frame;
+        }
+        [scrollView addSubview:selectedImageView];
     }
 }
 
@@ -82,8 +100,16 @@
     }else{
         [[TLFileManager sharedFileManager] setBgImage:[NSString stringWithFormat:@"%d",btn.tag]];
     }
-    
-    [scrollView scrollRectToVisible:btn.frame animated:YES];
+    [self enableAllButton];
+    btn.userInteractionEnabled = NO;
+    selectedImageView.frame = btn.frame;
+}
+
+- (void)enableAllButton
+{
+    for (UIButton *btn in bgArray) {
+        btn.userInteractionEnabled = YES;
+    }
 }
 
 - (NSString *)getMonth

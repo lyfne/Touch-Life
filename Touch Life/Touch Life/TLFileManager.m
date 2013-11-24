@@ -90,14 +90,12 @@ static TLFileManager *tlFileManagerInstance;
 {
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:[self getFilePathWithName:@"SettingList.plist"]];
     [dic setObject:imageName forKey:kBgImageKey];
-    NSLog(@"saved %@",imageName);
     [dic writeToFile:[self getFilePathWithName:@"SettingList.plist"] atomically:YES];
 }
 
 - (NSString *)getBgImageName
 {
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:[self getFilePathWithName:@"SettingList.plist"]];
-    NSLog(@"get %@",[dic objectForKey:kBgImageKey]);
     return [dic objectForKey:kBgImageKey];
 }
 

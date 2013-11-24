@@ -12,6 +12,7 @@
     UIScrollView *scrollView;
     NSMutableArray *bgArray;
     
+    UIImageView *selectedImageView;
     UIButton *bgCurrent;
     UIButton *bgA;
     UIButton *bgB;
