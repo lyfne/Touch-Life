@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C20F3A31841DDF600731AC0 /* 1Bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C20F39F1841DDF600731AC0 /* 1Bg.png */; };
+		1C20F3A41841DDF600731AC0 /* 2Bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C20F3A01841DDF600731AC0 /* 2Bg.png */; };
+		1C20F3A51841DDF600731AC0 /* 3Bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C20F3A11841DDF600731AC0 /* 3Bg.png */; };
+		1C20F3A61841DDF600731AC0 /* 4Bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C20F3A21841DDF600731AC0 /* 4Bg.png */; };
 		1C2B92001840E01A007CF238 /* HeaderBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C2B91FF1840E01A007CF238 /* HeaderBg.png */; };
 		1C2EB260183339CA0051A2B6 /* TLNoteActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EB25F183339CA0051A2B6 /* TLNoteActionViewController.m */; };
 		1C2EB2641833A4B30051A2B6 /* TLNoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EB2631833A4B30051A2B6 /* TLNoteCell.m */; };
@@ -78,6 +82,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C20F39F1841DDF600731AC0 /* 1Bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1Bg.png; sourceTree = "<group>"; };
+		1C20F3A01841DDF600731AC0 /* 2Bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2Bg.png; sourceTree = "<group>"; };
+		1C20F3A11841DDF600731AC0 /* 3Bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3Bg.png; sourceTree = "<group>"; };
+		1C20F3A21841DDF600731AC0 /* 4Bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4Bg.png; sourceTree = "<group>"; };
 		1C2B91FF1840E01A007CF238 /* HeaderBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeaderBg.png; sourceTree = "<group>"; };
 		1C2EB25E183339CA0051A2B6 /* TLNoteActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNoteActionViewController.h; sourceTree = "<group>"; };
 		1C2EB25F183339CA0051A2B6 /* TLNoteActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNoteActionViewController.m; sourceTree = "<group>"; };
@@ -358,6 +366,10 @@
 		7FC1CC3C1840D9810071E4A5 /* BgImage */ = {
 			isa = PBXGroup;
 			children = (
+				1C20F39F1841DDF600731AC0 /* 1Bg.png */,
+				1C20F3A01841DDF600731AC0 /* 2Bg.png */,
+				1C20F3A11841DDF600731AC0 /* 3Bg.png */,
+				1C20F3A21841DDF600731AC0 /* 4Bg.png */,
 				1C7A1058183CF25700AF562C /* 10.png */,
 				1C7A1059183CF25700AF562C /* 9.png */,
 				1C7A105A183CF25700AF562C /* 11.png */,
@@ -485,14 +497,18 @@
 				1C7A1065183CF25700AF562C /* 9.png in Resources */,
 				1C7A106A183CF25700AF562C /* 8.png in Resources */,
 				1CE4FE6118227BE800BC7C1C /* InfoPlist.strings in Resources */,
+				1C20F3A51841DDF600731AC0 /* 3Bg.png in Resources */,
 				7FC1CC441840D9B30071E4A5 /* papasscode_background.png in Resources */,
 				7FC1CC451840D9B30071E4A5 /* papasscode_background@2x.png in Resources */,
 				7FC1CC471840D9B30071E4A5 /* papasscode_failed_bg@2x.png in Resources */,
 				1C7A1066183CF25700AF562C /* 11.png in Resources */,
+				1C20F3A31841DDF600731AC0 /* 1Bg.png in Resources */,
 				1C2B92001840E01A007CF238 /* HeaderBg.png in Resources */,
 				4B5023C9183B9F8C00D3A4BE /* RecordDVD.png in Resources */,
+				1C20F3A41841DDF600731AC0 /* 2Bg.png in Resources */,
 				1C7A1068183CF25700AF562C /* 1.png in Resources */,
 				1C9C5454183499FE00813037 /* LaunchImage@R4.png in Resources */,
+				1C20F3A61841DDF600731AC0 /* 4Bg.png in Resources */,
 				7FC1CC461840D9B30071E4A5 /* papasscode_failed_bg.png in Resources */,
 				1C7A106E183CF25700AF562C /* 5.png in Resources */,
 				7FC1CC481840D9B30071E4A5 /* papasscode_marker.png in Resources */,

@@ -50,25 +50,25 @@
         
         bgA = [UIButton buttonWithType:UIButtonTypeCustom];
         bgA.frame = CGRectMake(kButtonXBasic+(kButtonWidth+kButtonXOffset), kButtonY, kButtonWidth, kButtonHeight);
-        [bgA setImage:[UIImage imageNamed:@"1"] forState:UIControlStateNormal];
+        [bgA setImage:[UIImage imageNamed:@"1Bg"] forState:UIControlStateNormal];
         [scrollView addSubview:bgA];
         bgA.tag = 1;
         
         bgB = [UIButton buttonWithType:UIButtonTypeCustom];
         bgB.frame = CGRectMake(kButtonXBasic+2*(kButtonWidth+kButtonXOffset), kButtonY, kButtonWidth, kButtonHeight);
-        [bgB setImage:[UIImage imageNamed:@"2"] forState:UIControlStateNormal];
+        [bgB setImage:[UIImage imageNamed:@"2Bg"] forState:UIControlStateNormal];
         [scrollView addSubview:bgB];
         bgB.tag = 2;
         
         bgC= [UIButton buttonWithType:UIButtonTypeCustom];
         bgC.frame = CGRectMake(kButtonXBasic+3*(kButtonWidth+kButtonXOffset), kButtonY, kButtonWidth, kButtonHeight);
-        [bgC setImage:[UIImage imageNamed:@"3"] forState:UIControlStateNormal];
+        [bgC setImage:[UIImage imageNamed:@"3Bg"] forState:UIControlStateNormal];
         [scrollView addSubview:bgC];
         bgC.tag = 3;
         
         bgD = [UIButton buttonWithType:UIButtonTypeCustom];
         bgD.frame = CGRectMake(kButtonXBasic+4*(kButtonWidth+kButtonXOffset), kButtonY, kButtonWidth, kButtonHeight);
-        [bgD setImage:[UIImage imageNamed:@"4"] forState:UIControlStateNormal];
+        [bgD setImage:[UIImage imageNamed:@"4Bg"] forState:UIControlStateNormal];
         [scrollView addSubview:bgD];
         bgD.tag = 4;
         
@@ -83,7 +83,7 @@
             bgCurrent.userInteractionEnabled = NO;
             selectedImageView.frame = bgCurrent.frame;
         }else{
-            int index = [[[TLFileManager sharedFileManager] getBgImageName] intValue];
+            int index = [[[[TLFileManager sharedFileManager] getBgImageName] substringToIndex:1] intValue];
             UIButton *btn = (UIButton *)[bgArray objectAtIndex:index];
             btn.userInteractionEnabled = NO;
             selectedImageView.frame = btn.frame;
@@ -98,7 +98,7 @@
     if (btn.tag == 100) {
         [[TLFileManager sharedFileManager] setBgImage:@"currentMonth"];
     }else{
-        [[TLFileManager sharedFileManager] setBgImage:[NSString stringWithFormat:@"%d",btn.tag]];
+        [[TLFileManager sharedFileManager] setBgImage:[NSString stringWithFormat:@"%dBg",btn.tag]];
     }
     [self enableAllButton];
     btn.userInteractionEnabled = NO;

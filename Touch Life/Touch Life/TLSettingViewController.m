@@ -105,7 +105,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        return 140;
+        return 144;
     }else{
         return 50;
     }
@@ -156,7 +156,6 @@
 
         return cell;
     }else{
-        [tableView registerClass:[TLPinCell class] forCellReuseIdentifier:pinCellIdStr];
         TLPinCell *cell = [tableView dequeueReusableHeaderFooterViewWithIdentifier:pinCellIdStr];
         if (cell == nil) {
             cell = [[TLPinCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:pinCellIdStr];
