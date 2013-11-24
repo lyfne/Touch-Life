@@ -53,14 +53,20 @@ static TLFileManager *tlFileManagerInstance;
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"SettingList" ofType:@"plist"];
     NSMutableDictionary *settingData = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
     NSArray *docPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    [settingData writeToFile:[[docPaths objectAtIndex:0] stringByAppendingString:@"SettingList.plist"] atomically:YES];
+    [settingData writeToFile:[[docPaths objectAtIndex:0] stringByAppendingString:@"/SettingList.plist"] atomically:YES];
 }
 
 - (NSString *)getFilePathWithName:(NSString *)name
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *dic = [[paths objectAtIndex:0] stringByAppendingString:name];
-    return dic;
+    NSString *path = [[paths objectAtIndex:0] stringByAppendingString:[@"/" stringByAppendingString:name]];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        return path;
+    }else
+    {
+        NSLog(@"No File Exists");
+        return nil;
+    }
 }
 
 #pragma mark Public Method
@@ -84,12 +90,14 @@ static TLFileManager *tlFileManagerInstance;
 {
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:[self getFilePathWithName:@"SettingList.plist"]];
     [dic setObject:imageName forKey:kBgImageKey];
+    NSLog(@"saved %@",imageName);
     [dic writeToFile:[self getFilePathWithName:@"SettingList.plist"] atomically:YES];
 }
 
 - (NSString *)getBgImageName
 {
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:[self getFilePathWithName:@"SettingList.plist"]];
+    NSLog(@"get %@",[dic objectForKey:kBgImageKey]);
     return [dic objectForKey:kBgImageKey];
 }
 

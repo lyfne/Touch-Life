@@ -13,6 +13,7 @@
 		1C2EB2671833A65D0051A2B6 /* TLNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EB2661833A65D0051A2B6 /* TLNote.m */; };
 		1C2EB26A1833A6760051A2B6 /* TLNoteList.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EB2691833A6760051A2B6 /* TLNoteList.m */; };
 		1C2EB26E1833C4250051A2B6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2EB26D1833C4250051A2B6 /* QuartzCore.framework */; };
+		1C31EFFD1841B6330031560C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CE4FE6818227BE800BC7C1C /* Main.storyboard */; };
 		1C3CDA8118325B0C00FBE934 /* TLNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA8018325B0C00FBE934 /* TLNoteViewController.m */; };
 		1C3CDA8418325B5000FBE934 /* TLSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA8318325B5000FBE934 /* TLSettingViewController.m */; };
 		1C3CDA88183262F500FBE934 /* TLNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CDA87183262F500FBE934 /* TLNavigationViewController.m */; };
@@ -42,7 +43,6 @@
 		1CE4FE6118227BE800BC7C1C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CE4FE5F18227BE800BC7C1C /* InfoPlist.strings */; };
 		1CE4FE6318227BE800BC7C1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE4FE6218227BE800BC7C1C /* main.m */; };
 		1CE4FE6718227BE800BC7C1C /* TLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE4FE6618227BE800BC7C1C /* TLAppDelegate.m */; };
-		1CE4FE6A18227BE800BC7C1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CE4FE6818227BE800BC7C1C /* Main.storyboard */; };
 		1CE4FE6D18227BE800BC7C1C /* TLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE4FE6C18227BE800BC7C1C /* TLViewController.m */; };
 		1CE4FE6F18227BE800BC7C1C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CE4FE6E18227BE800BC7C1C /* Images.xcassets */; };
 		1CE4FE7618227BE800BC7C1C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE4FE7518227BE800BC7C1C /* XCTest.framework */; };
@@ -470,6 +470,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C31EFFD1841B6330031560C /* Main.storyboard in Resources */,
 				1C7A106B183CF25700AF562C /* 3.png in Resources */,
 				1C7A1067183CF25700AF562C /* 2.png in Resources */,
 				1CE4FE6F18227BE800BC7C1C /* Images.xcassets in Resources */,
@@ -490,7 +491,6 @@
 				1C9C5454183499FE00813037 /* LaunchImage@R4.png in Resources */,
 				7FC1CC461840D9B30071E4A5 /* papasscode_failed_bg.png in Resources */,
 				1C7A106E183CF25700AF562C /* 5.png in Resources */,
-				1CE4FE6A18227BE800BC7C1C /* Main.storyboard in Resources */,
 				7FC1CC481840D9B30071E4A5 /* papasscode_marker.png in Resources */,
 				7FC1CC361840967F0071E4A5 /* SettingList.plist in Resources */,
 				1C7A106C183CF25700AF562C /* 7.png in Resources */,
