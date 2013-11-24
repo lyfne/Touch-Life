@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "TLNavigationViewController.h"
+#import "PAPasscodeViewController.h"
 
-@interface TLSettingViewController : UIViewController<TLNavigationDelegate,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>{
+@interface TLSettingViewController : UIViewController<PAPasscodeViewControllerDelegate,TLNavigationDelegate,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>{
     BOOL withPin;
 }
 

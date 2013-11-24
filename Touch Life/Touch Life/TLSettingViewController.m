@@ -31,6 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self initData];
     [self initNavigationView];
     [self initTableView];
 }
@@ -180,7 +181,57 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 1) {
+        if (withPin == NO) {
+            PAPasscodeViewController *passcodeViewController = [[PAPasscodeViewController alloc] initForAction:PasscodeActionSet];
+            passcodeViewController.delegate = self;
+            passcodeViewController.simple = YES;
+            [self presentViewController:passcodeViewController animated:YES completion:nil];
+        }else{
+            if (indexPath.row == 0) {
+                PAPasscodeViewController *passcodeViewController = [[PAPasscodeViewController alloc] initForAction:PasscodeActionChange];
+                passcodeViewController.delegate = self;
+                passcodeViewController.passcode = [[TLFileManager sharedFileManager] getPinCode];
+                passcodeViewController.simple = YES;
+                [self presentViewController:passcodeViewController animated:YES completion:nil];
+            }else{
+                PAPasscodeViewController *passcodeViewController = [[PAPasscodeViewController alloc] initForAction:PasscodeActionEnter];
+                passcodeViewController.delegate = self;
+                passcodeViewController.passcode = [[TLFileManager sharedFileManager] getPinCode];
+                passcodeViewController.simple = YES;
+                [self presentViewController:passcodeViewController animated:YES completion:nil];
+            }
+        }
+    }
+}
+
+#pragma mark - PAPasscodeViewControllerDelegate
+
+- (void)PAPasscodeViewControllerDidCancel:(PAPasscodeViewController *)controller {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)PAPasscodeViewControllerDidEnterPasscode:(PAPasscodeViewController *)controller {
+    [self dismissViewControllerAnimated:YES completion:^() {
+        [[TLFileManager sharedFileManager] setPinCode:kPinCodeStr];
+        [self initData];
+        [self.settingTableView reloadData];
+    }];
+}
+
+- (void)PAPasscodeViewControllerDidSetPasscode:(PAPasscodeViewController *)controller {
+    [self dismissViewControllerAnimated:YES completion:^() {
+        [[TLFileManager sharedFileManager] setPinCode:controller.passcode];
+        [self initData];
+        [self.settingTableView reloadData];
+    }];
+}
+
+- (void)PAPasscodeViewControllerDidChangePasscode:(PAPasscodeViewController *)controller {
+    [self dismissViewControllerAnimated:YES completion:^() {
+        [[TLFileManager sharedFileManager] setPinCode:controller.passcode];
+    }];
 }
 
 @end
