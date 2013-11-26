@@ -8,7 +8,7 @@
 
 #import <Accelerate/Accelerate.h>
 #import "TLViewController.h"
-#import "TLNoteCell.h"
+#import "TLTimeLineCell.h"
 #import "TLFileManager.h"
 
 @interface TLViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -43,9 +43,9 @@
 - (void)setBgImage
 {
     if ([[[TLFileManager sharedFileManager] getBgImageName] isEqualToString:kCurrentMonthStr]) {
-        [self.bgImageView setImage:[UIImage imageNamed:[self getMonth]]];
+        [self.bgImageView setImage:[self blurryImage:[UIImage imageNamed:[self getMonth]] withBlurLevel:0.2f]];
     }else{
-        [self.bgImageView setImage:[UIImage imageNamed:[[TLFileManager sharedFileManager] getBgImageName]]];
+        [self.bgImageView setImage:[self blurryImage:[UIImage imageNamed:[[TLFileManager sharedFileManager] getBgImageName]] withBlurLevel:0.2f]];
     }
 }
 
@@ -184,25 +184,26 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    return 150;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return 30;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString * identifer = @"TLNoteCell";
+    static NSString * identifer = @"TLTimeLineCell";
     
-    TLNoteCell * cell = [tableView dequeueReusableCellWithIdentifier:identifer];
+    TLTimeLineCell * cell = [tableView dequeueReusableCellWithIdentifier:identifer];
     if (cell == nil) {
-        cell = [[TLNoteCell alloc] initWithStyle:UITableViewCellStyleValue1
+        cell = [[TLTimeLineCell alloc] initWithStyle:UITableViewCellStyleValue1
                                        reuseIdentifier:identifer];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%d",indexPath.row];
+    cell.dateLabel.text = [NSString stringWithFormat:@"%d日",indexPath.row+1];
+
     return cell;
 }
 

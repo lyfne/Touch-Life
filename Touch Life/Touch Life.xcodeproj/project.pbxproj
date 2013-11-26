@@ -13,7 +13,6 @@
 		1C20F3A61841DDF600731AC0 /* 4Bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C20F3A21841DDF600731AC0 /* 4Bg.png */; };
 		1C2B92001840E01A007CF238 /* HeaderBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C2B91FF1840E01A007CF238 /* HeaderBg.png */; };
 		1C2EB260183339CA0051A2B6 /* TLNoteActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EB25F183339CA0051A2B6 /* TLNoteActionViewController.m */; };
-		1C2EB2641833A4B30051A2B6 /* TLNoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EB2631833A4B30051A2B6 /* TLNoteCell.m */; };
 		1C2EB2671833A65D0051A2B6 /* TLNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EB2661833A65D0051A2B6 /* TLNote.m */; };
 		1C2EB26A1833A6760051A2B6 /* TLNoteList.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EB2691833A6760051A2B6 /* TLNoteList.m */; };
 		1C2EB26E1833C4250051A2B6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2EB26D1833C4250051A2B6 /* QuartzCore.framework */; };
@@ -89,8 +88,6 @@
 		1C2B91FF1840E01A007CF238 /* HeaderBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeaderBg.png; sourceTree = "<group>"; };
 		1C2EB25E183339CA0051A2B6 /* TLNoteActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNoteActionViewController.h; sourceTree = "<group>"; };
 		1C2EB25F183339CA0051A2B6 /* TLNoteActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNoteActionViewController.m; sourceTree = "<group>"; };
-		1C2EB2621833A4B30051A2B6 /* TLNoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNoteCell.h; sourceTree = "<group>"; };
-		1C2EB2631833A4B30051A2B6 /* TLNoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNoteCell.m; sourceTree = "<group>"; };
 		1C2EB2651833A65D0051A2B6 /* TLNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNote.h; sourceTree = "<group>"; };
 		1C2EB2661833A65D0051A2B6 /* TLNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNote.m; sourceTree = "<group>"; };
 		1C2EB2681833A6760051A2B6 /* TLNoteList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNoteList.h; sourceTree = "<group>"; };
@@ -229,8 +226,6 @@
 				1C3CDA87183262F500FBE934 /* TLNavigationViewController.m */,
 				1C2EB25E183339CA0051A2B6 /* TLNoteActionViewController.h */,
 				1C2EB25F183339CA0051A2B6 /* TLNoteActionViewController.m */,
-				1C2EB2621833A4B30051A2B6 /* TLNoteCell.h */,
-				1C2EB2631833A4B30051A2B6 /* TLNoteCell.m */,
 				1C7E6F65183B84E300CF3BD7 /* TLRecordViewController.h */,
 				1C7E6F66183B84E300CF3BD7 /* TLRecordViewController.m */,
 				1CBA6BAB183C709200215812 /* TLPhotoViewController.h */,
@@ -553,7 +548,6 @@
 				1C7A1075183CFC3300AF562C /* UIView+Subview.m in Sources */,
 				1C2EB26A1833A6760051A2B6 /* TLNoteList.m in Sources */,
 				1C3CDA8118325B0C00FBE934 /* TLNoteViewController.m in Sources */,
-				1C2EB2641833A4B30051A2B6 /* TLNoteCell.m in Sources */,
 				1CE4FE6318227BE800BC7C1C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
