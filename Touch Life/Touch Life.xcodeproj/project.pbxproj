@@ -11,6 +11,9 @@
 		1C20F3A41841DDF600731AC0 /* 2Bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C20F3A01841DDF600731AC0 /* 2Bg.png */; };
 		1C20F3A51841DDF600731AC0 /* 3Bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C20F3A11841DDF600731AC0 /* 3Bg.png */; };
 		1C20F3A61841DDF600731AC0 /* 4Bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C20F3A21841DDF600731AC0 /* 4Bg.png */; };
+		1C21DA321846DEFC007EFBA0 /* TLMonthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C21DA311846DEFC007EFBA0 /* TLMonthCell.m */; };
+		1C21DA351846DF1F007EFBA0 /* TLMonthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C21DA341846DF1F007EFBA0 /* TLMonthViewController.m */; };
+		1C21DA381846DFB2007EFBA0 /* TLDetailNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C21DA371846DFB2007EFBA0 /* TLDetailNoteViewController.m */; };
 		1C2B92001840E01A007CF238 /* HeaderBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C2B91FF1840E01A007CF238 /* HeaderBg.png */; };
 		1C2EB260183339CA0051A2B6 /* TLNoteActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EB25F183339CA0051A2B6 /* TLNoteActionViewController.m */; };
 		1C2EB2671833A65D0051A2B6 /* TLNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EB2661833A65D0051A2B6 /* TLNote.m */; };
@@ -85,6 +88,12 @@
 		1C20F3A01841DDF600731AC0 /* 2Bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2Bg.png; sourceTree = "<group>"; };
 		1C20F3A11841DDF600731AC0 /* 3Bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3Bg.png; sourceTree = "<group>"; };
 		1C20F3A21841DDF600731AC0 /* 4Bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4Bg.png; sourceTree = "<group>"; };
+		1C21DA301846DEFC007EFBA0 /* TLMonthCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLMonthCell.h; sourceTree = "<group>"; };
+		1C21DA311846DEFC007EFBA0 /* TLMonthCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLMonthCell.m; sourceTree = "<group>"; };
+		1C21DA331846DF1F007EFBA0 /* TLMonthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLMonthViewController.h; sourceTree = "<group>"; };
+		1C21DA341846DF1F007EFBA0 /* TLMonthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLMonthViewController.m; sourceTree = "<group>"; };
+		1C21DA361846DFB2007EFBA0 /* TLDetailNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLDetailNoteViewController.h; sourceTree = "<group>"; };
+		1C21DA371846DFB2007EFBA0 /* TLDetailNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLDetailNoteViewController.m; sourceTree = "<group>"; };
 		1C2B91FF1840E01A007CF238 /* HeaderBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeaderBg.png; sourceTree = "<group>"; };
 		1C2EB25E183339CA0051A2B6 /* TLNoteActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNoteActionViewController.h; sourceTree = "<group>"; };
 		1C2EB25F183339CA0051A2B6 /* TLNoteActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNoteActionViewController.m; sourceTree = "<group>"; };
@@ -215,6 +224,10 @@
 				1C3CDA8018325B0C00FBE934 /* TLNoteViewController.m */,
 				1C3CDA8218325B5000FBE934 /* TLSettingViewController.h */,
 				1C3CDA8318325B5000FBE934 /* TLSettingViewController.m */,
+				1C21DA331846DF1F007EFBA0 /* TLMonthViewController.h */,
+				1C21DA341846DF1F007EFBA0 /* TLMonthViewController.m */,
+				1C21DA361846DFB2007EFBA0 /* TLDetailNoteViewController.h */,
+				1C21DA371846DFB2007EFBA0 /* TLDetailNoteViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -236,6 +249,8 @@
 				7FC1CC2D1840725B0071E4A5 /* TLPinCell.m */,
 				7FC1CC2F1840727C0071E4A5 /* TLBgCell.h */,
 				7FC1CC301840727C0071E4A5 /* TLBgCell.m */,
+				1C21DA301846DEFC007EFBA0 /* TLMonthCell.h */,
+				1C21DA311846DEFC007EFBA0 /* TLMonthCell.m */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -530,7 +545,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C3CDA88183262F500FBE934 /* TLNavigationViewController.m in Sources */,
+				1C21DA351846DF1F007EFBA0 /* TLMonthViewController.m in Sources */,
 				1C3CDA8418325B5000FBE934 /* TLSettingViewController.m in Sources */,
+				1C21DA381846DFB2007EFBA0 /* TLDetailNoteViewController.m in Sources */,
 				1C7E6F6A183B86C100CF3BD7 /* UIView+FadeInOut.m in Sources */,
 				7FC1CC2E1840725B0071E4A5 /* TLPinCell.m in Sources */,
 				4B53F4191835003B00CC33A6 /* NSArray+Data.m in Sources */,
@@ -539,6 +556,7 @@
 				7FC1CC4D1840D9C80071E4A5 /* PAPasscodeViewController.m in Sources */,
 				1C3CDA8C183264AD00FBE934 /* UIView+Frame.m in Sources */,
 				1C2EB2671833A65D0051A2B6 /* TLNote.m in Sources */,
+				1C21DA321846DEFC007EFBA0 /* TLMonthCell.m in Sources */,
 				1CBA6BAD183C709200215812 /* TLPhotoViewController.m in Sources */,
 				7FC1CC2818406F360071E4A5 /* TLTimeLineCell.m in Sources */,
 				1CE4FE6718227BE800BC7C1C /* TLAppDelegate.m in Sources */,

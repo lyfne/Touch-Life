@@ -30,5 +30,7 @@
 #define kTLSettingViewController @"TLSettingViewController"
 #define kTLRecordViewController @"TLRecordViewController"
 #define kTLPhotoViewController @"TLPhotoViewController"
+#define kTLMonthViewController @"TLMonthViewController"
+#define kTLDetailNoteViewController @"TLDetailNoteViewController"
 
 #endif

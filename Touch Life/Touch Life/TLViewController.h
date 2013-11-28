@@ -10,11 +10,15 @@
 #import "TLNavigationViewController.h"
 #import "TLNoteViewController.h"
 #import "TLSettingViewController.h"
+#import "TLMonthViewController.h"
+#import "TLDetailNoteViewController.h"
 
 @interface TLViewController : UIViewController<TLNavigationDelegate>
 
 @property (strong, nonatomic) TLNavigationViewController *navigationVC;
 @property (strong, nonatomic) TLNoteViewController *noteVC;
 @property (strong, nonatomic) TLSettingViewController *settingVC;
+@property (strong, nonatomic) TLMonthViewController *monthVC;
+@property (strong, nonatomic) TLDetailNoteViewController *detailNoteVC;
 
 @end
