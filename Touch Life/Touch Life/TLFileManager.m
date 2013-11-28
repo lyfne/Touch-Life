@@ -44,6 +44,8 @@ static TLFileManager *tlFileManagerInstance;
     [[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"FirstLoad"]];
     NSNumber *number = [[NSUserDefaults standardUserDefaults] objectForKey:@"FirstLoad"];
     if ([number boolValue] == YES) {
+        NSArray *tempMyLists = [NSArray arrayWithObjects:nil];
+        [tempMyLists saveToFile:kLocalListsFileName key:kLocalListsKey atomically:YES];
         [self firstLoadList];
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"FirstLoad"];
     }
@@ -85,6 +87,26 @@ static TLFileManager *tlFileManagerInstance;
 - (void)serialze
 {
     [self.noteLists saveToFile:kLocalListsFileName key:kLocalListsKey atomically:YES];
+}
+
+- (TLNoteList *)getList:(int)year andMonth:(int)month
+{
+    for (TLNoteList *list in self.noteLists) {
+        if (([list getYear] == year)&&([list getMonth] == month)) {
+            return list;
+        }
+    }
+    TLNoteList *newList = [TLNoteList createNoteList];
+    newList.listDate = [NSDate date];
+    [self.noteLists addObject:newList];
+    [self serialze];
+    return newList;
+}
+
+- (void)saveNote:(TLNote *)note
+{
+    [[self.noteLists lastObject] addNote:note];
+    [self serialze];
 }
 
 - (void)setBgImage:(NSString *)imageName

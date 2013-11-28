@@ -22,4 +22,8 @@
 - (void)addImageToNote:(UIImage *)image;
 - (void)addRecordToNote:(NSString *)name;
 
+- (int)getMonth;
+- (int)getYear;
+- (int)getDay;
+
 @end

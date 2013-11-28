@@ -52,6 +52,13 @@
 {
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    NSDate *now = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSUInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
+    int month = [dateComponent month];
+    int year = [dateComponent year];
+    showList = [[TLFileManager sharedFileManager] getList:year andMonth:month];
 }
 
 - (void)initNavigationView
@@ -121,7 +128,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 30;
+    return [showList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -134,7 +141,7 @@
                                        reuseIdentifier:identifer];
     }
     
-    cell.dateLabel.text = [NSString stringWithFormat:@"%d日",indexPath.row+1];
+    cell.dateLabel.text = [NSString stringWithFormat:@"%d日",[[showList getNoteWithIndex:indexPath.row] getDay]];
 
     return cell;
 }
@@ -146,11 +153,19 @@
     
 }
 
+#pragma mark TLNoteDelegate
+
+- (void)reloadTableView
+{
+    [self.tableView reloadData];
+}
+
 #pragma mark TLNavigationDelegate
 
 - (void)moreAction
 {
     self.noteVC = [self.storyboard instantiateViewControllerWithIdentifier:kTLNoteViewController];
+    self.noteVC.delegate = self;
     [self.navigationController pushViewController:self.noteVC animated:YES];
 }
 

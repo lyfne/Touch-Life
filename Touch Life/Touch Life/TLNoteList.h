@@ -16,6 +16,8 @@
 + (TLNoteList *)createNoteList;
 - (NSInteger)count;
 - (void)addNote:(TLNote *)note;
+- (TLNote *)getNoteWithIndex:(int)index;
+
 - (int)getMonth;
 - (int)getYear;
 

@@ -58,6 +58,11 @@
     [self.noteArray addObject:note];
 }
 
+- (TLNote *)getNoteWithIndex:(int)index
+{
+    return [self.noteArray objectAtIndex:index];
+}
+
 - (int)getYear
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
