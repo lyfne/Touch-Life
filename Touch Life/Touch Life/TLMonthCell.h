@@ -14,5 +14,6 @@
 
 - (void)setCell;
 - (void)setMonth:(NSString *)month;
+- (void)hidePartOfCell:(CGFloat)partHeight;
 
 @end

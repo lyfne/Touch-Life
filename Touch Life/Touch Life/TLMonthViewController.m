@@ -8,6 +8,7 @@
 
 #import "TLMonthViewController.h"
 #import "TLMonthCell.h"
+#import "TLFileManager.h"
 
 @interface TLMonthViewController ()
 
@@ -30,7 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self initTableView];
+    [self initView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,10 +41,23 @@
 
 #pragma mark Init Method
 
-- (void)initTableView
+- (void)initView
 {
+    self.view.clipsToBounds = YES;
     self.monthTableView.delegate = self;
     self.monthTableView.dataSource = self;
+}
+
+#pragma mark Privite Method
+
+- (NSString *)getMonth
+{
+    NSDate *now = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSUInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
+    int month = [dateComponent month];
+    return [NSString stringWithFormat:@"%d",month];
 }
 
 #pragma mark TableView DataSource
@@ -65,7 +79,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    return 40;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -116,4 +130,16 @@
     
 }
 
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    for (TLMonthCell *cell in self.monthTableView.visibleCells) {
+        CGFloat hiddenFrameHeight = scrollView.contentOffset.y + 35 - cell.frame.origin.y;
+        if (hiddenFrameHeight >= 0 || hiddenFrameHeight <= cell.frame.size.height) {
+            [cell hidePartOfCell:hiddenFrameHeight];
+        }
+    }
+}
+
+\
 @end

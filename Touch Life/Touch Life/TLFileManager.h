@@ -16,5 +16,6 @@
 - (NSString *)getBgImageName;
 - (void)setPinCode:(NSString *)code;
 - (NSString *)getPinCode;
+- (UIImage *)blurryImage:(UIImage *)image withBlurLevel:(CGFloat)blur;
 
 @end

@@ -30,7 +30,7 @@
 {
     self.backgroundColor = [UIColor clearColor];
     
-    monthLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 12, 155, 26)];
+    monthLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 7, 155, 26)];
     monthLabel.font = [UIFont systemFontOfSize:14];
     monthLabel.textColor = [UIColor blackColor];
     monthLabel.alpha = 0.6f;
@@ -41,6 +41,21 @@
 - (void)setMonth:(NSString *)month
 {
     monthLabel.text = month;
+}
+
+- (void)hidePartOfCell:(CGFloat)partHeight
+{
+    self.layer.mask = [self visibleCell:partHeight / self.frame.size.height];
+    self.layer.masksToBounds = YES;
+}
+
+- (CAGradientLayer *)visibleCell:(CGFloat)origin
+{
+    CAGradientLayer *mask = [CAGradientLayer layer];
+    mask.frame = self.bounds;
+    mask.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithWhite:1 alpha:0] CGColor], (id)[[UIColor colorWithWhite:1 alpha:1] CGColor], nil];
+    mask.locations = [NSArray arrayWithObjects:[NSNumber numberWithFloat:origin], [NSNumber numberWithFloat:origin], nil];
+    return mask;
 }
 
 @end
