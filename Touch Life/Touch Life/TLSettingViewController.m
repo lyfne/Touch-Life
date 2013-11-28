@@ -233,4 +233,21 @@
     }];
 }
 
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    for (TLBgCell *cell in self.settingTableView.visibleCells) {
+        CGFloat hiddenFrameHeight = scrollView.contentOffset.y + 35 - cell.frame.origin.y;
+        if (hiddenFrameHeight >= 0 || hiddenFrameHeight <= cell.frame.size.height) {
+            [cell hidePartOfCell:hiddenFrameHeight];
+        }
+    }
+    for (TLPinCell *cell in self.settingTableView.visibleCells) {
+        CGFloat hiddenFrameHeight = scrollView.contentOffset.y + 35 - cell.frame.origin.y;
+        if (hiddenFrameHeight >= 0 || hiddenFrameHeight <= cell.frame.size.height) {
+            [cell hidePartOfCell:hiddenFrameHeight];
+        }
+    }
+}
+
 @end

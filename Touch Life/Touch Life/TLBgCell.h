@@ -23,6 +23,7 @@
 }
 
 - (void)setView;
+- (void)hidePartOfCell:(CGFloat)partHeight;
 
 @end
  

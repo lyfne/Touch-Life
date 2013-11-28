@@ -14,6 +14,7 @@
 		1C21DA321846DEFC007EFBA0 /* TLMonthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C21DA311846DEFC007EFBA0 /* TLMonthCell.m */; };
 		1C21DA351846DF1F007EFBA0 /* TLMonthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C21DA341846DF1F007EFBA0 /* TLMonthViewController.m */; };
 		1C21DA381846DFB2007EFBA0 /* TLDetailNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C21DA371846DFB2007EFBA0 /* TLDetailNoteViewController.m */; };
+		1C21DA3D18476710007EFBA0 /* NoteList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C21DA3C18476710007EFBA0 /* NoteList.plist */; };
 		1C2B92001840E01A007CF238 /* HeaderBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C2B91FF1840E01A007CF238 /* HeaderBg.png */; };
 		1C2EB260183339CA0051A2B6 /* TLNoteActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EB25F183339CA0051A2B6 /* TLNoteActionViewController.m */; };
 		1C2EB2671833A65D0051A2B6 /* TLNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EB2661833A65D0051A2B6 /* TLNote.m */; };
@@ -93,6 +94,7 @@
 		1C21DA341846DF1F007EFBA0 /* TLMonthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLMonthViewController.m; sourceTree = "<group>"; };
 		1C21DA361846DFB2007EFBA0 /* TLDetailNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLDetailNoteViewController.h; sourceTree = "<group>"; };
 		1C21DA371846DFB2007EFBA0 /* TLDetailNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLDetailNoteViewController.m; sourceTree = "<group>"; };
+		1C21DA3C18476710007EFBA0 /* NoteList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NoteList.plist; sourceTree = "<group>"; };
 		1C2B91FF1840E01A007CF238 /* HeaderBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeaderBg.png; sourceTree = "<group>"; };
 		1C2EB25E183339CA0051A2B6 /* TLNoteActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNoteActionViewController.h; sourceTree = "<group>"; };
 		1C2EB25F183339CA0051A2B6 /* TLNoteActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNoteActionViewController.m; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				1C9C5452183499FE00813037 /* LaunchImage@R4.png */,
 				1C2B91FF1840E01A007CF238 /* HeaderBg.png */,
 				7FC1CC351840967F0071E4A5 /* SettingList.plist */,
+				1C21DA3C18476710007EFBA0 /* NoteList.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				1C20F3A61841DDF600731AC0 /* 4Bg.png in Resources */,
 				7FC1CC461840D9B30071E4A5 /* papasscode_failed_bg.png in Resources */,
 				1C7A106E183CF25700AF562C /* 5.png in Resources */,
+				1C21DA3D18476710007EFBA0 /* NoteList.plist in Resources */,
 				7FC1CC481840D9B30071E4A5 /* papasscode_marker.png in Resources */,
 				7FC1CC361840967F0071E4A5 /* SettingList.plist in Resources */,
 				1C7A106C183CF25700AF562C /* 7.png in Resources */,

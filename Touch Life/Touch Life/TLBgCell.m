@@ -122,4 +122,19 @@
     return [NSString stringWithFormat:@"%d",month];
 }
 
+- (void)hidePartOfCell:(CGFloat)partHeight
+{
+    self.layer.mask = [self visibleCell:partHeight / self.frame.size.height];
+    self.layer.masksToBounds = YES;
+}
+
+- (CAGradientLayer *)visibleCell:(CGFloat)origin
+{
+    CAGradientLayer *mask = [CAGradientLayer layer];
+    mask.frame = self.bounds;
+    mask.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithWhite:1 alpha:0] CGColor], (id)[[UIColor colorWithWhite:1 alpha:1] CGColor], nil];
+    mask.locations = [NSArray arrayWithObjects:[NSNumber numberWithFloat:origin], [NSNumber numberWithFloat:origin], nil];
+    return mask;
+}
+
 @end

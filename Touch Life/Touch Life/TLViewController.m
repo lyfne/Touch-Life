@@ -142,6 +142,7 @@
     }
     
     cell.dateLabel.text = [NSString stringWithFormat:@"%d日",[[showList getNoteWithIndex:indexPath.row] getDay]];
+    cell.previewTextView.text = [showList getNoteWithIndex:indexPath.row].detailNote;
 
     return cell;
 }

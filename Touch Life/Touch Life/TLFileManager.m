@@ -46,17 +46,18 @@ static TLFileManager *tlFileManagerInstance;
     if ([number boolValue] == YES) {
         NSArray *tempMyLists = [NSArray arrayWithObjects:nil];
         [tempMyLists saveToFile:kLocalListsFileName key:kLocalListsKey atomically:YES];
-        [self firstLoadList];
+        [self firstLoadList:@"SettingList"];
+        [self firstLoadList:@"NoteList"];
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"FirstLoad"];
     }
 }
 
-- (void)firstLoadList
+- (void)firstLoadList:(NSString *)name
 {
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"SettingList" ofType:@"plist"];
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:name ofType:@"plist"];
     NSMutableDictionary *settingData = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
     NSArray *docPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    [settingData writeToFile:[[docPaths objectAtIndex:0] stringByAppendingString:@"/SettingList.plist"] atomically:YES];
+    [settingData writeToFile:[[docPaths objectAtIndex:0] stringByAppendingString:[NSString stringWithFormat:@"/%@.plist",name]] atomically:YES];
 }
 
 - (NSString *)getFilePathWithName:(NSString *)name
@@ -70,6 +71,17 @@ static TLFileManager *tlFileManagerInstance;
         NSLog(@"No File Exists");
         return nil;
     }
+}
+
+- (void)setNoteListToFileWithYear:(NSString *)year andMonth:(NSString *)month
+{
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:[self getFilePathWithName:@"NoteList.plist"]];
+    NSMutableDictionary *tempDic = [dic objectForKey:year];
+    [tempDic setObject:@"yes" forKey:month];
+    NSLog(@"tempDic %@",tempDic);
+    [dic setObject:tempDic forKey:year];
+    NSLog(@"----------");
+    [dic writeToFile:[self getFilePathWithName:@"NoteList.plist"] atomically:YES];
 }
 
 #pragma mark Public Method
@@ -100,6 +112,7 @@ static TLFileManager *tlFileManagerInstance;
     newList.listDate = [NSDate date];
     [self.noteLists addObject:newList];
     [self serialze];
+    //[self setNoteListToFileWithYear:[NSString stringWithFormat:@"%d",[newList getYear]] andMonth:[NSString stringWithFormat:@"%d",[newList getMonth]]];
     return newList;
 }
 

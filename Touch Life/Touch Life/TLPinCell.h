@@ -14,5 +14,6 @@
 
 - (void)setCell;
 - (void)setActionTitle:(NSString *)title;
+- (void)hidePartOfCell:(CGFloat)partHeight;
 
 @end
