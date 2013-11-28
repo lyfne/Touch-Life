@@ -89,4 +89,20 @@
     [self.actionButton setBackgroundImage:selectedImage forState:UIControlStateSelected];
 }
 
+- (void)addGesture
+{
+    UISwipeGestureRecognizer *swipGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [swipGesture setDirection:UISwipeGestureRecognizerDirectionDown];
+    [self.view addGestureRecognizer:swipGesture];
+}
+
+#pragma mark Privite Function
+
+-(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer
+{
+    if (recognizer.direction==UISwipeGestureRecognizerDirectionDown){
+        [self.delegate showMonthView];
+    }
+}
+
 @end

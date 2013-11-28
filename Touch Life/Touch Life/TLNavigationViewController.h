@@ -13,6 +13,7 @@
 @optional
 - (void)popBack;
 - (void)moreAction;
+- (void)showMonthView;
 
 @end
 
@@ -25,5 +26,6 @@
 - (void)setHeaderTitle:(NSString *)title;
 - (void)setActionButtonTitle:(NSString *)title;
 - (void)setActionButtonBgImage:(UIImage *)image selectedImage:(UIImage *)selectedImage;
+- (void)addGesture;
 
 @end

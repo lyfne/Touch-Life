@@ -65,6 +65,7 @@
     [self.navigationVC setBackButtonHidden:YES];
     [self.navigationVC setHeaderTitle:[[self getMonth] stringByAppendingString:@" 月"]];
     [self.navigationVC setActionButtonTitle:@"新建日记"];
+    [self.navigationVC addGesture];
     [self.view addSubview:self.navigationVC.view];
 }
 
@@ -180,6 +181,30 @@
     return returnImage;
 }
 
+- (void)addGesture
+{
+    UISwipeGestureRecognizer *swipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [swipeGesture setDirection:UISwipeGestureRecognizerDirectionUp];
+}
+
+-(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer
+{
+    if (recognizer.direction==UISwipeGestureRecognizerDirectionUp){
+        [self removeMonthView];
+    }
+}
+
+- (void)removeMonthView
+{
+    [UIView animateWithDuration:0.5f animations:^{
+        [self.monthVC.view setY:-440];
+        [self.navigationVC.view setAlpha:1];
+        [self.tableView setAlpha:1];
+    }completion:^(BOOL finish){
+        [self.monthVC.view removeFromSuperview];
+    }];
+}
+
 #pragma mark TableView DataSource
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -220,6 +245,20 @@
 {
     self.noteVC = [self.storyboard instantiateViewControllerWithIdentifier:kTLNoteViewController];
     [self.navigationController pushViewController:self.noteVC animated:YES];
+}
+
+- (void)showMonthView
+{
+    self.monthVC = [self.storyboard instantiateViewControllerWithIdentifier:kTLMonthViewController];
+    [self.monthVC.view setX:0 Y:-440 Width:320 Height:440];
+    [self.view addSubview:self.monthVC.view];
+    [UIView animateWithDuration:0.5f animations:^{
+        [self.monthVC.view setY:0];
+        [self.navigationVC.view setAlpha:0];
+        [self.tableView setAlpha:0];
+    }completion:^(BOOL finish){
+        [self addGesture];
+    }];
 }
 
 @end

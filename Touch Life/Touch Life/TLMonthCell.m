@@ -26,4 +26,21 @@
     // Configure the view for the selected state
 }
 
+- (void)setCell
+{
+    self.backgroundColor = [UIColor clearColor];
+    
+    monthLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 12, 155, 26)];
+    monthLabel.font = [UIFont systemFontOfSize:14];
+    monthLabel.textColor = [UIColor blackColor];
+    monthLabel.alpha = 0.6f;
+    monthLabel.textAlignment = NSTextAlignmentLeft;
+    [self addSubview:monthLabel];
+}
+
+- (void)setMonth:(NSString *)month
+{
+    monthLabel.text = month;
+}
+
 @end

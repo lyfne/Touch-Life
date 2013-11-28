@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TLMonthCell : UITableViewCell
+@interface TLMonthCell : UITableViewCell{
+    UILabel *monthLabel;
+}
+
+- (void)setCell;
+- (void)setMonth:(NSString *)month;
 
 @end

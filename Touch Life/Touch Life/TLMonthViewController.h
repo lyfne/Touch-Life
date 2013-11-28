@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TLMonthViewController : UIViewController
+@protocol TLMonthViewDelegate
+
+- (void)backToTimeLine;
+- (void)switchToMonth:(NSString *)month;
+
+@end
+
+@interface TLMonthViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+
+@property (weak, nonatomic) id<TLMonthViewDelegate> delegate;
 
 @end
