@@ -58,7 +58,7 @@
     NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
     int month = [dateComponent month];
     int year = [dateComponent year];
-    showList = [[TLFileManager sharedFileManager] getList:year andMonth:month];
+    showList = [[TLFileManager sharedFileManager] createNewList:year andMonth:month];
 }
 
 - (void)initNavigationView

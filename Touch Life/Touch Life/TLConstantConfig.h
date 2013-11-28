@@ -12,6 +12,7 @@
 #define kCurrentMonthStr @"currentMonth"
 #define kPinCodeStr @"noPinCode"
 #define kBgImageKey @"BgImage"
+#define kMinYearKey @"MinYear"
 #define kPinKey @"Pin"
 #define kLocalListsFileName @"LocalNoteLists.plist"
 #define kLocalListsKey @"LocalListsKey"
@@ -21,7 +22,7 @@
 #define kDetailImage @"DetailImage"
 #define kRecordName @"RecordName"
 #define kNoteArrayData @"NoteArrayData"
-#define kListData @"ListData"
+#define kListDate @"ListDate"
 
 #define kTLNavigationViewController @"TLNavigationViewController"
 #define kTLViewController @"TLViewController"

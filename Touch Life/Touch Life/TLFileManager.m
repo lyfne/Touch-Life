@@ -48,6 +48,14 @@ static TLFileManager *tlFileManagerInstance;
         [tempMyLists saveToFile:kLocalListsFileName key:kLocalListsKey atomically:YES];
         [self firstLoadList:@"SettingList"];
         [self firstLoadList:@"NoteList"];
+        
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        NSUInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+        NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:[NSDate date]];
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:[self getFilePathWithName:@"SettingList.plist"]];
+        [dic setObject:[NSString stringWithFormat:@"%d",[dateComponent year]] forKey:kMinYearKey];
+        [dic writeToFile:[self getFilePathWithName:@"SettingList.plist"] atomically:YES];
+        
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"FirstLoad"];
     }
 }
@@ -73,17 +81,6 @@ static TLFileManager *tlFileManagerInstance;
     }
 }
 
-- (void)setNoteListToFileWithYear:(NSString *)year andMonth:(NSString *)month
-{
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:[self getFilePathWithName:@"NoteList.plist"]];
-    NSMutableDictionary *tempDic = [dic objectForKey:year];
-    [tempDic setObject:@"yes" forKey:month];
-    NSLog(@"tempDic %@",tempDic);
-    [dic setObject:tempDic forKey:year];
-    NSLog(@"----------");
-    [dic writeToFile:[self getFilePathWithName:@"NoteList.plist"] atomically:YES];
-}
-
 #pragma mark Public Method
 
 + (TLFileManager *)sharedFileManager
@@ -101,7 +98,17 @@ static TLFileManager *tlFileManagerInstance;
     [self.noteLists saveToFile:kLocalListsFileName key:kLocalListsKey atomically:YES];
 }
 
-- (TLNoteList *)getList:(int)year andMonth:(int)month
+- (TLNoteList *)getListWithYear:(int)year andMonth:(int)month
+{
+    for (TLNoteList *list in self.noteLists) {
+        if (([list getYear] == year)&&([list getMonth] == month)) {
+            return list;
+        }
+    }
+    return nil;
+}
+
+- (TLNoteList *)createNewList:(int)year andMonth:(int)month
 {
     for (TLNoteList *list in self.noteLists) {
         if (([list getYear] == year)&&([list getMonth] == month)) {
@@ -112,7 +119,6 @@ static TLFileManager *tlFileManagerInstance;
     newList.listDate = [NSDate date];
     [self.noteLists addObject:newList];
     [self serialze];
-    //[self setNoteListToFileWithYear:[NSString stringWithFormat:@"%d",[newList getYear]] andMonth:[NSString stringWithFormat:@"%d",[newList getMonth]]];
     return newList;
 }
 
@@ -120,6 +126,12 @@ static TLFileManager *tlFileManagerInstance;
 {
     [[self.noteLists lastObject] addNote:note];
     [self serialze];
+}
+
+- (int)getMinYear
+{
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:[self getFilePathWithName:@"SettingList.plist"]];
+    return [[dic objectForKey:kMinYearKey] intValue];
 }
 
 - (void)setBgImage:(NSString *)imageName

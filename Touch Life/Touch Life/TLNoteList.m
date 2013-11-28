@@ -18,7 +18,7 @@
 - (void)encodeWithCoder:(NSCoder*)coder
 {
     [coder encodeObject:self.noteArray forKey:kNoteArrayData];
-    [coder encodeObject:self.listDate forKey:kListData];
+    [coder encodeObject:self.listDate forKey:kListDate];
 }
 
 - (id)initWithCoder:(NSCoder*)coder
@@ -27,7 +27,7 @@
     
     if (self) {
         self.noteArray = [coder decodeObjectForKey:kNoteArrayData];
-        self.listDate = [coder decodeObjectForKey:kListData];
+        self.listDate = [coder decodeObjectForKey:kListDate];
     }
     
     return self;

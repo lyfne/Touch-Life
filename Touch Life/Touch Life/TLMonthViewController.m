@@ -60,11 +60,20 @@
     return [NSString stringWithFormat:@"%d",month];
 }
 
+- (int)getYear
+{
+    NSDate *now = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSUInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
+    return [dateComponent year];
+}
+
 #pragma mark TableView DataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return [self getYear]-[[TLFileManager sharedFileManager] getMinYear]+1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -103,7 +112,7 @@
     label.textColor = [UIColor blackColor];
     label.alpha = 0.6f;
     label.textAlignment = NSTextAlignmentCenter;
-    label.text = @"2013";
+    label.text = [NSString stringWithFormat:@"%d",[[TLFileManager sharedFileManager] getMinYear]+section];
     [headerView addSubview:label];
     
     return headerView;
@@ -127,7 +136,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    TLNoteList *list = [[TLFileManager sharedFileManager] getListWithYear:[self getYear] andMonth:indexPath.row+1];
+    if (list != nil) {
+        NSLog(@"list %@",list);
+    }else{
+        NSLog(@"hehe");
+    }
 }
 
 #pragma mark - UIScrollViewDelegate
