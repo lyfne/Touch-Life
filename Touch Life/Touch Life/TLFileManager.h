@@ -14,10 +14,12 @@
 
 + (TLFileManager *)sharedFileManager;
 - (void)serialze;
+- (NSMutableArray *)getListArrayWithYear:(int)year;
 - (TLNoteList *)getListWithYear:(int)year andMonth:(int)month;
 - (TLNoteList *)createNewList:(int)year andMonth:(int)month;
 - (void)saveNote:(TLNote *)note;
 - (int)getMinYear;
+- (int)getCountOfYear:(int)year;
 
 - (void)setBgImage:(NSString *)imageName;
 - (NSString *)getBgImageName;

@@ -83,7 +83,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 12;
+    return [[TLFileManager sharedFileManager] getCountOfYear:[[TLFileManager sharedFileManager] getMinYear]+section];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -127,7 +127,8 @@
     }
     
     [cell setCell];
-    [cell setMonth:[NSString stringWithFormat:@"%d 月",indexPath.row+1]];
+    NSMutableArray *array = [[TLFileManager sharedFileManager] getListArrayWithYear:[[TLFileManager sharedFileManager] getMinYear]+indexPath.section];
+    [cell setMonth:[NSString stringWithFormat:@"%d 月",[(TLNoteList *)[array objectAtIndex:indexPath.row] getMonth]]];
     
     return cell;
 }
@@ -137,9 +138,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    TLNoteList *list = [[TLFileManager sharedFileManager] getListWithYear:[self getYear] andMonth:indexPath.row+1];
+    int year = [[TLFileManager sharedFileManager] getMinYear]+indexPath.section;
+    NSMutableArray *array = [[TLFileManager sharedFileManager] getListArrayWithYear:year];
+    TLNoteList *list = [[TLFileManager sharedFileManager] getListWithYear:year andMonth:[(TLNoteList *)[array objectAtIndex:indexPath.row] getMonth]];
     if (list != nil) {
-        NSLog(@"list %@",list);
+        [self.delegate backToTimeLineWithList:list];
     }else{
         NSLog(@"hehe");
     }

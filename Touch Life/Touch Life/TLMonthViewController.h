@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TLNoteList.h"
 
 @protocol TLMonthViewDelegate
 
-- (void)backToTimeLine;
-- (void)switchToMonth:(NSString *)month;
+- (void)backToTimeLineWithList:(TLNoteList *)list;
 
 @end
 

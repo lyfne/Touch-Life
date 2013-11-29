@@ -14,7 +14,7 @@
 #import "TLDetailNoteViewController.h"
 #import "TLNoteList.h"
 
-@interface TLViewController : UIViewController<TLNavigationDelegate,TLNoteDelegate>{
+@interface TLViewController : UIViewController<TLNavigationDelegate,TLNoteDelegate,TLMonthViewDelegate>{
     TLNoteList *showList;
 }
 

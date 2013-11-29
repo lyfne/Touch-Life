@@ -98,6 +98,17 @@ static TLFileManager *tlFileManagerInstance;
     [self.noteLists saveToFile:kLocalListsFileName key:kLocalListsKey atomically:YES];
 }
 
+- (NSMutableArray *)getListArrayWithYear:(int)year
+{
+    NSMutableArray *array = [[NSMutableArray alloc] initWithObjects:nil];
+    for (TLNoteList *list in self.noteLists) {
+        if ([list getYear] == year) {
+            [array addObject:list];
+        }
+    }
+    return array;
+}
+
 - (TLNoteList *)getListWithYear:(int)year andMonth:(int)month
 {
     for (TLNoteList *list in self.noteLists) {
@@ -132,6 +143,17 @@ static TLFileManager *tlFileManagerInstance;
 {
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:[self getFilePathWithName:@"SettingList.plist"]];
     return [[dic objectForKey:kMinYearKey] intValue];
+}
+
+- (int)getCountOfYear:(int)year
+{
+    int count = 0;
+    for (TLNoteList *list in self.noteLists) {
+        if ([list getYear] == year) {
+            count++;
+        }
+    }
+    return count;
 }
 
 - (void)setBgImage:(NSString *)imageName

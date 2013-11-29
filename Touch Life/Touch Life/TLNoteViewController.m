@@ -111,8 +111,10 @@
         NSLog(@"0");
     }else if(buttonIndex == 1){
         TLNote *note = [TLNote createNoteWithDate:[NSDate date] note:self.noteTextView.text];
+        [[TLFileManager sharedFileManager] createNewList:[note getYear] andMonth:[note getMonth]];
         [[TLFileManager sharedFileManager] saveNote:note];
         [self.delegate reloadTableView];
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
                     
