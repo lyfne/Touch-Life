@@ -91,18 +91,15 @@
 
 - (void)addGesture
 {
-    UISwipeGestureRecognizer *swipGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeFrom:)];
-    [swipGesture setDirection:UISwipeGestureRecognizerDirectionDown];
-    [self.view addGestureRecognizer:swipGesture];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
+    [self.view addGestureRecognizer:tapGesture];
 }
 
 #pragma mark Privite Function
 
--(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer
+-(void)tapAction
 {
-    if (recognizer.direction==UISwipeGestureRecognizerDirectionDown){
         [self.delegate showMonthView];
-    }
 }
 
 @end

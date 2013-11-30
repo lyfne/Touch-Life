@@ -114,7 +114,7 @@
 
 - (void)removeMonthView
 {
-    [UIView animateWithDuration:0.5f animations:^{
+    [UIView animateWithDuration:0.2f animations:^{
         [self.monthVC.view setY:-440];
         [self.navigationVC.view setAlpha:1];
         [self.tableView setAlpha:1];
@@ -195,7 +195,7 @@
     [self.monthVC.view setX:0 Y:-440 Width:320 Height:440];
     self.monthVC.delegate = self;
     [self.view addSubview:self.monthVC.view];
-    [UIView animateWithDuration:0.5f animations:^{
+    [UIView animateWithDuration:0.2f animations:^{
         [self.monthVC.view setY:0];
         [self.navigationVC.view setAlpha:0];
         [self.tableView setAlpha:0];
