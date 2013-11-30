@@ -55,6 +55,16 @@
     self.recordName = name;
 }
 
+- (BOOL)withImage
+{
+    return withPhoto;
+}
+
+- (BOOL)withRecord
+{
+    return withRecord;
+}
+
 - (int)getYear
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];

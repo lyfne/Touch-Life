@@ -21,6 +21,8 @@
 + (TLNote *)createNoteWithDate:(NSDate *)date note:(NSString *)note;
 - (void)addImageToNote:(UIImage *)image;
 - (void)addRecordToNote:(NSString *)name;
+- (BOOL)withImage;
+- (BOOL)withRecord;
 
 - (int)getMonth;
 - (int)getYear;

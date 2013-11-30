@@ -9,6 +9,8 @@
 #import "TLDetailNoteViewController.h"
 #import "TLFileManager.h"
 
+#define kWithOutPhotoOffset 204
+
 @interface TLDetailNoteViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
@@ -33,6 +35,7 @@
 {
     [super viewDidLoad];
     [self initNavigationView];
+    [self setTextView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,6 +62,15 @@
     [self.textAndActionView.layer setShadowRadius:2];
     [self.textAndActionView.layer setShadowOpacity:0.7f];
     [self.textAndActionView.layer setShadowColor:[UIColor blackColor].CGColor];
+}
+
+- (void)setTextView
+{
+    if ([showNote withImage] == NO) {
+        [self.textAndActionView setY:50];
+        [self.textAndActionView setHeight:self.textAndActionView.frame.size.height+kWithOutPhotoOffset];
+        [self.detailText setHeight:self.detailText.frame.size.height+kWithOutPhotoOffset];
+    }
 }
 
 #pragma mark Public Method
