@@ -34,4 +34,6 @@
 #define kTLMonthViewController @"TLMonthViewController"
 #define kTLDetailNoteViewController @"TLDetailNoteViewController"
 
+#define kKeyboardHeight 216
+
 #endif

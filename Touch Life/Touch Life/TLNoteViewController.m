@@ -64,8 +64,8 @@
 {
     self.noteActionVC = [self.storyboard instantiateViewControllerWithIdentifier:kTLNoteActionViewController];
     self.noteActionVC.delegate = self;
-    [self.noteActionVC.view setX:0 Y:300];
-    [self.noteActionVC.view setHeight:50];
+    [self.noteActionVC.view setX:0 Y:302];
+    [self.noteActionVC.view setHeight:kKeyboardHeight+50];
     [self.view addSubview:self.noteActionVC.view];
 }
 
