@@ -13,6 +13,8 @@
 #import "TLRecordViewController.h"
 #import "TLNote.h"
 
+
+@class FastTextView;
 @protocol TLNoteDelegate
 
 - (void)reloadTableView;
@@ -21,9 +23,17 @@
 
 @interface TLNoteViewController : UIViewController<TLNavigationDelegate,TLNoteActionDelegate,TLRecordDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate,UINavigationControllerDelegate>{
     BOOL keyboardWasShown;
-    BOOL takePhoto;
-    UIImage *savedImage;
+//    BOOL takePhoto;
+//    UIImage *savedImage;
+    
+    FastTextView *_fastTextView;
+    BOOL isAddPicture;
 }
+
+@property(nonatomic,strong) FastTextView *fastTextView;
+
+
+
 
 @property (weak, nonatomic) id<TLNoteDelegate> delegate;
 
