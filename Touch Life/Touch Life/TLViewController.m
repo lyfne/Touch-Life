@@ -7,7 +7,6 @@
 //
 
 #import "TLViewController.h"
-#import "TLTimeLineCell.h"
 #import "TLFileManager.h"
 
 @interface TLViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -146,9 +145,12 @@
                                        reuseIdentifier:identifer];
     }
     
+    cell.delegate = self;
     cell.dateLabel.text = [NSString stringWithFormat:@"%d日",[[showList getNoteWithIndex:indexPath.row] getDay]];
     cell.previewTextView.text = [showList getNoteWithIndex:indexPath.row].detailNote;
-
+    cell.tag = indexPath.row;
+    [cell addGesture];
+    
     return cell;
 }
 
@@ -212,6 +214,16 @@
     [self.navigationVC setBackButtonHidden:NO];
     [self.tableView reloadData];
     [self removeMonthView];
+}
+
+#pragma mark TLTimeCellDelegate
+
+- (void)addDetailViewToMainViewWithTag:(int)tag
+{
+    self.detailNoteVC = [self.storyboard instantiateViewControllerWithIdentifier:kTLDetailNoteViewController];
+    [self.detailNoteVC.view setX:0 Y:0 Width:320 Height:568];
+    [self.detailNoteVC showNote:[showList getNoteWithIndex:tag]];
+    [self.navigationController pushViewController:self.detailNoteVC animated:YES];
 }
 
 @end

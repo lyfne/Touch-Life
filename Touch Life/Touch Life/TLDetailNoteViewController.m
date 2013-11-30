@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 @property (weak, nonatomic) IBOutlet UITextView *detailText;
 @property (weak, nonatomic) IBOutlet UIImageView *detailImage;
+@property (weak, nonatomic) IBOutlet UIView *textAndActionView;
 
 @end
 
@@ -52,13 +53,23 @@
     [self.view addSubview:self.navigationVC.view];
 }
 
+- (void)initShadow
+{
+    [self.textAndActionView.layer setShadowOffset:CGSizeMake(0, 0)];
+    [self.textAndActionView.layer setShadowRadius:2];
+    [self.textAndActionView.layer setShadowOpacity:0.7f];
+    [self.textAndActionView.layer setShadowColor:[UIColor blackColor].CGColor];
+}
+
 #pragma mark Public Method
 
 - (void)showNote:(TLNote *)note
 {
     showNote = note;
     [self.navigationVC setHeaderTitle:[NSString stringWithFormat:@"%d月%d日",[showNote getMonth],[showNote getDay]]];
-    [self.bgImageView setImage:[[TLFileManager sharedFileManager] blurryImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d",[showNote getMonth]]] withBlurLevel:0.2f]];
+    [self.bgImageView setImage:[[TLFileManager sharedFileManager] blurryImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d",[showNote getMonth]]] withBlurLevel:0.3f]];
+    
+    self.detailText.text = showNote.detailNote;
 }
 
 #pragma mark TLNavigationDelegate

@@ -28,4 +28,16 @@
 
 - (IBAction)lockAction:(id)sender {
 }
+
+- (void)addGesture
+{
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showDetailView)];
+    [self.contentView addGestureRecognizer:tapGesture];
+}
+
+- (void)showDetailView
+{
+    [self.delegate addDetailViewToMainViewWithTag:self.tag];
+}
+
 @end
