@@ -156,7 +156,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    self.detailNoteVC = [self.storyboard instantiateViewControllerWithIdentifier:kTLDetailNoteViewController];
+    [self.detailNoteVC.view setX:0 Y:0 Width:320 Height:568];
+    [self.detailNoteVC showNote:[showList getNoteWithIndex:indexPath.row]];
+    [self.navigationController pushViewController:self.detailNoteVC animated:YES];
 }
 
 #pragma mark TLNoteDelegate
