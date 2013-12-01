@@ -24,7 +24,9 @@
 @interface TLNoteViewController : UIViewController<TLNavigationDelegate,TLNoteActionDelegate,TLRecordDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate,UINavigationControllerDelegate>{
     BOOL keyboardWasShown;
     BOOL takePhoto;
+    BOOL withRecord;
     UIImage *savedImage;
+    NSString *recordFileName;
     
   //  FastTextView *_fastTextView;
    // BOOL isAddPicture;

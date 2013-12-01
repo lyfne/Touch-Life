@@ -179,6 +179,7 @@
 {
     self.view.clipsToBounds = YES;
     takePhoto = NO;
+    withRecord = NO;
 }
 
 - (void)initNotification
@@ -400,9 +401,9 @@
     [self saveImage:image withName:@"currentImage.png"];
     NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"currentImage.png"];
     savedImage = [[UIImage alloc] initWithContentsOfFile:fullPath];
-    [self.noteActionVC showEditButton];
     [self.noteActionVC addPhoto:savedImage];
     takePhoto = YES;
+    
 //    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init] ;
 //    [library assetForURL:[info objectForKey:UIImagePickerControllerReferenceURL]
 //             resultBlock:^(ALAsset *asset){
@@ -430,7 +431,13 @@
     [self.recordVC.view setX:0 Y:0 Width:self.view.frame.size.width Height:self.view.frame.size.height];
     [self.view addSubview:self.recordVC.view];
     [self.recordVC.view fadeIn:0.5f];
-    [self.recordVC startRecording];
+    if (!withRecord) {
+        [self.recordVC setPlay:NO];
+        [self.recordVC startRecording];
+    }else{
+        [self.recordVC setPlay:YES];
+        [self.recordVC showPlayView];
+    }
 }
 
 - (void)deletePhoto
@@ -443,7 +450,7 @@
 
 - (void)saveRecord
 {
-    
+    withRecord = YES;
 }
 
 - (void)backToNoteView
@@ -454,7 +461,6 @@
 
 - (void)removeRecordView
 {
-    [self.noteTextView becomeFirstResponder];
     [self.recordVC.view removeFromSuperview];
 }
 //#pragma mark -

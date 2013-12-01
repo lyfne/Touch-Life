@@ -23,10 +23,13 @@
     NSTimer *recordTimer;
     int time;
     int angle;
+    BOOL playOrRecord;
 }
 
 @property (weak, nonatomic) id<TLRecordDelegate> delegate;
 
 - (void)startRecording;
+- (void)setPlay:(BOOL)play;
+- (void)showPlayView;
 
 @end

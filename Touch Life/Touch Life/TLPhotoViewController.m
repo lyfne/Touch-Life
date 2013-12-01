@@ -11,8 +11,6 @@
 @interface TLPhotoViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
-@property (weak, nonatomic) IBOutlet UIButton *reTakeButton;
-@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 
 @end
 
@@ -31,6 +29,7 @@
 {
     [super viewDidLoad];
     [self initGesture];
+    withPhoto = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,15 +48,9 @@
 
 #pragma mark Public Method
 
-- (void)showEditButton
-{
-    self.reTakeButton.hidden = NO;
-    self.deleteButton.hidden = NO;
-    self.photoImageView.userInteractionEnabled = NO;
-}
-
 - (void)addPhoto:(UIImage *)photo
 {
+    withPhoto = YES;
     [self.photoImageView setImage:photo];
 }
 
@@ -65,7 +58,32 @@
 
 - (void)takePhoto
 {
-    [self.delegate takePhoto];
+    if (withPhoto == YES) {
+        UIActionSheet *sheet;
+        sheet  = [[UIActionSheet alloc] initWithTitle:@"选择" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"重新拍照",@"删除照片", nil];
+        sheet.tag = 255;
+        [sheet showInView:self.view];
+    }else{
+        [self.delegate takePhoto];
+    }
+}
+
+-(void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (actionSheet.tag == 255) {
+        switch (buttonIndex) {
+            case 0:
+                return;
+            case 1:
+                [self.delegate takePhoto];
+                break;
+            case 2:
+                withPhoto = NO;
+                [self.delegate deletePhoto];
+                [self.photoImageView setImage:nil];
+                break;
+        }
+    }
 }
 
 #pragma mark IBAction Method
@@ -83,9 +101,6 @@
 {
     if(buttonIndex == 1){
         [self.photoImageView setImage:nil];
-        self.photoImageView.userInteractionEnabled = YES;
-        self.reTakeButton.hidden = YES;
-        self.deleteButton.hidden = YES;
     }
 }
 

@@ -15,11 +15,12 @@
 
 @end
 
-@interface TLPhotoViewController : UIViewController
+@interface TLPhotoViewController : UIViewController<UIActionSheetDelegate>{
+    BOOL withPhoto;
+}
 
 @property (weak, nonatomic) id<TLPhotoDelegate> delegate;
 
-- (void)showEditButton;
 - (void)addPhoto:(UIImage *)photo;
 
 @end

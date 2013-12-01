@@ -17,6 +17,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 
+@property (weak, nonatomic) IBOutlet UIImageView *playButton;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+@property (weak, nonatomic) IBOutlet UIButton *closeButton;
+@property (weak, nonatomic) IBOutlet UILabel *playTimeLabel;
+@property (weak, nonatomic) IBOutlet UIView *playView;
+
 @end
 
 @implementation TLRecordViewController
@@ -30,10 +36,20 @@
     return self;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [UIView animateWithDuration:0.5f animations:^{
+        if (playOrRecord) {
+            [self.playView setY:105];
+        }else{
+            [self.actionView setY:105];
+        }
+    }];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self initView];
     [self initShadow];
 }
 
@@ -57,12 +73,23 @@
     [self.actionView.layer setShadowRadius:2];
     [self.actionView.layer setShadowOpacity:0.7f];
     [self.actionView.layer setShadowColor:[UIColor blackColor].CGColor];
+    
+    [self.playView.layer setShadowOffset:CGSizeMake(0, 0)];
+    [self.playView.layer setShadowRadius:2];
+    [self.playView.layer setShadowOpacity:0.7f];
+    [self.playView.layer setShadowColor:[UIColor blackColor].CGColor];
 }
 
 #pragma mark Public Method
 
+- (void)setPlay:(BOOL)play
+{
+    playOrRecord = play;
+}
+
 - (void)startRecording
 {
+    [self initView];
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     NSError *err = nil;
     [audioSession setCategory :AVAudioSessionCategoryPlayAndRecord error:&err];
@@ -124,6 +151,12 @@
     [recorder recordForDuration:(NSTimeInterval) 120];
 }
 
+- (void)showPlayView
+{
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(playAndStopRecord)];
+    [self.playButton addGestureRecognizer:tapGesture];
+}
+
 #pragma mark IBAction Method
 
 - (IBAction)finishAction:(id)sender {
@@ -145,7 +178,25 @@
     }];
 }
 
+- (IBAction)deleteRecord:(id)sender {
+    
+}
+
+- (IBAction)closePlayViewAction:(id)sender {
+    [self stopPlay];
+    [UIView animateWithDuration:0.5f animations:^{
+        [self.actionView setY:-self.actionView.frame.size.height];
+    }completion:^(BOOL finish){
+        [self.delegate backToNoteView];
+    }];
+}
+
 #pragma mark Mini Function
+
+- (void)playAndStopRecord
+{
+    
+}
 
 -(void) startAnimation
 {
@@ -187,6 +238,11 @@
     if(err){
         NSLog(@"File Manager: %@ %d %@", [err domain], [err code], [[err userInfo] description]);
     }
+}
+
+- (void)stopPlay
+{
+    
 }
 
 #pragma mark AVRecordDelegate

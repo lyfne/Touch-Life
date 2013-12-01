@@ -29,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self initShadow];
     [self initPhotoView];
 }
 
@@ -47,6 +48,14 @@
     [self.view addSubview:self.photoVC.view];
 }
 
+- (void)initShadow
+{
+    [self.view.layer setShadowOffset:CGSizeMake(0, 0)];
+    [self.view.layer setShadowRadius:2];
+    [self.view.layer setShadowOpacity:0.7f];
+    [self.view.layer setShadowColor:[UIColor blackColor].CGColor];
+}
+
 #pragma mark IBAction Method
 
 - (IBAction)takePhotoAction:(id)sender {
@@ -62,11 +71,6 @@
 - (void)setPhotoButtonTitle:(NSString *)title
 {
     [self.takePhotoButton setTitle:title forState:UIControlStateNormal];
-}
-
-- (void)showEditButton
-{
-    [self.photoVC showEditButton];
 }
 
 - (void)addPhoto:(UIImage *)photo

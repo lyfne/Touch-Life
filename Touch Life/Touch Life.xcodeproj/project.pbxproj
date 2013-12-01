@@ -43,6 +43,8 @@
 		1C7E6F6A183B86C100CF3BD7 /* UIView+FadeInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E6F69183B86C100CF3BD7 /* UIView+FadeInOut.m */; };
 		1C9C5453183499FE00813037 /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9C5451183499FE00813037 /* LaunchImage@2x.png */; };
 		1C9C5454183499FE00813037 /* LaunchImage@R4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C9C5452183499FE00813037 /* LaunchImage@R4.png */; };
+		1CA71247184B131300CB0B39 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CA71245184B131300CB0B39 /* play.png */; };
+		1CA71248184B131300CB0B39 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CA71246184B131300CB0B39 /* stop.png */; };
 		1CBA6BAD183C709200215812 /* TLPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA6BAC183C709200215812 /* TLPhotoViewController.m */; };
 		1CE4FE5718227BE800BC7C1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE4FE5618227BE800BC7C1C /* Foundation.framework */; };
 		1CE4FE5B18227BE800BC7C1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE4FE5A18227BE800BC7C1C /* UIKit.framework */; };
@@ -86,13 +88,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 1CE4FE5218227BE800BC7C1C;
 			remoteInfo = "Touch Life";
-		};
-		7FB190DB184AF0FE001E3A14 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7FB190D7184AF0FE001E3A14 /* FastTextViewLib.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5EED2E6417DD72FA0080F277;
-			remoteInfo = FastTextViewLib;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -146,6 +141,8 @@
 		1C7E6F69183B86C100CF3BD7 /* UIView+FadeInOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FadeInOut.m"; sourceTree = "<group>"; };
 		1C9C5451183499FE00813037 /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
 		1C9C5452183499FE00813037 /* LaunchImage@R4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@R4.png"; sourceTree = "<group>"; };
+		1CA71245184B131300CB0B39 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		1CA71246184B131300CB0B39 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		1CBA6BAB183C709200215812 /* TLPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLPhotoViewController.h; sourceTree = "<group>"; };
 		1CBA6BAC183C709200215812 /* TLPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLPhotoViewController.m; sourceTree = "<group>"; };
 		1CE4FE5318227BE800BC7C1C /* Touch Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Touch Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,7 +175,6 @@
 		4B86CB771849F145000BB889 /* UIImage-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage-Extensions.h"; sourceTree = "<group>"; };
 		4B86CB7A1849F14C000BB889 /* SlideAttachmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideAttachmentCell.h; sourceTree = "<group>"; };
 		4B86CB7B1849F14D000BB889 /* UIImage-Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage-Extensions.m"; sourceTree = "<group>"; };
-		7FB190D7184AF0FE001E3A14 /* FastTextViewLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FastTextViewLib.xcodeproj; path = ../../../../Shared/FastTextViewLib/FastTextViewLib.xcodeproj; sourceTree = "<group>"; };
 		7FB190DD184AF2F2001E3A14 /* TLFontSizeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLFontSizeCell.h; sourceTree = "<group>"; };
 		7FB190DE184AF2F2001E3A14 /* TLFontSizeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLFontSizeCell.m; sourceTree = "<group>"; };
 		7FC1CC2618406F360071E4A5 /* TLTimeLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTimeLineCell.h; sourceTree = "<group>"; };
@@ -322,6 +318,8 @@
 				1C9C5451183499FE00813037 /* LaunchImage@2x.png */,
 				1C9C5452183499FE00813037 /* LaunchImage@R4.png */,
 				1C2B91FF1840E01A007CF238 /* HeaderBg.png */,
+				1CA71245184B131300CB0B39 /* play.png */,
+				1CA71246184B131300CB0B39 /* stop.png */,
 				7FC1CC351840967F0071E4A5 /* SettingList.plist */,
 			);
 			name = Resources;
@@ -330,7 +328,6 @@
 		1CE4FE4A18227BE800BC7C1C = {
 			isa = PBXGroup;
 			children = (
-				7FB190D7184AF0FE001E3A14 /* FastTextViewLib.xcodeproj */,
 				1CE4FE5C18227BE800BC7C1C /* Touch Life */,
 				1CE4FE7B18227BE800BC7C1C /* Touch LifeTests */,
 				1CE4FE5518227BE800BC7C1C /* Frameworks */,
@@ -402,14 +399,6 @@
 				1CE4FE7E18227BE800BC7C1C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		7FB190D8184AF0FE001E3A14 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7FB190DC184AF0FE001E3A14 /* libFastTextViewLib.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		7FC1CC3C1840D9810071E4A5 /* BgImage */ = {
@@ -527,12 +516,6 @@
 			mainGroup = 1CE4FE4A18227BE800BC7C1C;
 			productRefGroup = 1CE4FE5418227BE800BC7C1C /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 7FB190D8184AF0FE001E3A14 /* Products */;
-					ProjectRef = 7FB190D7184AF0FE001E3A14 /* FastTextViewLib.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				1CE4FE5218227BE800BC7C1C /* Touch Life */,
@@ -541,16 +524,6 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		7FB190DC184AF0FE001E3A14 /* libFastTextViewLib.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libFastTextViewLib.a;
-			remoteRef = 7FB190DB184AF0FE001E3A14 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		1CE4FE5118227BE800BC7C1C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -558,6 +531,7 @@
 			files = (
 				1C31EFFD1841B6330031560C /* Main.storyboard in Resources */,
 				1C31F0031841C69B0031560C /* SelectedBg.png in Resources */,
+				1CA71248184B131300CB0B39 /* stop.png in Resources */,
 				1C7A106B183CF25700AF562C /* 3.png in Resources */,
 				1C7A1067183CF25700AF562C /* 2.png in Resources */,
 				1CE4FE6F18227BE800BC7C1C /* Images.xcassets in Resources */,
@@ -573,6 +547,7 @@
 				7FC1CC451840D9B30071E4A5 /* papasscode_background@2x.png in Resources */,
 				7FC1CC471840D9B30071E4A5 /* papasscode_failed_bg@2x.png in Resources */,
 				1C7A1066183CF25700AF562C /* 11.png in Resources */,
+				1CA71247184B131300CB0B39 /* play.png in Resources */,
 				1C20F3A31841DDF600731AC0 /* 1Bg.png in Resources */,
 				1C2B92001840E01A007CF238 /* HeaderBg.png in Resources */,
 				4B5023C9183B9F8C00D3A4BE /* RecordDVD.png in Resources */,

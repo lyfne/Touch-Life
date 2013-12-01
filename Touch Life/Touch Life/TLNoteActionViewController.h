@@ -24,7 +24,6 @@
 @property (strong, nonatomic) TLPhotoViewController *photoVC;
 
 - (void)setPhotoButtonTitle:(NSString *)title;
-- (void)showEditButton;
 - (void)addPhoto:(UIImage *)photo;
 
 @end
