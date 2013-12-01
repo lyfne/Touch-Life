@@ -470,6 +470,7 @@
                         <outlet property="closeButton" destination="G79-LG-dIH" id="txC-nW-MjK"/>
                         <outlet property="deleteButton" destination="08W-E9-5VY" id="cA0-ba-ly9"/>
                         <outlet property="playButton" destination="a1o-nh-CXG" id="51e-dZ-njV"/>
+                        <outlet property="playSumTimeLabel" destination="cr9-hI-QGR" id="mWJ-Lw-QgZ"/>
                         <outlet property="playTimeLabel" destination="OUS-mT-JYK" id="LzA-Iy-hGE"/>
                         <outlet property="playView" destination="UF4-dq-yHJ" id="EHA-3f-vPf"/>
                         <outlet property="recordImageView" destination="83r-t7-fwi" id="EZg-2r-VqA"/>

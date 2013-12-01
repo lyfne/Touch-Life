@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
 @property (weak, nonatomic) IBOutlet UILabel *playTimeLabel;
 @property (weak, nonatomic) IBOutlet UIView *playView;
+@property (weak, nonatomic) IBOutlet UILabel *playSumTimeLabel;
 
 @end
 
@@ -185,7 +186,7 @@
 - (IBAction)closePlayViewAction:(id)sender {
     [self stopPlay];
     [UIView animateWithDuration:0.5f animations:^{
-        [self.actionView setY:-self.actionView.frame.size.height];
+        [self.playView setY:-self.actionView.frame.size.height];
     }completion:^(BOOL finish){
         [self.delegate backToNoteView];
     }];
