@@ -25,6 +25,8 @@
 - (NSString *)getBgImageName;
 - (void)setPinCode:(NSString *)code;
 - (NSString *)getPinCode;
+- (void)setFontSize:(NSString *)size;
+- (NSString *)getFontSize;
 
 - (UIImage *)blurryImage:(UIImage *)image withBlurLevel:(CGFloat)blur;
 

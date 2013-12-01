@@ -182,6 +182,19 @@ static TLFileManager *tlFileManagerInstance;
     return [dic objectForKey:kPinKey];
 }
 
+- (void)setFontSize:(NSString *)size
+{
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:[self getFilePathWithName:@"SettingList.plist"]];
+    [dic setObject:size forKey:kFontSizeKey];
+    [dic writeToFile:[self getFilePathWithName:@"SettingList.plist"] atomically:YES];
+}
+
+- (NSString *)getFontSize
+{
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:[self getFilePathWithName:@"SettingList.plist"]];
+    return [dic objectForKey:kFontSizeKey];
+}
+
 - (UIImage *)blurryImage:(UIImage *)image withBlurLevel:(CGFloat)blur {
     //模糊度,
     if ((blur < 0.1f) || (blur > 2.0f)) {

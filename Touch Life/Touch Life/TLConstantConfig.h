@@ -14,6 +14,7 @@
 #define kBgImageKey @"BgImage"
 #define kMinYearKey @"MinYear"
 #define kPinKey @"Pin"
+#define kFontSizeKey @"FontSize"
 #define kLocalListsFileName @"LocalNoteLists.plist"
 #define kLocalListsKey @"LocalListsKey"
 

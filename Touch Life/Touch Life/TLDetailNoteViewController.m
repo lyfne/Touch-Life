@@ -82,6 +82,7 @@
     [self.bgImageView setImage:[[TLFileManager sharedFileManager] blurryImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d",[showNote getMonth]]] withBlurLevel:0.3f]];
     
     self.detailText.text = showNote.detailNote;
+    self.detailText.font = [UIFont systemFontOfSize:[[[TLFileManager sharedFileManager] getFontSize] floatValue]];
 }
 
 #pragma mark TLNavigationDelegate

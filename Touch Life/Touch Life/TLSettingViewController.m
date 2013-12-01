@@ -10,6 +10,7 @@
 #import "TLFileManager.h"
 #import "TLPinCell.h"
 #import "TLBgCell.h"
+#import "TLFontSizeCell.h"
 
 @interface TLSettingViewController ()
 
@@ -88,26 +89,30 @@
 {
     if (section == 0) {
         return 1;
-    }else{
+    }else if(section == 1){
         if (withPin == NO) {
             return 1;
         }else{
             return 2;
         }
+    }else{
+        return 1;
     }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
         return 144;
-    }else{
+    }else if(indexPath.section == 1){
         return 50;
+    }else{
+        return 100;
     }
 }
 
@@ -134,8 +139,10 @@
     label.textAlignment = NSTextAlignmentCenter;
     if (section == 0) {
         label.text = @"壁纸";
-    }else{
+    }else if(section == 1){
         label.text = @"密码";
+    }else{
+        label.text = @"字体";
     }
     [headerView addSubview:label];
     
@@ -146,6 +153,7 @@
 {
     static NSString *bgImageCellIdStr = @"TLBgCell";
     static NSString *pinCellIdStr = @"TLPinCell";
+    static NSString *fontSizeCellIdStr = @"TLFontSizeCell";
     if (indexPath.section == 0) {
         TLBgCell *cell = [tableView dequeueReusableCellWithIdentifier:bgImageCellIdStr];
         if (cell == nil) {
@@ -155,7 +163,7 @@
         [cell setView];
 
         return cell;
-    }else{
+    }else if(indexPath.section == 1){
         TLPinCell *cell = [tableView dequeueReusableHeaderFooterViewWithIdentifier:pinCellIdStr];
         if (cell == nil) {
             cell = [[TLPinCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:pinCellIdStr];
@@ -172,6 +180,15 @@
             }
         }
         
+        return cell;
+    }else{
+        TLFontSizeCell *cell = [tableView dequeueReusableCellWithIdentifier:fontSizeCellIdStr];
+        if (cell == nil) {
+            cell = [[TLFontSizeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:fontSizeCellIdStr];
+        }
+        
+        cell.preShowLabel.font = [UIFont systemFontOfSize:[[[TLFileManager sharedFileManager] getFontSize] floatValue]];
+        cell.changeSizeStepper.value = [[[TLFileManager sharedFileManager] getFontSize] floatValue];
         return cell;
     }
 }

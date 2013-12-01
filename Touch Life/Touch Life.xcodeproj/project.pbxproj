@@ -58,13 +58,13 @@
 		1CE4FE8218227BE800BC7C1C /* Touch_LifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE4FE8118227BE800BC7C1C /* Touch_LifeTests.m */; };
 		4B5023C9183B9F8C00D3A4BE /* RecordDVD.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5023C8183B9F8C00D3A4BE /* RecordDVD.png */; };
 		4B53F4191835003B00CC33A6 /* NSArray+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F4171835003B00CC33A6 /* NSArray+Data.m */; };
-		4B86CB6F1849EF4D000BB889 /* libFastTextViewLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B86CB6E1849EE9C000BB889 /* libFastTextViewLib.a */; };
 		4B86CB701849EF60000BB889 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B03A517184719D000A4221D /* CoreText.framework */; };
 		4B86CB711849EF68000BB889 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B03A519184719DA00A4221D /* AssetsLibrary.framework */; };
 		4B86CB721849EF70000BB889 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE4FE5818227BE800BC7C1C /* CoreGraphics.framework */; };
 		4B86CB781849F145000BB889 /* EmotionAttachmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B86CB751849F145000BB889 /* EmotionAttachmentCell.m */; };
 		4B86CB791849F145000BB889 /* SlideAttachmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B86CB761849F145000BB889 /* SlideAttachmentCell.m */; };
 		4B86CB7C1849F14D000BB889 /* UIImage-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B86CB7B1849F14D000BB889 /* UIImage-Extensions.m */; };
+		7FB190DF184AF2F2001E3A14 /* TLFontSizeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB190DE184AF2F2001E3A14 /* TLFontSizeCell.m */; };
 		7FC1CC2818406F360071E4A5 /* TLTimeLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC1CC2718406F360071E4A5 /* TLTimeLineCell.m */; };
 		7FC1CC2E1840725B0071E4A5 /* TLPinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC1CC2D1840725B0071E4A5 /* TLPinCell.m */; };
 		7FC1CC311840727C0071E4A5 /* TLBgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC1CC301840727C0071E4A5 /* TLBgCell.m */; };
@@ -87,9 +87,9 @@
 			remoteGlobalIDString = 1CE4FE5218227BE800BC7C1C;
 			remoteInfo = "Touch Life";
 		};
-		4B86CB6D1849EE9C000BB889 /* PBXContainerItemProxy */ = {
+		7FB190DB184AF0FE001E3A14 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 4B86CB691849EE9C000BB889 /* FastTextViewLib.xcodeproj */;
+			containerPortal = 7FB190D7184AF0FE001E3A14 /* FastTextViewLib.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 5EED2E6417DD72FA0080F277;
 			remoteInfo = FastTextViewLib;
@@ -172,13 +172,15 @@
 		4B5023C8183B9F8C00D3A4BE /* RecordDVD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecordDVD.png; sourceTree = "<group>"; };
 		4B53F4171835003B00CC33A6 /* NSArray+Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Data.m"; sourceTree = "<group>"; };
 		4B53F4181835003B00CC33A6 /* NSArray+Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Data.h"; sourceTree = "<group>"; };
-		4B86CB691849EE9C000BB889 /* FastTextViewLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FastTextViewLib.xcodeproj; path = ../../../../../Shared/FastTextViewLib/FastTextViewLib.xcodeproj; sourceTree = "<group>"; };
 		4B86CB741849F145000BB889 /* EmotionAttachmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionAttachmentCell.h; sourceTree = "<group>"; };
 		4B86CB751849F145000BB889 /* EmotionAttachmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionAttachmentCell.m; sourceTree = "<group>"; };
 		4B86CB761849F145000BB889 /* SlideAttachmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideAttachmentCell.m; sourceTree = "<group>"; };
 		4B86CB771849F145000BB889 /* UIImage-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage-Extensions.h"; sourceTree = "<group>"; };
 		4B86CB7A1849F14C000BB889 /* SlideAttachmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideAttachmentCell.h; sourceTree = "<group>"; };
 		4B86CB7B1849F14D000BB889 /* UIImage-Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage-Extensions.m"; sourceTree = "<group>"; };
+		7FB190D7184AF0FE001E3A14 /* FastTextViewLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FastTextViewLib.xcodeproj; path = ../../../../Shared/FastTextViewLib/FastTextViewLib.xcodeproj; sourceTree = "<group>"; };
+		7FB190DD184AF2F2001E3A14 /* TLFontSizeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLFontSizeCell.h; sourceTree = "<group>"; };
+		7FB190DE184AF2F2001E3A14 /* TLFontSizeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLFontSizeCell.m; sourceTree = "<group>"; };
 		7FC1CC2618406F360071E4A5 /* TLTimeLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTimeLineCell.h; sourceTree = "<group>"; };
 		7FC1CC2718406F360071E4A5 /* TLTimeLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTimeLineCell.m; sourceTree = "<group>"; };
 		7FC1CC2C1840725B0071E4A5 /* TLPinCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLPinCell.h; sourceTree = "<group>"; };
@@ -207,7 +209,6 @@
 				4B86CB711849EF68000BB889 /* AssetsLibrary.framework in Frameworks */,
 				4B86CB701849EF60000BB889 /* CoreText.framework in Frameworks */,
 				1C2EB26E1833C4250051A2B6 /* QuartzCore.framework in Frameworks */,
-				4B86CB6F1849EF4D000BB889 /* libFastTextViewLib.a in Frameworks */,
 				1C7E6F64183B558E00CF3BD7 /* AVFoundation.framework in Frameworks */,
 				1CE4FE5B18227BE800BC7C1C /* UIKit.framework in Frameworks */,
 				1CE4FE5718227BE800BC7C1C /* Foundation.framework in Frameworks */,
@@ -276,6 +277,8 @@
 				7FC1CC301840727C0071E4A5 /* TLBgCell.m */,
 				1C21DA301846DEFC007EFBA0 /* TLMonthCell.h */,
 				1C21DA311846DEFC007EFBA0 /* TLMonthCell.m */,
+				7FB190DD184AF2F2001E3A14 /* TLFontSizeCell.h */,
+				7FB190DE184AF2F2001E3A14 /* TLFontSizeCell.m */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -327,7 +330,7 @@
 		1CE4FE4A18227BE800BC7C1C = {
 			isa = PBXGroup;
 			children = (
-				4B86CB691849EE9C000BB889 /* FastTextViewLib.xcodeproj */,
+				7FB190D7184AF0FE001E3A14 /* FastTextViewLib.xcodeproj */,
 				1CE4FE5C18227BE800BC7C1C /* Touch Life */,
 				1CE4FE7B18227BE800BC7C1C /* Touch LifeTests */,
 				1CE4FE5518227BE800BC7C1C /* Frameworks */,
@@ -401,10 +404,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4B86CB6A1849EE9C000BB889 /* Products */ = {
+		7FB190D8184AF0FE001E3A14 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4B86CB6E1849EE9C000BB889 /* libFastTextViewLib.a */,
+				7FB190DC184AF0FE001E3A14 /* libFastTextViewLib.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -526,8 +529,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 4B86CB6A1849EE9C000BB889 /* Products */;
-					ProjectRef = 4B86CB691849EE9C000BB889 /* FastTextViewLib.xcodeproj */;
+					ProductGroup = 7FB190D8184AF0FE001E3A14 /* Products */;
+					ProjectRef = 7FB190D7184AF0FE001E3A14 /* FastTextViewLib.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -539,11 +542,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		4B86CB6E1849EE9C000BB889 /* libFastTextViewLib.a */ = {
+		7FB190DC184AF0FE001E3A14 /* libFastTextViewLib.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libFastTextViewLib.a;
-			remoteRef = 4B86CB6D1849EE9C000BB889 /* PBXContainerItemProxy */;
+			remoteRef = 7FB190DB184AF0FE001E3A14 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -620,6 +623,7 @@
 				7FC1CC2818406F360071E4A5 /* TLTimeLineCell.m in Sources */,
 				1CE4FE6718227BE800BC7C1C /* TLAppDelegate.m in Sources */,
 				1C7E6F67183B84E300CF3BD7 /* TLRecordViewController.m in Sources */,
+				7FB190DF184AF2F2001E3A14 /* TLFontSizeCell.m in Sources */,
 				4B86CB791849F145000BB889 /* SlideAttachmentCell.m in Sources */,
 				7FC1CC39184098030071E4A5 /* TLFileManager.m in Sources */,
 				7FC1CC311840727C0071E4A5 /* TLBgCell.m in Sources */,
