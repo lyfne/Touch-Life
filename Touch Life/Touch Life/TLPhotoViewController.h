@@ -10,7 +10,8 @@
 
 @protocol TLPhotoDelegate
 
-- (void)closePhotoView;
+- (void)takePhoto;
+- (void)deletePhoto;
 
 @end
 
@@ -18,6 +19,7 @@
 
 @property (weak, nonatomic) id<TLPhotoDelegate> delegate;
 
-- (void)addDetailViewWithImage:(UIImage *)image;
+- (void)showEditButton;
+- (void)addPhoto:(UIImage *)photo;
 
 @end

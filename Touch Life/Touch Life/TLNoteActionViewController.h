@@ -7,18 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TLPhotoViewController.h"
 
 @protocol TLNoteActionDelegate
 
+- (void)showPhotoView;
 - (void)takePhoto;
 - (void)startRecord;
+- (void)deletePhoto;
 
 @end
 
-@interface TLNoteActionViewController : UIViewController
+@interface TLNoteActionViewController : UIViewController<TLPhotoDelegate>
 
-@property (strong, nonatomic) id<TLNoteActionDelegate> delegate;
+@property (weak, nonatomic) id<TLNoteActionDelegate> delegate;
+@property (strong, nonatomic) TLPhotoViewController *photoVC;
 
 - (void)setPhotoButtonTitle:(NSString *)title;
+- (void)showEditButton;
+- (void)addPhoto:(UIImage *)photo;
 
 @end

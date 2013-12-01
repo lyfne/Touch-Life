@@ -10,8 +10,9 @@
 
 @interface TLPhotoViewController ()
 
-@property (weak, nonatomic) IBOutlet UIView *detailView;
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
+@property (weak, nonatomic) IBOutlet UIButton *reTakeButton;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 
 @end
 
@@ -29,7 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.clipsToBounds = YES;
+    [self initGesture];
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,30 +40,53 @@
 
 #pragma mark Init Method
 
-#pragma mark IBAction Method
-
-- (IBAction)closeAction:(id)sender {
-    [UIView animateWithDuration:0.5f animations:^{
-        [self.detailView setY:self.view.frame.size.height];
-    }completion:^(BOOL finish){
-        [self.delegate closePhotoView];
-    }];
-}
-
-- (IBAction)reTakeAction:(id)sender {
-}
-
-- (IBAction)deleteAction:(id)sender {
+- (void)initGesture
+{
+    self.photoImageView.clipsToBounds = YES;
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(takePhoto)];
+    [self.photoImageView addGestureRecognizer:tapGesture];
 }
 
 #pragma mark Public Method
 
-- (void)addDetailViewWithImage:(UIImage *)image
+- (void)showEditButton
 {
-    [self.photoImageView setImage:image];
-    [UIView animateWithDuration:0.5f animations:^{
-        [self.detailView setY:60];
-    }];
+    self.reTakeButton.hidden = NO;
+    self.deleteButton.hidden = NO;
+    self.photoImageView.userInteractionEnabled = NO;
+}
+
+- (void)addPhoto:(UIImage *)photo
+{
+    [self.photoImageView setImage:photo];
+}
+
+#pragma mark Privite Method
+
+- (void)takePhoto
+{
+    [self.delegate takePhoto];
+}
+
+#pragma mark IBAction Method
+
+- (IBAction)reTakeAction:(id)sender {
+    [self.delegate takePhoto];
+}
+
+- (IBAction)deleteAction:(id)sender {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"删除照片" message:@"确定删除照片？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"删除", nil];
+    [alertView show];
+}
+
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex == 1){
+        [self.photoImageView setImage:nil];
+        self.photoImageView.userInteractionEnabled = YES;
+        self.reTakeButton.hidden = YES;
+        self.deleteButton.hidden = YES;
+    }
 }
 
 @end

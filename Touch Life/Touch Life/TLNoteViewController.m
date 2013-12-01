@@ -161,7 +161,7 @@
     self.navigationVC.delegate = self;
     [self.navigationVC.view setX:0 Y:0];
     [self.navigationVC.view setHeight:50];
-    [self.navigationVC setActionButtonTitle:@"完成"];
+    [self.navigationVC setActionButtonTitle:@"保存"];
     [self.navigationVC setHeaderTitle:@"新建日记"];
     [self.view addSubview:self.navigationVC.view];
 }
@@ -175,15 +175,10 @@
     [self.view addSubview:self.noteActionVC.view];
 }
 
-- (void)initKeyboard
-{
-    [self.noteTextView becomeFirstResponder];
-}
-
 - (void)initView
 {
     self.view.clipsToBounds = YES;
-//    takePhoto = NO;
+    takePhoto = NO;
 }
 
 - (void)initNotification
@@ -213,10 +208,11 @@
 
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 0) {
-        NSLog(@"0");
-    }else if(buttonIndex == 1){
+    if(buttonIndex == 1){
         TLNote *note = [TLNote createNoteWithDate:[NSDate date] note:self.noteTextView.text];
+        if (takePhoto) {
+            [note addImageToNote:savedImage];
+        }
         [[TLFileManager sharedFileManager] createNewList:[note getYear] andMonth:[note getMonth]];
         [[TLFileManager sharedFileManager] saveNote:note];
         [self.delegate reloadTableView];
@@ -242,6 +238,11 @@
 }
 
 #pragma mark TLNoteActionDelegate
+
+- (void)showPhotoView
+{
+    [self.noteTextView resignFirstResponder];
+}
 
 - (void)takePhoto    //photo
 {
@@ -399,6 +400,8 @@
     [self saveImage:image withName:@"currentImage.png"];
     NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"currentImage.png"];
     savedImage = [[UIImage alloc] initWithContentsOfFile:fullPath];
+    [self.noteActionVC showEditButton];
+    [self.noteActionVC addPhoto:savedImage];
     takePhoto = YES;
 //    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init] ;
 //    [library assetForURL:[info objectForKey:UIImagePickerControllerReferenceURL]
@@ -428,6 +431,12 @@
     [self.view addSubview:self.recordVC.view];
     [self.recordVC.view fadeIn:0.5f];
     [self.recordVC startRecording];
+}
+
+- (void)deletePhoto
+{
+    takePhoto = NO;
+    savedImage = nil;
 }
 
 #pragma mark TLRecoreDelegate
