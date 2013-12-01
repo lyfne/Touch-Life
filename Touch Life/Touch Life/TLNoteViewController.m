@@ -178,8 +178,6 @@
 - (void)initView
 {
     self.view.clipsToBounds = YES;
-    takePhoto = NO;
-    withRecord = NO;
 }
 
 - (void)initNotification
@@ -213,6 +211,9 @@
         TLNote *note = [TLNote createNoteWithDate:[NSDate date] note:self.noteTextView.text];
         if (takePhoto) {
             [note addImageData:imageData];
+        }
+        if (withRecord) {
+            [note addRecordToNote:recordFileName];
         }
         [[TLFileManager sharedFileManager] createNewList:[note getYear] andMonth:[note getMonth]];
         [[TLFileManager sharedFileManager] saveNote:note];
@@ -435,6 +436,7 @@
         [self.recordVC setPlay:NO];
         [self.recordVC startRecording];
     }else{
+        [self.recordVC playRecord:recordFileName];
         [self.recordVC setPlay:YES];
         [self.recordVC showPlayView];
     }
@@ -448,9 +450,10 @@
 
 #pragma mark TLRecoreDelegate
 
-- (void)saveRecord
+- (void)saveRecord:(NSString *)name
 {
     withRecord = YES;
+    recordFileName = name;
 }
 
 - (void)backToNoteView
@@ -463,6 +466,7 @@
 {
     [self.recordVC.view removeFromSuperview];
 }
+
 //#pragma mark -
 //#pragma mark fastTextViewDelegate
 //

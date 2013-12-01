@@ -8,6 +8,7 @@
 
 #import "TLDetailNoteViewController.h"
 #import "TLFileManager.h"
+#import "TLRecordPlayer.h"
 
 #define kWithOutPhotoOffset 204
 #define kPhotoShowHeight 468
@@ -18,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *detailText;
 @property (weak, nonatomic) IBOutlet UIImageView *detailImage;
 @property (weak, nonatomic) IBOutlet UIView *textAndActionView;
+@property (weak, nonatomic) IBOutlet UIImageView *textViewBgImageView;
+@property (weak, nonatomic) IBOutlet UIButton *recordButton;
 
 @end
 
@@ -36,8 +39,8 @@
 {
     [super viewDidLoad];
     [self initNavigationView];
-    [self setTextView];
     isShowPhoto = NO;
+    isPlaying = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,13 +75,17 @@
     [self.detailImage addGestureRecognizer:tapGesture];
 }
 
-- (void)setTextView
-{
-    if ([showNote withImage] == NO) {
-        [self.textAndActionView setY:50];
-        [self.textAndActionView setHeight:self.textAndActionView.frame.size.height+kWithOutPhotoOffset];
-        [self.detailText setHeight:self.detailText.frame.size.height+kWithOutPhotoOffset];
+#pragma mark IBAction Method
+
+- (IBAction)playRecord:(id)sender {
+    if (isPlaying == NO) {
+        [[TLRecordPlayer sharedRecordPlayer] playRecorwWithName:showNote.recordName withDelegate:self];
+        [self.recordButton setTitle:@"停止播放" forState:UIControlStateNormal];
+    }else{
+        [[TLRecordPlayer sharedRecordPlayer] stopRecord];
+        [self.recordButton setTitle:@"播放音频" forState:UIControlStateNormal];
     }
+    isPlaying = !isPlaying;
 }
 
 #pragma mark Privite Method
@@ -109,8 +116,19 @@
     
     self.detailText.text = showNote.detailNote;
     self.detailText.font = [UIFont systemFontOfSize:[[[TLFileManager sharedFileManager] getFontSize] floatValue]];
-    [self.detailImage setImage:[UIImage imageWithData:showNote.imageData]];
+    if ([showNote withImage] == NO) {
+        [self.textAndActionView setY:50];
+        [self.textAndActionView setHeight:self.textAndActionView.frame.size.height+kWithOutPhotoOffset];
+        [self.textViewBgImageView setHeight:self.textAndActionView.frame.size.height];
+        [self.detailText setHeight:self.detailText.frame.size.height+kWithOutPhotoOffset];
+    }else{
+        [self.detailImage setImage:[UIImage imageWithData:showNote.imageData]];
+    }
     [self initImageView];
+    
+    if([showNote withRecord] == NO){
+        self.recordButton.hidden = YES;
+    }
 }
 
 #pragma mark TLNavigationDelegate
@@ -118,6 +136,10 @@
 - (void)popBack
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer*)player successfully:(BOOL)flag{
+    [self.recordButton setTitle:@"播放音频" forState:UIControlStateNormal];
 }
 
 @end

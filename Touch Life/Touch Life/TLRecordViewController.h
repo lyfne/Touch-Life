@@ -12,7 +12,7 @@
 @protocol TLRecordDelegate
 
 - (void)backToNoteView;
-- (void)saveRecord;
+- (void)saveRecord:(NSString *)name;
 
 @end
 
@@ -20,6 +20,7 @@
     AVAudioRecorder *recorder;
     NSMutableDictionary *recordSetting;
     NSString *recorderFilePath;
+    NSString *recordFileName;
     NSTimer *recordTimer;
     int time;
     int angle;
@@ -31,5 +32,6 @@
 - (void)startRecording;
 - (void)setPlay:(BOOL)play;
 - (void)showPlayView;
+- (void)playRecord:(NSString *)fileName;
 
 @end

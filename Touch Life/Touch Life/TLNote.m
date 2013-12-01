@@ -37,31 +37,35 @@
     TLNote *tlNote = [[TLNote alloc] init];
     tlNote.detailDate = date;
     tlNote.detailNote = note;
-    tlNote->withPhoto = NO;
-    tlNote->withRecord = NO;
     return tlNote;
 }
 
 - (void)addImageData:(NSData *)data
 {
-    withPhoto = YES;
     self.imageData = data;
 }
 
 - (void)addRecordToNote:(NSString *)name
 {
-    withRecord = YES;
     self.recordName = name;
 }
 
 - (BOOL)withImage
 {
-    return withPhoto;
+    if (self.imageData != nil) {
+        return YES;
+    }else{
+        return NO;
+    }
 }
 
 - (BOOL)withRecord
 {
-    return withRecord;
+    if (self.recordName != nil) {
+        return YES;
+    }else{
+        return NO;
+    }
 }
 
 - (int)getYear

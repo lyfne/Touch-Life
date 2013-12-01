@@ -7,6 +7,7 @@
 //
 
 #import "TLRecordViewController.h"
+#import "TLRecordPlayer.h"
 
 #define DOCUMENTS_FOLDER [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]
 
@@ -42,6 +43,7 @@
     [UIView animateWithDuration:0.5f animations:^{
         if (playOrRecord) {
             [self.playView setY:105];
+            [self showPlayView];
         }else{
             [self.actionView setY:105];
         }
@@ -83,6 +85,11 @@
 
 #pragma mark Public Method
 
+- (void)playRecord:(NSString *)fileName
+{
+    [[TLRecordPlayer sharedRecordPlayer] playRecorwWithName:fileName withDelegate:self];
+}
+
 - (void)setPlay:(BOOL)play
 {
     playOrRecord = play;
@@ -92,6 +99,16 @@
 {
     [self initView];
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    [audioSession requestRecordPermission:^(BOOL granted) {
+        if (granted) {
+            // Microphone enabled code
+            NSLog(@"enable");
+        }
+        else {
+            NSLog(@"disable");
+            // Microphone disabled code
+        }
+    }];
     NSError *err = nil;
     [audioSession setCategory :AVAudioSessionCategoryPlayAndRecord error:&err];
     if(err){
@@ -116,6 +133,7 @@
     
     NSDate *now = [NSDate dateWithTimeIntervalSinceNow:0];
     NSString *caldate = [now description];
+    recordFileName = caldate;
     recorderFilePath = [NSString stringWithFormat:@"%@/%@.caf",DOCUMENTS_FOLDER,caldate];
     
     NSURL *url = [NSURL fileURLWithPath:recorderFilePath];
@@ -165,7 +183,7 @@
     [UIView animateWithDuration:0.5f animations:^{
         [self.actionView setY:-self.actionView.frame.size.height];
     }completion:^(BOOL finish){
-        [self.delegate saveRecord];
+        [self.delegate saveRecord:recordFileName];
         [self.delegate backToNoteView];
     }];
 }
@@ -196,7 +214,13 @@
 
 - (void)playAndStopRecord
 {
-    
+    if ([[TLRecordPlayer sharedRecordPlayer] isPlaying]) {
+        [self.playButton setImage:[UIImage imageNamed:@"play"]];
+        [[TLRecordPlayer sharedRecordPlayer] stopRecord];
+    }else{
+        [self.playButton setImage:[UIImage imageNamed:@"stop"]];
+        [[TLRecordPlayer sharedRecordPlayer] playRecord];
+    }
 }
 
 -(void) startAnimation
@@ -251,6 +275,10 @@
 - (void)audioRecorderDidFinishRecording:(AVAudioRecorder *) aRecorder successfully:(BOOL)flag
 {
     NSLog (@"audioRecorderDidFinishRecording:successfully:");
+}
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer*)player successfully:(BOOL)flag{
+    [self.playButton setImage:[UIImage imageNamed:@"play"]];
 }
 
 @end

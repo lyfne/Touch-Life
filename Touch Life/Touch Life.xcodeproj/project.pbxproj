@@ -58,6 +58,7 @@
 		1CE4FE7818227BE800BC7C1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE4FE5A18227BE800BC7C1C /* UIKit.framework */; };
 		1CE4FE8018227BE800BC7C1C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CE4FE7E18227BE800BC7C1C /* InfoPlist.strings */; };
 		1CE4FE8218227BE800BC7C1C /* Touch_LifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE4FE8118227BE800BC7C1C /* Touch_LifeTests.m */; };
+		1CEACEFE184B68AF00CB08E5 /* TLRecordPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CEACEFD184B68AF00CB08E5 /* TLRecordPlayer.m */; };
 		4B5023C9183B9F8C00D3A4BE /* RecordDVD.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5023C8183B9F8C00D3A4BE /* RecordDVD.png */; };
 		4B53F4191835003B00CC33A6 /* NSArray+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F4171835003B00CC33A6 /* NSArray+Data.m */; };
 		4B86CB701849EF60000BB889 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B03A517184719D000A4221D /* CoreText.framework */; };
@@ -164,6 +165,8 @@
 		1CE4FE7D18227BE800BC7C1C /* Touch LifeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Touch LifeTests-Info.plist"; sourceTree = "<group>"; };
 		1CE4FE7F18227BE800BC7C1C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1CE4FE8118227BE800BC7C1C /* Touch_LifeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Touch_LifeTests.m; sourceTree = "<group>"; };
+		1CEACEFC184B68AF00CB08E5 /* TLRecordPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLRecordPlayer.h; sourceTree = "<group>"; };
+		1CEACEFD184B68AF00CB08E5 /* TLRecordPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLRecordPlayer.m; sourceTree = "<group>"; };
 		4B03A517184719D000A4221D /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		4B03A519184719DA00A4221D /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		4B5023C8183B9F8C00D3A4BE /* RecordDVD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecordDVD.png; sourceTree = "<group>"; };
@@ -233,6 +236,8 @@
 				1C2EB2691833A6760051A2B6 /* TLNoteList.m */,
 				7FC1CC37184098030071E4A5 /* TLFileManager.h */,
 				7FC1CC38184098030071E4A5 /* TLFileManager.m */,
+				1CEACEFC184B68AF00CB08E5 /* TLRecordPlayer.h */,
+				1CEACEFD184B68AF00CB08E5 /* TLRecordPlayer.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -599,6 +604,7 @@
 				1CE4FE6718227BE800BC7C1C /* TLAppDelegate.m in Sources */,
 				1C7E6F67183B84E300CF3BD7 /* TLRecordViewController.m in Sources */,
 				7FB190DF184AF2F2001E3A14 /* TLFontSizeCell.m in Sources */,
+				1CEACEFE184B68AF00CB08E5 /* TLRecordPlayer.m in Sources */,
 				4B86CB791849F145000BB889 /* SlideAttachmentCell.m in Sources */,
 				7FC1CC39184098030071E4A5 /* TLFileManager.m in Sources */,
 				7FC1CC311840727C0071E4A5 /* TLBgCell.m in Sources */,

@@ -13,6 +13,7 @@
 @interface TLDetailNoteViewController : UIViewController<TLNavigationDelegate>{
     TLNote *showNote;
     BOOL isShowPhoto;
+    BOOL isPlaying;
 }
 
 @property (strong, nonatomic) TLNavigationViewController *navigationVC;

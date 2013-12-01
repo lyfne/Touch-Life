@@ -8,10 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TLNote : NSObject{
-    BOOL withPhoto;
-    BOOL withRecord;
-}
+@interface TLNote : NSObject
 
 @property (copy, nonatomic) NSDate *detailDate;
 @property (copy, nonatomic) NSString *detailNote;
