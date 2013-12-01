@@ -202,7 +202,7 @@
 
 - (void) saveImage:(UIImage *)currentImage withName:(NSString *)imageName
 {
-    NSData *imageData = UIImageJPEGRepresentation(currentImage, 0.5);
+    imageData = UIImageJPEGRepresentation(currentImage, 0.3);
     NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:imageName];
     [imageData writeToFile:fullPath atomically:NO];
 }
@@ -212,7 +212,7 @@
     if(buttonIndex == 1){
         TLNote *note = [TLNote createNoteWithDate:[NSDate date] note:self.noteTextView.text];
         if (takePhoto) {
-            [note addImageToNote:savedImage];
+            [note addImageData:imageData];
         }
         [[TLFileManager sharedFileManager] createNewList:[note getYear] andMonth:[note getMonth]];
         [[TLFileManager sharedFileManager] saveNote:note];

@@ -27,7 +27,7 @@
     BOOL withRecord;
     UIImage *savedImage;
     NSString *recordFileName;
-    
+    NSData *imageData;
   //  FastTextView *_fastTextView;
    // BOOL isAddPicture;
 }

@@ -14,8 +14,8 @@
 {
     [coder encodeObject:self.detailDate forKey:kDetailDate];
     [coder encodeObject:self.detailNote forKey:kDetailNote];
-    [coder encodeObject:self.detailImage forKey:kDetailImage];
     [coder encodeObject:self.recordName forKey:kRecordName];
+    [coder encodeObject:self.imageData forKey:kImageData];
 }
 
 - (id)initWithCoder:(NSCoder*)coder
@@ -25,8 +25,8 @@
     if (self) {
         self.detailDate = [coder decodeObjectForKey:kDetailDate];
         self.detailNote = [coder decodeObjectForKey:kDetailNote];
-        self.detailImage = [coder decodeObjectForKey:kDetailImage];
         self.recordName = [coder decodeObjectForKey:kRecordName];
+        self.imageData = [coder decodeObjectForKey:kImageData];
     }
     
     return self;
@@ -42,11 +42,10 @@
     return tlNote;
 }
 
-
-- (void)addImageToNote:(UIImage *)image
+- (void)addImageData:(NSData *)data
 {
     withPhoto = YES;
-    self.detailImage = image;
+    self.imageData = data;
 }
 
 - (void)addRecordToNote:(NSString *)name

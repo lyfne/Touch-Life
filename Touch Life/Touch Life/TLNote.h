@@ -15,11 +15,11 @@
 
 @property (copy, nonatomic) NSDate *detailDate;
 @property (copy, nonatomic) NSString *detailNote;
-@property (copy, nonatomic) UIImage *detailImage;
 @property (copy, nonatomic) NSString *recordName;
+@property (copy, nonatomic) NSData *imageData;
 
 + (TLNote *)createNoteWithDate:(NSDate *)date note:(NSString *)note;
-- (void)addImageToNote:(UIImage *)image;
+- (void)addImageData:(NSData *)data;
 - (void)addRecordToNote:(NSString *)name;
 - (BOOL)withImage;
 - (BOOL)withRecord;

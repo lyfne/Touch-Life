@@ -10,6 +10,7 @@
 #import "TLFileManager.h"
 
 #define kWithOutPhotoOffset 204
+#define kPhotoShowHeight 468
 
 @interface TLDetailNoteViewController ()
 
@@ -36,6 +37,7 @@
     [super viewDidLoad];
     [self initNavigationView];
     [self setTextView];
+    isShowPhoto = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,6 +66,12 @@
     [self.textAndActionView.layer setShadowColor:[UIColor blackColor].CGColor];
 }
 
+- (void)initImageView
+{
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImageAction)];
+    [self.detailImage addGestureRecognizer:tapGesture];
+}
+
 - (void)setTextView
 {
     if ([showNote withImage] == NO) {
@@ -71,6 +79,24 @@
         [self.textAndActionView setHeight:self.textAndActionView.frame.size.height+kWithOutPhotoOffset];
         [self.detailText setHeight:self.detailText.frame.size.height+kWithOutPhotoOffset];
     }
+}
+
+#pragma mark Privite Method
+
+- (void)tapImageAction
+{
+    if (isShowPhoto) {
+        [UIView animateWithDuration:0.3f animations:^{
+            [self.detailImage setHeight:204];
+            [self.textAndActionView setY:254];
+        }];
+    }else{
+        [UIView animateWithDuration:0.3f animations:^{
+            [self.detailImage setHeight:468];
+            [self.textAndActionView setY:518];
+        }];
+    }
+    isShowPhoto = !isShowPhoto;
 }
 
 #pragma mark Public Method
@@ -83,6 +109,8 @@
     
     self.detailText.text = showNote.detailNote;
     self.detailText.font = [UIFont systemFontOfSize:[[[TLFileManager sharedFileManager] getFontSize] floatValue]];
+    [self.detailImage setImage:[UIImage imageWithData:showNote.imageData]];
+    [self initImageView];
 }
 
 #pragma mark TLNavigationDelegate

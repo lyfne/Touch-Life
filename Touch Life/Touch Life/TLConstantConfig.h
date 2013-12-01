@@ -22,6 +22,7 @@
 #define kDetailNote @"DetailNote"
 #define kDetailImage @"DetailImage"
 #define kRecordName @"RecordName"
+#define kImageData @"ImageData" 
 #define kNoteArrayData @"NoteArrayData"
 #define kListDate @"ListDate"
 
