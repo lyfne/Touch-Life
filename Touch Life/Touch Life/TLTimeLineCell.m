@@ -26,9 +26,6 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)lockAction:(id)sender {
-}
-
 - (void)addGesture
 {
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showDetailView)];

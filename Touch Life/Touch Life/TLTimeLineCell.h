@@ -19,10 +19,7 @@
 @property (weak, nonatomic) id<TLTimeCellDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UITextView *previewTextView;
-@property (weak, nonatomic) IBOutlet UIButton *lockButton;
 
-- (IBAction)lockAction:(id)sender;
 - (void)addGesture;
 
 @end

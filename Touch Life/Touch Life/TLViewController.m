@@ -9,6 +9,9 @@
 #import "TLViewController.h"
 #import "TLFileManager.h"
 
+#define FONT_SIZE 14.0f
+#define CELL_CONTENT_WIDTH 252.0f
+
 @interface TLViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -128,7 +131,24 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 150;
+    NSString *text = [showList getNoteWithIndex:indexPath.row].detailNote;
+    
+    CGSize constraint = CGSizeMake(CELL_CONTENT_WIDTH, 20000.0f);
+    
+    NSDictionary * attributes = [NSDictionary dictionaryWithObject:[UIFont systemFontOfSize:FONT_SIZE] forKey:NSFontAttributeName];
+    NSAttributedString *attributedText =
+    [[NSAttributedString alloc]
+     initWithString:text
+     attributes:attributes];
+    CGRect rect = [attributedText boundingRectWithSize:constraint
+                                               options:NSStringDrawingUsesLineFragmentOrigin
+                                               context:nil];
+    CGSize size = rect.size;
+    
+    
+    CGFloat height = MAX(size.height, 30.0f);
+    
+    return height+70.0f;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -148,9 +168,37 @@
     
     cell.delegate = self;
     cell.dateLabel.text = [NSString stringWithFormat:@"%d日",[[showList getNoteWithIndex:indexPath.row] getDay]];
-    cell.previewTextView.text = [showList getNoteWithIndex:indexPath.row].detailNote;
+    //cell.previewTextView.text = [showList getNoteWithIndex:indexPath.row].detailNote;
     cell.tag = indexPath.row;
     [cell addGesture];
+    
+    UILabel *label = nil;
+
+    label = [[UILabel alloc] initWithFrame:CGRectMake(48, 25, CELL_CONTENT_WIDTH, 30.0f)];
+    [label setLineBreakMode:NSLineBreakByWordWrapping];
+    [label setMinimumScaleFactor:FONT_SIZE];
+    [label setNumberOfLines:0];
+    [label setFont:[UIFont systemFontOfSize:FONT_SIZE]];
+    [label setTag:1];
+    [[cell contentView] addSubview:label];
+    
+    NSString *text = [showList getNoteWithIndex:indexPath.row].detailNote;
+    
+    CGSize constraint = CGSizeMake(CELL_CONTENT_WIDTH, 20000.0f);
+    
+    NSAttributedString *attributedText = [[NSAttributedString alloc]initWithString:text attributes:@{
+                                                                                                     NSFontAttributeName:[UIFont systemFontOfSize:FONT_SIZE]
+                                                                                                     }];
+    CGRect rect = [attributedText boundingRectWithSize:constraint
+                                               options:NSStringDrawingUsesLineFragmentOrigin
+                                               context:nil];
+    CGSize size = rect.size;
+    
+    if (!label)
+        label = (UILabel*)[cell viewWithTag:1];
+    
+    [label setText:text];
+    [label setFrame:CGRectMake(48, 25, CELL_CONTENT_WIDTH, MAX(size.height, 30.0f))];
     
     return cell;
 }
