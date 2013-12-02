@@ -10,7 +10,7 @@
 #import "TLNavigationViewController.h"
 #import "TLNote.h"
 
-@interface TLDetailNoteViewController : UIViewController<TLNavigationDelegate>{
+@interface TLDetailNoteViewController : UIViewController<TLNavigationDelegate,UIActionSheetDelegate>{
     TLNote *showNote;
     BOOL isShowPhoto;
     BOOL isPlaying;

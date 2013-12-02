@@ -98,6 +98,39 @@
         [self.pinButton setTitle:@"解锁" forState:UIControlStateNormal];
     }
 }
+
+- (IBAction)shareAction:(id)sender {
+    UIActionSheet *sheet;
+    sheet  = [[UIActionSheet alloc] initWithTitle:@"选择" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"分享到人人",@"分享到微博",@"分享到QQ空间", nil];
+    
+    sheet.tag = 255;
+    [sheet showInView:self.view];
+}
+
+-(void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (actionSheet.tag == 255) {
+        switch (buttonIndex) {
+            case 0:
+                return;
+            case 1:{
+                UIAlertView *alertView= [[UIAlertView alloc] initWithTitle:@"分享" message:@"分享到人人成功" delegate:self cancelButtonTitle:@"好的" otherButtonTitles:nil];
+                [alertView show];
+            }
+                break;
+            case 2:{
+                UIAlertView *alertView= [[UIAlertView alloc] initWithTitle:@"分享" message:@"分享到微博成功" delegate:self cancelButtonTitle:@"好的" otherButtonTitles:nil];
+                [alertView show];
+            }
+                break;
+            case 3:{
+                UIAlertView *alertView= [[UIAlertView alloc] initWithTitle:@"分享" message:@"分享到QQ空间成功" delegate:self cancelButtonTitle:@"好的" otherButtonTitles:nil];
+                [alertView show];
+            }
+                break;
+        }
+    }
+}
 #pragma mark Privite Method
 
 - (void)tapImageAction
