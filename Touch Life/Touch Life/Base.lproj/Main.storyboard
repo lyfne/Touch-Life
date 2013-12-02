@@ -47,14 +47,17 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="irw-8I-6bt">
-                                                <rect key="frame" x="254" y="10" width="46" height="30"/>
+                                                <rect key="frame" x="75" y="11" width="46" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="加密">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="lockAction:" destination="hWy-I1-aY7" eventType="touchUpInside" id="mKi-u5-mWM"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ySQ-KK-VJ3">
-                                                <rect key="frame" x="127" y="10" width="65" height="30"/>
+                                                <rect key="frame" x="235" y="10" width="65" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="播放音频">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -64,7 +67,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7Vl-L4-9ry">
-                                                <rect key="frame" x="200" y="10" width="46" height="30"/>
+                                                <rect key="frame" x="20" y="10" width="46" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="分享">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -84,6 +87,7 @@
                         <outlet property="bgImageView" destination="x2W-B1-FlO" id="p5d-Ox-bIK"/>
                         <outlet property="detailImage" destination="TPy-zb-hlZ" id="0QE-6x-ddZ"/>
                         <outlet property="detailText" destination="ipo-G8-mP3" id="iiH-hR-xYo"/>
+                        <outlet property="pinButton" destination="irw-8I-6bt" id="xXK-Hm-v9v"/>
                         <outlet property="recordButton" destination="ySQ-KK-VJ3" id="IAR-7t-bkk"/>
                         <outlet property="textAndActionView" destination="p6v-gv-NNW" id="5zM-Ir-oZ4"/>
                         <outlet property="textViewBgImageView" destination="cGS-L6-sSU" id="hLj-D2-bhR"/>
@@ -142,23 +146,11 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FQ5-aw-lcP">
-                                                    <rect key="frame" x="8" y="113" width="32" height="32"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <state key="normal" title="加密">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="lockAction:" destination="VY2-r0-LiB" eventType="touchUpInside" id="okh-UY-s9N"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="dateLabel" destination="nr2-1U-mlb" id="hNV-gf-yWR"/>
-                                            <outlet property="lockButton" destination="FQ5-aw-lcP" id="6fZ-dh-oOX"/>
                                             <outlet property="previewTextView" destination="o6O-DL-bSD" id="9WP-AE-E6M"/>
                                         </connections>
                                     </tableViewCell>

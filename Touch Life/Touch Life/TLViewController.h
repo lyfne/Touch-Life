@@ -14,9 +14,11 @@
 #import "TLDetailNoteViewController.h"
 #import "TLNoteList.h"
 #import "TLTimeLineCell.h"
+#import "PAPasscodeViewController.h"
 
-@interface TLViewController : UIViewController<TLNavigationDelegate,TLNoteDelegate,TLMonthViewDelegate,TLTimeCellDelegate>{
+@interface TLViewController : UIViewController<TLNavigationDelegate,TLNoteDelegate,TLMonthViewDelegate,TLTimeCellDelegate,PAPasscodeViewControllerDelegate>{
     TLNoteList *showList;
+    int whichNote;
 }
 
 @property (strong, nonatomic) TLNavigationViewController *navigationVC;

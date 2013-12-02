@@ -18,11 +18,14 @@
 #define kLocalListsFileName @"LocalNoteLists.plist"
 #define kLocalListsKey @"LocalListsKey"
 
+#define kWithPinStr @"withPin"
+#define kNoPinStr @"noPin"
 #define kDetailDate @"DetailDate"
 #define kDetailNote @"DetailNote"
 #define kDetailImage @"DetailImage"
 #define kRecordName @"RecordName"
 #define kImageData @"ImageData" 
+#define kWithPin @"WithPin"
 #define kNoteArrayData @"NoteArrayData"
 #define kListDate @"ListDate"
 

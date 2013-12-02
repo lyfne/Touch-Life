@@ -16,6 +16,7 @@
     [coder encodeObject:self.detailNote forKey:kDetailNote];
     [coder encodeObject:self.recordName forKey:kRecordName];
     [coder encodeObject:self.imageData forKey:kImageData];
+    [coder encodeObject:self.withPin forKey:kWithPin];
 }
 
 - (id)initWithCoder:(NSCoder*)coder
@@ -27,6 +28,7 @@
         self.detailNote = [coder decodeObjectForKey:kDetailNote];
         self.recordName = [coder decodeObjectForKey:kRecordName];
         self.imageData = [coder decodeObjectForKey:kImageData];
+        self.withPin = [coder decodeObjectForKey:kWithPin];
     }
     
     return self;
@@ -62,6 +64,24 @@
 - (BOOL)withRecord
 {
     if (self.recordName != nil) {
+        return YES;
+    }else{
+        return NO;
+    }
+}
+
+- (void)addPinCode:(BOOL)withPin
+{
+    if (withPin == YES) {
+        self.withPin = kWithPinStr;
+    }else{
+        self.withPin = kNoPinStr;
+    }
+}
+
+- (BOOL)withPinOrNot
+{
+    if ([self.withPin isEqualToString:kWithPinStr]) {
         return YES;
     }else{
         return NO;

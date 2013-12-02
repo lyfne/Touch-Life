@@ -14,12 +14,15 @@
 @property (copy, nonatomic) NSString *detailNote;
 @property (copy, nonatomic) NSString *recordName;
 @property (copy, nonatomic) NSData *imageData;
+@property (copy, nonatomic) NSString *withPin;
 
 + (TLNote *)createNoteWithDate:(NSDate *)date note:(NSString *)note;
 - (void)addImageData:(NSData *)data;
 - (void)addRecordToNote:(NSString *)name;
 - (BOOL)withImage;
 - (BOOL)withRecord;
+- (void)addPinCode:(BOOL)withPin;
+- (BOOL)withPinOrNot;
 
 - (int)getMonth;
 - (int)getYear;

@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIView *textAndActionView;
 @property (weak, nonatomic) IBOutlet UIImageView *textViewBgImageView;
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
+@property (weak, nonatomic) IBOutlet UIButton *pinButton;
 
 @end
 
@@ -88,6 +89,15 @@
     isPlaying = !isPlaying;
 }
 
+- (IBAction)lockAction:(id)sender {
+    if ([showNote withPinOrNot]) {
+        [showNote addPinCode:NO];
+        [self.pinButton setTitle:@"上锁" forState:UIControlStateNormal];
+    }else{
+        [showNote addPinCode:YES];
+        [self.pinButton setTitle:@"解锁" forState:UIControlStateNormal];
+    }
+}
 #pragma mark Privite Method
 
 - (void)tapImageAction
@@ -128,6 +138,14 @@
     
     if([showNote withRecord] == NO){
         self.recordButton.hidden = YES;
+    }
+    
+    if (![[[TLFileManager sharedFileManager] getPinCode] isEqualToString:kPinCodeStr]) {
+        if ([showNote withPinOrNot]) {
+            [self.pinButton setTitle:@"解锁" forState:UIControlStateNormal];
+        }else{
+            [self.pinButton setTitle:@"上锁" forState:UIControlStateNormal];
+        }
     }
 }
 

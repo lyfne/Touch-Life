@@ -29,6 +29,7 @@
     [super viewDidLoad];
     [self initNavigationView];
     [self initTableView];
+    whichNote = 0;
 }
 
 - (void)didReceiveMemoryWarning
@@ -220,10 +221,34 @@
 
 - (void)addDetailViewToMainViewWithTag:(int)tag
 {
-    self.detailNoteVC = [self.storyboard instantiateViewControllerWithIdentifier:kTLDetailNoteViewController];
-    [self.detailNoteVC.view setX:0 Y:0 Width:320 Height:568];
-    [self.detailNoteVC showNote:[showList getNoteWithIndex:tag]];
-    [self.navigationController pushViewController:self.detailNoteVC animated:YES];
+    whichNote = tag;
+    if ([[showList getNoteWithIndex:tag] withPinOrNot]) {
+        PAPasscodeViewController *passcodeViewController = [[PAPasscodeViewController alloc] initForAction:PasscodeActionEnter];
+        passcodeViewController.delegate = self;
+        passcodeViewController.passcode = [[TLFileManager sharedFileManager] getPinCode];
+        passcodeViewController.simple = YES;
+        [self presentViewController:passcodeViewController animated:YES completion:nil];
+    }else{
+        self.detailNoteVC = [self.storyboard instantiateViewControllerWithIdentifier:kTLDetailNoteViewController];
+        [self.detailNoteVC.view setX:0 Y:0 Width:320 Height:568];
+        [self.detailNoteVC showNote:[showList getNoteWithIndex:tag]];
+        [self.navigationController pushViewController:self.detailNoteVC animated:YES];
+    }
+}
+
+#pragma mark - PAPasscodeViewControllerDelegate
+
+- (void)PAPasscodeViewControllerDidCancel:(PAPasscodeViewController *)controller {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)PAPasscodeViewControllerDidEnterPasscode:(PAPasscodeViewController *)controller {
+    [self dismissViewControllerAnimated:YES completion:^() {
+        self.detailNoteVC = [self.storyboard instantiateViewControllerWithIdentifier:kTLDetailNoteViewController];
+        [self.detailNoteVC.view setX:0 Y:0 Width:320 Height:568];
+        [self.detailNoteVC showNote:[showList getNoteWithIndex:whichNote]];
+        [self.navigationController pushViewController:self.detailNoteVC animated:YES];
+    }];
 }
 
 @end
